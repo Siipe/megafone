@@ -19,6 +19,18 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	/*END MENU*/
 /*END HEADER*/
 
+/*FLASH MESSAGES*/
+.message {width:70%; margin:0 auto .7%; height:40px; vertical-align:center; border-radius:7px; -moz-border-radius:7px; -webkit-border-radius:7px;}
+.message span {float:left; height:100%; width:31px; margin:0 5px;}
+.message p {float:left; line-height:35px; font-size:1.1em;}
+.success {background:#adf2a2; color:#389645; border:solid 1px #77cd69;}
+.success span {background:url('../img/message-icons.png') no-repeat left center;}
+.error {background:#fed2d3; color:#8a1724; border:solid 1px #d8929c;}
+.error span {background:url('../img/message-icons.png') no-repeat right center;}
+.warning {background:#fefccb; color:#88892c; border:solid 1px #c3c94f;}
+.warning span {background:url('../img/message-icons.png') no-repeat center center;}
+/*FLASH MESSAGES*/
+
 /*CONTENT*/
 	#main-content {width: 70%; margin: 0 auto}
 	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; box-shadow: 2px 3px 3px #AAA}

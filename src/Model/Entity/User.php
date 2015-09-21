@@ -10,6 +10,7 @@
         ];
 
         public function _setPassword($password) {
-            return new DefaultPasswordHasher($password);
+            $hasher = new DefaultPasswordHasher();
+            return $hasher->hash($password);
         }
     }

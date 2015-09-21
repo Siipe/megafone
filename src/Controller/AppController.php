@@ -34,13 +34,10 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize() {
         parent::initialize();
         $this->loadComponent('Flash');
     }
-
-    public abstract function save($entity);
 
     protected function setSuccessMessage($message) {
         $this->Flash->success($message);

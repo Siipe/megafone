@@ -1,1 +1,6 @@
-<div class="message error"><?= h($message) ?></div>
+<div class="message error">
+	<span></span>
+	<p>
+		<?= h($message) ?>
+	</p>
+</div>
