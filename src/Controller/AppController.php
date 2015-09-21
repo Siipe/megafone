@@ -39,4 +39,26 @@ class AppController extends Controller
         parent::initialize();
         $this->loadComponent('Flash');
     }
+
+    public abstract function save($entity);
+
+    protected function setSuccessMessage($message) {
+        $this->Flash->success($message);
+    }
+
+    protected function setWarningMessage($message) {
+        $this->Flash->warning($message);
+    }
+
+    protected function setErrorMessage($message) {
+        $this->Flash->error($message);
+    }
+
+    protected function toIndex() {
+        return $this->redirect(['action' => 'index']);
+    }
+
+    protected function toPrevious() {
+        return $this->redirect($this->referer());
+    }
 }
