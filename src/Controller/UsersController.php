@@ -6,6 +6,7 @@
     class UsersController extends AppController {
         public function initialize() {
             parent::initialize();
+            $this->set('class', 'user');
         }
 
         public function index() {
@@ -23,7 +24,7 @@
             $this->set(compact('user'));
         }
 
-        public function save($user) {
+        private function save($user) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if($this->Users->save($user)) {
                 $this->setSuccessMessage('Operation has been done successfully!');

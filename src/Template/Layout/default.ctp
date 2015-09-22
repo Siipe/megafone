@@ -19,13 +19,16 @@
     <body>
         <header>
             <div id="top-header">
+                <?php 
+                    require_once('panel.ctp');
+                ?>
                 <h1>Megafone</h1>
                 <?= $this->Html->image('megafone.png', ['alt' => 'Megafone logo']); ?>
             </div>
             <nav class="<?= isset($class) ? $class : '' ?>">
                 <ul>
                     <li><?= $this->Html->link(__('Home'), ['controller' => '', 'action' => '/'], ['class' => 'home']) ?></li>
-                    <li><?= $this->Html->link(__('Users'), ['controller' => null, 'action' => null], ['class' => 'users']) ?></li>
+                    <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'users']) ?></li>
                     <li><?= $this->Html->link(__('Complaints'), ['controller' => null, 'action' => null], ['class' => 'complaints']) ?></li>
                     <li><?= $this->Html->link(__('Categories'), ['controller' => null, 'action' => null], ['class' => 'categories']) ?></li>
                     <li><?= $this->Html->link(__('About'), ['controller' => 'Pages', 'action' => 'display', 'about'], ['class' => 'about']) ?></li>
