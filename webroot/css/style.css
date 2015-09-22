@@ -71,6 +71,16 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	/*END FORMS*/
 
 	div.interval {width: 96%; border-top: dotted 1px #BBB; height: 2px; margin: 1.1% auto; clear: both}
+    div.clear {clear:both}
+
+    /*USERS LIST*/
+    #user-list {margin:2% auto;}
+    #user-list ul li {width:30%; float:left; margin:1% 1% 1% 0;}
+    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%}
+    #user-list span {display:inline-block; float:left}
+    #user-list img {width:80px}
+    #user-list p {float:left}
+/*END USERS LIST*/
 
 /*END CONTENT*/
 
