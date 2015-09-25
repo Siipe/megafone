@@ -8,7 +8,7 @@
             <?php foreach($users as $user): ?>
                 <li>
                     <div class="display-user">
-                        <span><?= $user->picture ? $this->Html->image('uploads/'.$user->picture) : $this->Html->image('user-default.png') ?></span>
+                        <?= $user->picture ? $this->Html->image('uploads/'.$user->picture) : $this->Html->image('user-default.png') ?>
                         <p><?= $user->name ?></p>
                     </div>
                 </li>

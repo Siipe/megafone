@@ -76,11 +76,10 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     /*USERS LIST*/
     #user-list {margin:2% auto;}
     #user-list ul li {width:30%; float:left; margin:1% 1.6%}
-    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:#DDD; border-radius:10px; box-sizing:border-box; padding:5px}
-    #user-list span {display:inline-block; float:left}
-    #user-list img {width:70px; border: solid 1px #BBB}
-    #user-list p {float:left; margin-left:5px}
-/*END USERS LIST*/
+    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:#F1F1F1; border-radius:10px; box-sizing:border-box; padding:5px}
+    #user-list .display-user img {width:70px; border: solid 1px #BBB; float:left}
+    #user-list .display-user p {float:left; margin-left:5px; width:55%; color:#DDD; font-weight:bold; text-shadow: 1px 1px 2px #222}
+	/*END USERS LIST*/
 
 /*END CONTENT*/
 
@@ -93,26 +92,44 @@ body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: r
 
 /*FOR SMARTPHONES*/
 @media only screen and (min-width:150px) and (max-width:600px) {
+	/*HEADER*/
 	header {background: none}
 	#top-header {width: 96%; padding: 13px 2%; background: linear-gradient(to top, #353535, #777); background: -moz-linear-gradient(to top, #353535, #777); background: -ms-linear-gradient(to top, #353535, #777)}
 	#top-header p {display: none}
+	/*END HEADER*/
+
+	/*MENU*/
 	nav ul {width: 96%; padding: 0 2%}
 	nav ul li {float:none}
 	nav ul li a {display:block; text-align:center; height:10px; line-height: 8px}
     nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
+	/*END MENU*/
+
+	/*CONTENT*/
 	#main-content {width: 96%}
 	#content article {padding: 4%}
 	#content article p {text-align: justify}
 	#content article footer {margin: 4% 0}
+
 	.images {float: none; width: 90%; margin-bottom: 4%}
+
 	div.button {float: none; margin: 20px 0}
+
 	#form>div input,#form>div textarea {width: 90%}
 	#form>div {margin-bottom: 4%}
 	#form select {min-width: 40%}
 	#form label {float: none; display: block; text-align: left; padding: 0px}
-	#user-list ul li {float:none; overflow:auto; width:100%; margin:2% 0;}
+
+    #user-list {margin:8% auto;}
+    #user-list ul li {float:none; overflow:auto; width:100%; margin:4% 0;}
+    #user-list .display-user img {width:60px;}
+    #user-list .display-user p {width:70%;}
+	/*END CONTENT*/
+
+	/*FOOTER*/
     body>footer div {width: 96%; padding: 0 2%}
     body>footer div p {width: 60%}
+    /*END FOOTER*/
 }
 
 /*FOR TABLETS*/
@@ -120,6 +137,11 @@ body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: r
 	#top-header,#main-content,nav ul, .message, body>footer div {width: 90%}
     div.button {margin-bottom: 3%}
 	#form>div input,#form>div textarea {width: 50%}
+
+	#user-list {margin:2% auto;}
+    #user-list ul li {width:45%; margin:1% 2.5%}
+    #user-list .display-user img {width:50px;}
+    #user-list .display-user p {width:70%; font-size:.9em;}
 }
 
 /*FOR HIGHER RESOLUTIONS*/
