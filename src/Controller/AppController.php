@@ -37,6 +37,22 @@ class AppController extends Controller
     public function initialize() {
         parent::initialize();
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'login',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ]
+        ]);
+        $this->Auth->allow(['index', 'view', 'display']);
+        $this->set('userSession', $this->Auth->user());
     }
 
     protected function setSuccessMessage($message) {
@@ -49,6 +65,10 @@ class AppController extends Controller
 
     protected function setErrorMessage($message) {
         $this->Flash->error($message);
+    }
+
+    protected function toHome() {
+        return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
     }
 
     protected function toIndex() {

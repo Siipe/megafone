@@ -10,7 +10,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 
 	/*PANNEL*/
 	#panel {float:right; text-align:right}
-	#panel h1 {font-size:1em; color:#DDD; margin-bottom:10px; display:block}
+	#panel h1 {font-size:1em; margin-bottom:10px; display:block; color:#DDD;}
+    #panel h1.admin {color:#e6d28c; padding-right:25px; background:url('../img/bsk.png') no-repeat right center; line-height:30px; height:30px}
 	#panel a {background:#AAA; display:inline-block; text-decoration:none; font-size:.9em; padding:5px; color:#FFF; border-radius:4px}
 	#panel a:hover {background:#888}
 	/*END PANEL*/
@@ -27,15 +28,22 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 /*END HEADER*/
 
 /*FLASH MESSAGES*/
-.message {width:70%; margin:0 auto .7%; height:40px; vertical-align:center; border-radius:7px; -moz-border-radius:7px; -webkit-border-radius:7px;}
-.message span {float:left; height:100%; width:31px; margin:0 5px;}
-.message p {float:left; line-height:35px; font-size:1.1em;}
-.success {background:#adf2a2; color:#389645; border:solid 1px #77cd69;}
-.success span {background:url('../img/message-icons.png') no-repeat left center;}
-.error {background:#fed2d3; color:#8a1724; border:solid 1px #d8929c;}
-.error span {background:url('../img/message-icons.png') no-repeat right center;}
-.warning {background:#fefccb; color:#88892c; border:solid 1px #c3c94f;}
-.warning span {background:url('../img/message-icons.png') no-repeat center center;}
+.message {width:70%; margin:0 auto .7%; padding:.2% .5%; overflow:auto; vertical-align:center; border-radius:7px; -moz-border-radius:7px; -webkit-border-radius:7px; box-sizing:border-box; position:relative }
+.message span {float:left; height:31px; width:31px; margin-right:5px}
+.message p {line-height:35px; font-size:1.1em}
+.message .close-message {position:absolute; top:0; right:0; border-radius:4px; border:none; color:#FFF; cursor:pointer; outline:none; display:none}
+
+.success {background:#adf2a2; color:#389645; border:solid 1px #77cd69}
+.success span {background:url('../img/message-icons.png') no-repeat left center}
+.success .close-message {background:#77cd69}
+
+.error {background:#fed2d3; color:#8a1724; border:solid 1px #d8929c}
+.error span {background:url('../img/message-icons.png') no-repeat right center}
+.error .close-message {background:#d8929c}
+
+.warning {background:#fefccb; color:#88892c; border:solid 1px #c3c94f}
+.warning span {background:url('../img/message-icons.png') no-repeat center center}
+.warning .close-message {background:#c3c94f}
 /*FLASH MESSAGES*/
 
 /*CONTENT*/
@@ -62,7 +70,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	/*FORMS*/
 	#form {width: 100%; margin-top: 3%}
 	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold}
-	#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}
+	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
 	#form>div {margin: 2% 0}
 	#form>div input,#form>div textarea {width: 45%; padding: 2px}
 	#form>div input {height: 25px}
@@ -76,10 +84,23 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     /*USERS LIST*/
     #user-list {margin:2% auto;}
     #user-list ul li {width:30%; float:left; margin:1% 1.6%}
-    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:#F1F1F1; border-radius:10px; box-sizing:border-box; padding:5px}
+    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:#FBFBFB; border-radius:7px; box-sizing:border-box; padding:3px}
     #user-list .display-user img {width:70px; border: solid 1px #BBB; float:left}
-    #user-list .display-user p {float:left; margin-left:5px; width:55%; color:#DDD; font-weight:bold; text-shadow: 1px 1px 2px #222}
+    #user-list .display-user .details {width:55%; float:left; margin-left:5px}
+    #user-list .display-user a {display:block; color:#888; font-weight:bold; text-decoration:none}
+    #user-list .display-user a:hover {text-decoration:underline}
+    #user-list .display-user footer {font-size: .8em; margin:4% 0}
 	/*END USERS LIST*/
+
+    /*VIEW USER*/
+    #user-view {margin:2% auto}
+    #user-view .user-image img {border:solid 1px #BBB}
+    #user-view .user-image, #user-view .information {float:left}
+    #user-view .information {margin-left:10px}
+    #user-view .information h1 {color:#888}
+    #user-view .information div {margin:3% 0; font-style:italic}
+    #user-view .information label {font-weight:bold}
+    /*END VIEW USER*/
 
 /*END CONTENT*/
 
@@ -105,8 +126,15 @@ body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: r
     nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
 	/*END MENU*/
 
+    /*FLASH MESSAGES*/
+    .message {width:96%; padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
+    .message p {line-height: 27px}
+    .message .close-message {display:block}
+    /*END FLASH MESSAGES*/
+
 	/*CONTENT*/
 	#main-content {width: 96%}
+    #content {min-height: initial}
 	#content article {padding: 4%}
 	#content article p {text-align: justify}
 	#content article footer {margin: 4% 0}
@@ -121,9 +149,13 @@ body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: r
 	#form label {float: none; display: block; text-align: left; padding: 0px}
 
     #user-list {margin:8% auto;}
-    #user-list ul li {float:none; overflow:auto; width:100%; margin:4% 0;}
-    #user-list .display-user img {width:60px;}
-    #user-list .display-user p {width:70%;}
+    #user-list ul li {float:none; overflow:auto; width:100%; margin:4% 0}
+    #user-list .display-user img {width:60px}
+    #user-list .display-user .details {width:70%}
+
+    #user-view {margin:4% auto}
+    #user-view .user-image, #user-view .information {float:none}
+    #user-view .information {margin:4% 0 0 0}
 	/*END CONTENT*/
 
 	/*FOOTER*/
@@ -141,7 +173,8 @@ body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: r
 	#user-list {margin:2% auto;}
     #user-list ul li {width:45%; margin:1% 2.5%}
     #user-list .display-user img {width:50px;}
-    #user-list .display-user p {width:70%; font-size:.9em;}
+    #user-list .display-user .details {width:70%;}
+    #user-list .display-user a {font-size:.9em;}
 }
 
 /*FOR HIGHER RESOLUTIONS*/

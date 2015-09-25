@@ -4,12 +4,13 @@ USE megafone;
 CREATE TABLE IF NOT EXISTS users (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   login VARCHAR(100) NOT NULL,
-  password VARCHAR(200) NOT NULL,
+  password VARCHAR(60) NOT NULL,
   name VARCHAR(200) NOT NULL,
   email VARCHAR(200) NOT NULL,
   profile TINYINT NOT NULL,
   dateJoined DATETIME NOT NULL,
-  picture VARCHAR(100)
+  picture VARCHAR(100),
+  CONSTRAINT USER_UNIQUE UNIQUE (login, email)
 );
 
 CREATE TABLE IF NOT EXISTS categories (
@@ -45,3 +46,6 @@ CREATE TABLE IF NOT EXISTS comments (
   FOREIGN KEY FK_COMPLAINT_COMMENT (complaint_id) REFERENCES complaints(id),
   FOREIGN KEY FK_COMMENT_COMMENT (comment_id) REFERENCES comments(id)
 );
+
+/* CREATION OF SUPER USER - DEFAULT PASSWORD IS megaadmin */
+INSERT INTO users VALUES (0, 'root', '$2a$10$GBZqyTL5W/0lQoBkin3MJudIwaQFM7yJ/6R2fc8XsXiNXqJDMFAEa', 'RooT', 'lfaugusto.gomes@gmail.com', 1, NOW(), 'root.jpg')

@@ -12,10 +12,6 @@
 		<?= $this->Form->input('password', ['label' => false]) ?>
 	</div>
 	<div>
-		<label>Confirm password</label>
-		<?= $this->Form->input('confirmPassword', ['label' => false, 'type' => 'password']) ?>
-	</div>
-	<div>
 		<label>E-mail</label>
 		<?= $this->Form->input('email', ['label' => false]) ?>
 	</div>
