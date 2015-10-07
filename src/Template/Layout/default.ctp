@@ -8,9 +8,8 @@
         </title>
         <?= $this->Html->meta('megaicon.ico','/megaicon.ico', ['type' => 'icon']) ?>
 
-        <?= $this->Html->css(['reset', 'style']) ?>
-        <?= $this->Html->script('jquery.1.11.3.min') ?>
-        <?= $this->Html->script('script') ?>
+        <?= $this->Html->css(['reset', 'style', 'cropper']) ?>
+        <?= $this->Html->script(['jquery.1.11.3.min', 'script']) ?>
 
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
@@ -32,6 +31,7 @@
                     <li><?= $this->Html->link(__('Complaints'), ['controller' => null, 'action' => null], ['class' => 'complaints']) ?></li>
                     <li><?= $this->Html->link(__('Categories'), ['controller' => null, 'action' => null], ['class' => 'categories']) ?></li>
                     <li><?= $this->Html->link(__('About'), ['controller' => 'Pages', 'action' => 'display', 'about'], ['class' => 'about']) ?></li>
+                    <li><?= $this->Html->link(__('Cropper'), ['controller' => 'Pages', 'action' => 'display', 'cropper'], ['class' => 'cropper']) ?></li>
                 </ul>
             </nav>
         </header>
