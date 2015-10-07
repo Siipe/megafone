@@ -69,7 +69,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 
 	/*FORMS*/
 	#form {width: 100%; margin-top: 3%}
-	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold}
+	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px}
 	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
 	#form>div {margin: 2% 0}
 	#form>div input,#form>div textarea {width: 45%; padding: 2px}
@@ -100,6 +100,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #user-view .information h1 {color:#888}
     #user-view .information div {margin:3% 0; font-style:italic}
     #user-view .information label {font-weight:bold}
+    #user-view #update-image {text-decoration:none; color:#555; font-size:.9em; display:block; text-align:center}
+    #user-view #update-image:hover {text-decoration:underline}
     /*END VIEW USER*/
 
 /*END CONTENT*/

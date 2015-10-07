@@ -7,17 +7,15 @@
 		<label>Login</label>
 		<?= $this->Form->input('login', ['label' => false]) ?>
 	</div>
-	<div>
-		<label>Password</label>
-		<?= $this->Form->input('password', ['label' => false]) ?>
-	</div>
+    <?php if($this->request->action == 'add'): ?>
+        <div>
+            <label>Password</label>
+            <?= $this->Form->input('password', ['label' => false]) ?>
+        </div>
+    <?php endif; ?>
 	<div>
 		<label>E-mail</label>
 		<?= $this->Form->input('email', ['label' => false]) ?>
-	</div>
-	<div>
-		<label>Picture</label>
-		<?= $this->Form->input('upload', ['label' => false, 'type' => 'file']) ?>
 	</div>
 	<div class="button">
 		<?= $this->Form->button('Send') ?>

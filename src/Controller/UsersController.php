@@ -37,7 +37,6 @@
             if($this->request->is('post')) {
                 $user->dateJoined = new DateTime();
                 $user->profile = false;
-                $user->picture = $this->Upload->sendFileAndGetName($this->request->data['upload']);
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if($user = $this->Users->save($user)) {
                     $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
@@ -51,7 +50,6 @@
         public function edit() {
             $user = $this->Users->get($this->Auth->user('id'));
             if($this->request->is(['post', 'patch', 'put'])) {
-                $user->picture = $this->Upload->sendFileAndGetName($this->request->data['upload'], $user->picture);
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if($this->Users->save($user)) {
                     $this->setSuccessMessage('Your account has been modified successfully!');
@@ -74,7 +72,7 @@
                 $this->setErrorMessage('Login failed. Check your credentials and try again');
             } else if($user) {
                 $this->Auth->setUser((array) $user);
-                return $this->toHome();
+                return $this->redirect(['action' => 'account']);
             }
         }
 
