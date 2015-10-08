@@ -18,4 +18,13 @@
             <?php endforeach; ?>
         </ul>
 	</section>
+    <div class="paginator">
+        <ul class="pagination">
+            <?php
+                echo $this->Paginator->prev('<');
+                echo $this->Paginator->numbers();
+                echo $this->Paginator->next('>');
+            ?>
+        </ul>
+    </div>
 </article>

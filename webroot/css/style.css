@@ -102,6 +102,14 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #user-list .display-user footer {font-size: .8em; margin:4% 0}
 	/*END USERS LIST*/
 
+    /*PAGINATION*/
+    .paginator {clear:both; text-align:center}
+    .paginator ul {clear:both; display:inline-block; margin:2% 0}
+    .paginator ul li {float:left; margin:0 4px}
+    .paginator ul li a {text-decoration:none; background:linear-gradient(to top, #DDD, #FFF); padding:5px 9px; border:solid 1px #DDD; border-radius:5px; color:#888}
+    .paginator ul li a:hover {background:linear-gradient(to bottom, #DDD, #FFF)}
+    /*END PAGINATION*/
+
     /*VIEW USER*/
     #user-view {margin:2% auto}
     #user-view .user-image {display:inline-block;}

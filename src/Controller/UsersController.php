@@ -9,6 +9,7 @@
         public function initialize() {
             parent::initialize();
             $this->loadComponent('Upload');
+            $this->loadComponent('Paginator');
             $this->set('class', 'user');
         }
 
