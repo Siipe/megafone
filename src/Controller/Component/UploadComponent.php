@@ -13,6 +13,22 @@ use Cake\Network\Exception\InternalErrorException;
 use Cake\Utility\Text;
 
 class UploadComponent extends Component {
+
+    public function decodeAndMoveBase64File($string) {
+        $dir = WWW_ROOT.'img'.DS.'uploads'.DS;
+        list($type, $string) = explode(';', $string);
+        list(, $string)      = explode(',', $string);
+        $extensionArray = explode('/', $type);
+        $string = base64_decode($string);
+
+        $imageName = Text::uuid().'.'.end($extensionArray);
+
+        if(file_put_contents($dir.$imageName, $string))
+            return $imageName;
+
+        return null;
+    }
+
     public function sendFileAndGetName($file, $oldFile = null) {
         $dir = WWW_ROOT.'img'.DS.'uploads';
         $this->deleteFile($oldFile);
@@ -33,7 +49,7 @@ class UploadComponent extends Component {
     }
 
     public function deleteFile($fileName) {
-        if(!empty($fileName)) {
+        if($fileName) {
             $path = WWW_ROOT . 'img' . DS . 'uploads' . DS . $fileName;
             if (file_exists($path))
                 unlink($path);

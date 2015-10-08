@@ -1,4 +1,4 @@
-.crop {position:relative; overflow:hidden; min-height:600px}
+.crop {position:relative; overflow:hidden; background:url('../img/gridme.png') repeat center center; padding:10px; border:solid 2px #777; height:600px}
 .crop *, .crop *:after, .crop *:before {box-sizing: border-box;}
 
 .resize-container {position: relative; display: inline-block; cursor: move; margin: 0 auto}

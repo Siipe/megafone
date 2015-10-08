@@ -3,6 +3,7 @@
 
     use Cake\Event\Event;
     use DateTime;
+    use Cake\Utility\Text;
 
     class UsersController extends AppController {
         public function initialize() {
@@ -30,6 +31,20 @@
             $this->set(compact('user'));
         }
 
+        public function updateImage() {
+            if($picture = $this->Upload->decodeAndMoveBase64File($this->request->data('cropped-image'))) {
+                $this->Upload->deleteFile($this->Auth->user('picture'));
+                $query = $this->Users->query();
+                $query->update()->set(['picture' => $picture])->where(['id' => $this->Auth->user('id')])->execute();
+                $this->updateUserInSession();
+                $this->setSuccessMessage('Image updated successfully!');
+            }
+            else
+                $this->setErrorMessage('An error has occurred');
+
+            return $this->toPrevious();
+        }
+
         public function add() {
             $this->checkUserIntention('You are already a member');
 
@@ -40,7 +55,8 @@
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if($user = $this->Users->save($user)) {
                     $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
-                    return $this->login($user);
+                    $this->Auth->setUser($user);
+                    return $this->redirect(['action' => 'account']);
                 } else
                     $this->setErrorMessage('An error has occurred');
             }
@@ -51,7 +67,8 @@
             $user = $this->Users->get($this->Auth->user('id'));
             if($this->request->is(['post', 'patch', 'put'])) {
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                if($this->Users->save($user)) {
+                if($user = $this->Users->save($user)) {
+                    $this->updateUserInSession($user);
                     $this->setSuccessMessage('Your account has been modified successfully!');
                     return $this->redirect(['action' => 'account']);
                 } else
@@ -60,7 +77,7 @@
             $this->set(compact('user'));
         }
 
-        public function login($user = null) {
+        public function login() {
             $this->checkUserIntention('You are already logged in');
 
             if($this->request->is('post')) {
@@ -70,9 +87,6 @@
                     return $this->redirect($this->Auth->redirectUrl());
                 }
                 $this->setErrorMessage('Login failed. Check your credentials and try again');
-            } else if($user) {
-                $this->Auth->setUser((array) $user);
-                return $this->redirect(['action' => 'account']);
             }
         }
 
@@ -84,6 +98,13 @@
 
         public function beforeFilter(Event $event) {
             $this->Auth->allow('add');
+        }
+
+        private function updateUserInSession($user = null) {
+            if(!$user)
+               $user = $this->Users->get($this->Auth->user('id'));
+
+            $this->Auth->setUser($user->toArray());
         }
 
         private function checkUserIntention($message) {

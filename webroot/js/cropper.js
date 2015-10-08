@@ -179,19 +179,17 @@ var resizeableImage = function(image_target) {
         left = $('.overlay').offset().left - $container.offset().left,
         top =  $('.overlay').offset().top - $container.offset().top,
         width = $('.overlay').width(),
-        height = $('.overlay').height()
-        img = $('<img />');
+        height = $('.overlay').height();
 		
     crop_canvas = document.createElement('canvas');
     crop_canvas.width = width;
     crop_canvas.height = height;
     
     crop_canvas.getContext('2d').drawImage(image_target, left, top, width, height, 0, 0, width, height);
-    img.attr('src', crop_canvas.toDataURL("image/png")).appendTo('body');
+      $('#cropped-image-data').val(crop_canvas.toDataURL("image/png")).parents('form').submit();
   }
 
   init();
 };
 
 // Kick everything off with the target image
-//resizeableImage($('#crop'));
