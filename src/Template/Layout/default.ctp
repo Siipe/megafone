@@ -16,6 +16,8 @@
         <?= $this->fetch('script') ?>
     </head>
     <body>
+        <div id="overlay"></div>
+        <div id="modal"></div>
         <header>
             <div id="top-header">
                 <?php 
