@@ -42,6 +42,8 @@
     #user-list .display-user img {width:60px}
     #user-list .display-user .details {width:70%}
 
+    #content .paginator p.pagination-info {margin-top:4%}
+
     #user-view {margin:4% auto}
     #user-view .user-image, #user-view .information {float:none}
     #user-view .information {margin:4% 0 0 0}

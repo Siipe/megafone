@@ -94,7 +94,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     /*USERS LIST*/
     #user-list {margin:2% auto;}
     #user-list ul li {width:30%; float:left; margin:1% 1.6%}
-    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:#FBFBFB; border-radius:7px; box-sizing:border-box; padding:3px}
+    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px}
     #user-list .display-user img {width:70px; border: solid 1px #BBB; float:left}
     #user-list .display-user .details {width:55%; float:left; margin-left:5px}
     #user-list .display-user a {display:block; color:#888; font-weight:bold; text-decoration:none}
@@ -106,8 +106,15 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     .paginator {clear:both; text-align:center}
     .paginator ul {clear:both; display:inline-block; margin:2% 0}
     .paginator ul li {float:left; margin:0 4px}
-    .paginator ul li a {text-decoration:none; background:linear-gradient(to top, #DDD, #FFF); padding:5px 9px; border:solid 1px #DDD; border-radius:5px; color:#888}
+    .paginator ul li a {text-decoration:none; background:linear-gradient(to top, #DDD, #FFF); padding:5px 9px; border:solid 1px #DDD; border-radius:5px; color:#999; font-weight:bold}
     .paginator ul li a:hover {background:linear-gradient(to bottom, #DDD, #FFF)}
+
+    .paginator .disabled {opacity:.6}
+    .paginator .disabled a {background:linear-gradient(to bottom, #DDD, #FFF); cursor: default}
+
+    .paginator .active a, .paginator .active a:hover {background:linear-gradient(to bottom, #FCCB8C, #FFF); color:#f29113; cursor: default; border-color:#FCCB8C}
+    
+    #content .paginator p.pagination-info {text-align:center; font-size:.9em; margin-top:2%}
     /*END PAGINATION*/
 
     /*VIEW USER*/

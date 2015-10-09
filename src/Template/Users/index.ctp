@@ -2,7 +2,7 @@
 	$this->assign('title', 'View Users')
 ?>
 <article>
-	<h1>View Users</h1>
+	<h1>View Users</h1> 
 	<section id="user-list">
         <ul>
             <?php foreach($users as $user): ?>
@@ -21,10 +21,20 @@
     <div class="paginator">
         <ul class="pagination">
             <?php
+                echo $this->Paginator->first('<<');
                 echo $this->Paginator->prev('<');
                 echo $this->Paginator->numbers();
                 echo $this->Paginator->next('>');
+                echo $this->Paginator->last('>>');
             ?>
         </ul>
+        <p class="pagination-info">
+            <?php 
+                echo $this->Paginator->counter(
+                    'Page {{page}} of {{pages}}, showing {{current}} records out of
+                    {{count}} total, starting on record {{start}}, ending on {{end}}'
+                );
+            ?>
+        </p>
     </div>
 </article>
