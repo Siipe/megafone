@@ -96,7 +96,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #user-list ul li {width:30%; float:left; margin:1% 1.6%}
     #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px}
     #user-list .display-user img {width:70px; border: solid 1px #BBB; float:left}
-    #user-list .display-user .details {width:55%; float:left; margin-left:5px}
+    #user-list .display-user .details {width:calc(100% - 80px); float:left; margin-left:5px}
     #user-list .display-user a {display:block; color:#888; font-weight:bold; text-decoration:none}
     #user-list .display-user a:hover {text-decoration:underline}
     #user-list .display-user footer {font-size: .8em; margin:4% 0}

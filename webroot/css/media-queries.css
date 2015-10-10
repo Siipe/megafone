@@ -40,7 +40,6 @@
     #user-list {margin:8% auto;}
     #user-list ul li {float:none; overflow:auto; width:100%; margin:4% 0}
     #user-list .display-user img {width:60px}
-    #user-list .display-user .details {width:70%}
 
     #content .paginator p.pagination-info {margin-top:4%}
 
@@ -66,8 +65,7 @@
 
     #user-list {margin:2% auto;}
     #user-list ul li {width:45%; margin:1% 2.5%}
-    #user-list .display-user img {width:50px;}
-    #user-list .display-user .details {width:70%;}
+    #user-list .display-user img {width:60px;}
     #user-list .display-user a {font-size:.9em;}
 }
 
