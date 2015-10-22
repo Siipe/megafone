@@ -91,16 +91,21 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     div#modal {position: absolute; overflow:hidden; width: 70%; background-color: #CCC; z-index: 1001; top: 5%; left: 15%; border-radius:10px; text-align:center; padding:10px; box-sizing:border-box}
     /*END BASIC MODAL*/
 
-    /*USERS LIST*/
-    #user-list {margin:2% auto;}
-    #user-list ul li {width:30%; float:left; margin:1% 1.6%}
-    #user-list .display-user {border:solid 1px #CCC; float:left; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px}
-    #user-list .display-user img {width:70px; border: solid 1px #BBB; float:left}
-    #user-list .display-user .details {width:calc(100% - 80px); float:left; margin-left:5px}
-    #user-list .display-user a {display:block; color:#888; font-weight:bold; text-decoration:none}
-    #user-list .display-user a:hover {text-decoration:underline}
-    #user-list .display-user footer {font-size: .8em; margin:4% 0}
-	/*END USERS LIST*/
+    /*BASIC LIST*/
+    #basic-list {margin:2% auto;}
+    #basic-list > ul > li {width:30%; float:left; margin:1% 1.6%}
+    #basic-list .display-item {border:solid 1px #CCC; float:left; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
+    #basic-list .display-item img {width:70px; border: solid 1px #BBB; float:left}
+    #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
+    #basic-list .display-item > a {display:block; color:#888; font-weight:bold; text-decoration:none}
+    #basic-list .display-item > a:hover {text-decoration:underline}
+    #basic-list .display-item footer {font-size: .8em; margin:4% 0}
+
+    #basic-list .display-item .dropdown {position:absolute; right:5px; top: 5px}
+    #basic-list .display-item .options {position:absolute; right:5px; top: 15px; background:#FFF; border:solid 1px #CCC; border-radius:3px}
+    #basic-list .display-item .options a {padding:5px 10px; display:block; font-size:.9em; color:#666; text-decoration: none}
+    #basic-list .display-item .options a:hover {background:#F7F7F7}
+	/*END BASIC LIST*/
 
     /*PAGINATION*/
     .paginator {clear:both; text-align:center}

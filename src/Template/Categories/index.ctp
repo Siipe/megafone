@@ -6,22 +6,26 @@
 	<div class="button">
 		<?= $this->Html->link(__('Add a category'), ['controller' => 'Categories', 'action' => 'add']) ?>
 	</div>
-	<table>
-		<tr>
-			<td>Name</td>
-			<td>Description</td>
-			<td>Created in</td>
-			<td>Created by</td>
-		</tr>
-		<?php foreach ($categories as $category): ?>
-			<tr>
-				<td><?= $category->name ?></td>
-				<td><?= $category->description ?></td>
-				<td><?= $category->dateCreated->format('d-m-Y H:i:s') ?></td>
-				<td><?= $category->user->name ?></td>
-			</tr>
-		<?php endforeach; ?>
-	</table>
+    <section id="basic-list">
+        <ul>
+            <?php foreach ($categories as $category): ?>
+                <li>
+                    <div class="display-item">
+                        <span class="dropdown">V</span>
+                        <span class="options">
+                            <ul>
+                                <li><a href="#">View</a></li>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </ul>
+                        </span>
+                        <?= $this->Html->link($category->name, ['controller' => 'Categories', 'action' => 'view', $category->id]) ?>
+                        <footer>Created in: <?= $category->dateCreated->format('d/m/Y H:i:s') ?></footer>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
 	<div class="paginator">
         <ul class="pagination">
             <?php

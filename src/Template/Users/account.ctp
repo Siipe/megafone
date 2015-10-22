@@ -27,7 +27,7 @@ $this->assign('title', $user['name']);
             </div>
             <div>
                 <label>Member since</label>
-                <?= $user['dateJoined']->format('d-m-Y H:i:s') ?>
+                <?= $user['dateJoined']->format('d/m/Y H:i:s') ?>
             </div>
         </div>
         <div class="clear"></div>

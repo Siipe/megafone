@@ -55,9 +55,9 @@
                 $user->profile = false;
                 $user->picture = null;
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                if($newUser = $this->Users->save($user)) {
+                if($user = $this->Users->save($user)) {
                     $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
-                    $this->Auth->setUser($newUser->toArray());
+                    $this->Auth->setUser($user->toArray());
                     return $this->redirect(['action' => 'account']);
                 } else
                     $this->setErrorMessage('An error has occurred');

@@ -3,15 +3,15 @@
 ?>
 <article>
 	<h1>View Users</h1> 
-	<section id="user-list">
+	<section id="basic-list">
         <ul>
             <?php foreach($users as $user): ?>
                 <li>
-                    <div class="display-user">
+                    <div class="display-item">
                         <?= $user->picture ? $this->Html->image('uploads/'.$user->picture) : $this->Html->image('user-default.png') ?>
                         <div class="details">
                             <?= $this->Html->link($user->name, ['controller' => 'Users', 'action' => 'view', $user->id]) ?>
-                            <footer>Joined: <?= $user->dateJoined->format('d-m-Y H:i:s') ?></footer>
+                            <footer>Joined: <?= $user->dateJoined->format('d/m/Y H:i:s') ?></footer>
                         </div>
                     </div>
                 </li>

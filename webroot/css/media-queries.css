@@ -37,9 +37,9 @@
     #form select {min-width: 40%}
     #form label {float: none; display: block; text-align: left; padding: 0px}
 
-    #user-list {margin:8% auto;}
-    #user-list ul li {float:none; overflow:auto; width:100%; margin:4% 0}
-    #user-list .display-user img {width:60px}
+    #basic-list {margin:8% auto;}
+    #basic-list ul li {float:none; overflow:auto; width:100%; margin:4% 0}
+    #basic-list .display-item img {width:60px}
 
     #content .paginator p.pagination-info {margin-top:4%}
 
@@ -63,10 +63,10 @@
     div.button {margin-bottom: 3%}
     #form>div input,#form>div textarea {width: 50%}
 
-    #user-list {margin:2% auto;}
-    #user-list ul li {width:45%; margin:1% 2.5%}
-    #user-list .display-user img {width:60px;}
-    #user-list .display-user a {font-size:.9em;}
+    #basic-list {margin:2% auto;}
+    #basic-list ul li {width:45%; margin:1% 2.5%}
+    #basic-list .display-item img {width:60px;}
+    #basic-list .display-item a {font-size:.9em;}
 }
 
 /*FOR HIGHER RESOLUTIONS*/
