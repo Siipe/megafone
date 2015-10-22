@@ -50,7 +50,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#main-content {width: 70%; margin: 0 auto}
 	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; box-shadow: 2px 3px 3px #AAA}
 	#content article {padding: 2.3%; overflow: auto}
-	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold}
+	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block}
 	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic}
 	#content article p {line-height: 25px; font-size: 0.98em; color: #444}
 
@@ -61,7 +61,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	.images img {width: 90%; height: auto; margin: 0 1.5%; opacity: 0.77}
 	/*END HOME*/
 
-	div.button {text-align:right}
+	div.button {float:right}
 	div.button *, .default-button {padding: 7px 20px; color: #FFF; text-decoration: none; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 0.9em; border:none; cursor:pointer; display:inline-block; outline: none}
 	div.button * {background: #fab357;}
 	div.button *:hover {background: #FCCB8C}

@@ -53,10 +53,11 @@
             if($this->request->is('post')) {
                 $user->dateJoined = new DateTime();
                 $user->profile = false;
+                $user->picture = null;
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                if($user = $this->Users->save($user)) {
+                if($newUser = $this->Users->save($user)) {
                     $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
-                    $this->Auth->setUser($user);
+                    $this->Auth->setUser($newUser->toArray());
                     return $this->redirect(['action' => 'account']);
                 } else
                     $this->setErrorMessage('An error has occurred');
