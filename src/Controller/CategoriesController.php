@@ -11,6 +11,9 @@
 		}
 
 		public function index() {
+			$this->paginate = [
+				'contain' => 'Users'
+			];
 			$this->set('categories', $this->paginate($this->Categories));
 		}
 

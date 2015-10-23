@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-    $('.message').on('mouseover', function(){
+    $('.message').on('mouseover', function() {
         $('.close-message').show();
     })
     .on('mouseout', function(){
@@ -14,18 +14,23 @@ $(document).ready(function(){
         $(this).parent().remove();
     });
 
-    $('.cancel-modal').on('click', function(){
+    $('.cancel-modal').on('click', function() {
         closeModal();
         cleanCropperComponent();
     });
 
-    $('#update-image').on('click', function(){
+    $('#update-image').on('click', function() {
         $('input:file').trigger('click');
     });
 
-    $('#browse-image').on('change', function(e){
+    $('#browse-image').on('change', function(e) {
         openModal();
         handleUpload(e);
+        $(this).val('');
+    });
+
+    $('.dropdown').on('click', function() {
+        $(this).siblings('.options').toggle();
     });
 });
 

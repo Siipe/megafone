@@ -21,7 +21,7 @@
             <?php endif; ?>
             <div>
                 <label>Member since</label>
-                <?= $user['dateJoined'] ?>
+                <?= $user['dateJoined']->format('d/m/Y H:i') ?>
             </div>
         </div>
         <div class="clear"></div>
