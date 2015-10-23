@@ -13,4 +13,8 @@
             $hasher = new DefaultPasswordHasher();
             return $hasher->hash($password);
         }
+
+        public function _getJoined() {
+            return $this->_properties['dateJoined']->format('d/m/Y H:i');
+        }
     }

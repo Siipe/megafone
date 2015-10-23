@@ -11,17 +11,17 @@
             <h1>Basic information</h1>
             <div>
                 <label>Name</label>
-                <?= $user['name'] ?>
+                <?= $user->name ?>
             </div>
             <?php if($userSession): ?>
                 <div>
                     <label>E-mail</label>
-                    <?= $user['email'] ?>
+                    <?= $user->email ?>
                 </div>
             <?php endif; ?>
             <div>
-                <label>Member since</label>
-                <?= $user['dateJoined']->format('d/m/Y H:i') ?>
+                <label>Joined</label>
+                <?= $user->joined ?>
             </div>
         </div>
         <div class="clear"></div>

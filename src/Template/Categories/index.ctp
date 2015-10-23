@@ -2,10 +2,12 @@
 	$this->assign('title', 'View Categories');
 ?>
 <article>
-	<h1>View Categories</h1>
-	<div class="button">
-		<?= $this->Html->link(__('Add a category'), ['controller' => 'Categories', 'action' => 'add']) ?>
-	</div>
+    <div>
+        <h1>View Categories</h1>
+        <div class="button">
+            <?= $this->Html->link(__('Add a category'), ['controller' => 'Categories', 'action' => 'add']) ?>
+        </div>
+    </div>
     <section id="basic-list">
         <ul>
             <?php foreach ($categories as $category): ?>
@@ -21,7 +23,7 @@
                             </span>
                         <?php endif; ?>
                         <?= $this->Html->link($category->name, ['controller' => 'Categories', 'action' => 'view', $category->id]) ?>
-                        <footer>Created in: <?= $category->dateCreated->format('d/m/Y H:i') ?> by <?= $this->Html->link($category->user->name, ['controller' => 'Users', 'action' => 'view', $category->user->id])  ?></footer>
+                        <footer>Created in: <?= $category->created ?></footer>
                     </div>
                 </li>
             <?php endforeach; ?>

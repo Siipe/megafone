@@ -17,6 +17,11 @@
 			$this->set('categories', $this->paginate($this->Categories));
 		}
 
+        public function view($id = null) {
+            $category = $this->Categories->get($id, ['contain' => 'Users']);
+            $this->set(compact('category'));
+        }
+
 		public function add() {
 			$category = $this->Categories->newEntity();
 			if($this->request->is('post')) {
@@ -31,4 +36,42 @@
 			}
 			$this->set(compact('category'));
 		}
+
+        public function edit($id = null) {
+            $category = $this->Categories->get($id);
+            if($this->request->is(['post', 'patch', 'put'])) {
+                $category = $this->Categories->patchEntity($category, $this->request->data);
+                if($category = $this->Categories->save($category)) {
+                    $this->setSuccessMessage("Category $category->name modified successfully!");
+                    return $this->toIndex();
+                } else
+                    $this->setErrorMessage('An error has occurred');
+            }
+            $this->set(compact('category'));
+        }
+
+        public function delete($id = null) {
+            $category = $this->Categories->get($id);
+            if($this->Categories->delete($category))
+                $this->setSuccessMessage("Category removed successfully!");
+            else
+                $this->setErrorMessage('An error has occurred');
+
+            return $this->toIndex();
+        }
+
+        public function isAuthorized($user) {
+            if($this->request->action === 'add')
+                return true;
+
+            if(in_array($this->request->action, ['edit', 'delete'])) {
+                $id = $this->request->params['pass'][0];
+                if($this->Categories->isOwnedBy($id, $this->Auth->user('id'))) {
+                    return true;
+                }
+            }
+
+            $this->setErrorMessage('You have no permission for such operation');
+            return false;
+        }
 	}

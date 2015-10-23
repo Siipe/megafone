@@ -52,6 +52,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#content article {padding: 2.3%; overflow: auto}
 	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block}
 	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic}
+    #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight: bold}
+    #content article footer a:hover {text-decoration: underline}
 	#content article p {line-height: 25px; font-size: 0.98em; color: #444}
 
 	/*HOME*/
@@ -94,7 +96,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     /*BASIC LIST*/
     #basic-list {margin:2% auto;}
     #basic-list > ul > li {width:30%; float:left; margin:1% 1.6%}
-    #basic-list .display-item {border:solid 1px #CCC; float:left; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
+    #basic-list .display-item {border:solid 1px #CCC; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
     #basic-list .display-item img {width:70px; border: solid 1px #BBB; float:left}
     #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
     #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none}
@@ -102,7 +104,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #basic-list .display-item footer {font-size: .8em; margin:4% 0}
 
     #basic-list .display-item .dropdown {display:inline-block; cursor: pointer; height:12px; width:12px; background:url('../img/arrow-down.png') center center no-repeat; position:absolute; right:5px; top: 5px}
-    #basic-list .display-item .options {display:none; position:absolute; right:5px; top: 22px; background:#FFF; border:solid 1px #CCC; border-radius:3px}
+    #basic-list .display-item .options {z-index:900; display:none; position:absolute; right:5px; top: 22px; background:#FFF; border:solid 1px #CCC; border-radius:3px}
     #basic-list .display-item .options a {padding:5px 10px; display:block; font-size:.8em; color:#666; text-decoration: none; font-weight:normal}
     #basic-list .display-item .options a:hover {background:#F7F7F7}
 	/*END BASIC LIST*/

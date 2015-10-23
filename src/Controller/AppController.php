@@ -40,6 +40,11 @@ class AppController extends Controller
         parent::initialize();
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
+            'unauthorizedRedirect' => [
+                'action' => 'index',
+                'prefix' => false
+            ],
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -55,6 +60,15 @@ class AppController extends Controller
         ]);
         $this->Auth->allow(['index', 'view', 'display']);
         $this->set('userSession', $this->Auth->user());
+    }
+
+    /**
+     * @param $user - User to be validated
+     * @return True if everything's ok (not implemented yet)
+     */
+    public function isAuthorized($user) {
+        //TODO implement some logic here
+        return true;
     }
 
     protected function setSuccessMessage($message) {
