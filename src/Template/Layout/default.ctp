@@ -29,7 +29,7 @@
                     <li><?= $this->Html->link(__('Home'), ['controller' => '', 'action' => '/'], ['class' => 'home']) ?></li>
                     <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'users']) ?></li>
                     <li><?= $this->Html->link(__('Categories'), ['controller' => 'Categories', 'action' => 'index'], ['class' => 'categories']) ?></li>
-                    <li><?= $this->Html->link(__('Complaints'), ['controller' => null, 'action' => null], ['class' => 'complaints']) ?></li>
+                    <li><?= $this->Html->link(__('Complaints'), ['controller' => 'Complaints', 'action' => 'index'], ['class' => 'complaints']) ?></li>
                     <li><?= $this->Html->link(__('About'), ['controller' => 'Pages', 'action' => 'display', 'about'], ['class' => 'about']) ?></li>
                 </ul>
             </nav>
