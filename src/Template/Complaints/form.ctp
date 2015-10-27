@@ -5,7 +5,7 @@
 	</div>
 	<div>
 		<label>Category</label>
-		<?= $this->Form->input('category_id', ['label' => false]) ?>
+		<?= $this->Form->select('category_id', $categories, ['label' => false]) ?>
 	</div>
 	<div>
 		<label>Name</label>

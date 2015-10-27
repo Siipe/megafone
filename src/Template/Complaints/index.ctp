@@ -7,11 +7,11 @@
 		<div class="button"><?= $this->Html->link(__('Add a complaint'), ['controller' => 'Complaints', 'action' => 'add']) ?></div>
 	</div>
 	<?php foreach($complaints as $complaint): ?>
-		<div>$complaint->name</div>
-		<div>$complaint->description</div>
-		<div>$complaint->created</div>
-		<div>$complaint->user->name</div>
-		<div>$complaint->category->name</div>
+		<div><?= $complaint->name ?></div>
+		<div><?= $complaint->description ?></div>
+		<div><?= $complaint->created ?></div>
+		<div><?= $complaint->user->name ?></div>
+		<div><?= $complaint->category->name ?></div>
 		<hr />
 	<?php endforeach; ?>
 	<div class="paginator">

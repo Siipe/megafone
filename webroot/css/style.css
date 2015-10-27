@@ -78,9 +78,9 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px}
 	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
 	#form>div {margin: 2% 0}
-	#form>div input,#form>div textarea {width: 45%; padding: 2px}
+	#form>div input,#form>div textarea {width: 45%; padding: 2px; border:solid 1px #BBB}
 	#form>div input {height: 25px}
-	#form>div select {width: 25%; height: 25px}
+	#form>div select {width: 25%; height: 31px}
 	#form>div textarea {height: 100px}
 	/*END FORMS*/
 

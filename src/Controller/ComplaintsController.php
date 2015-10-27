@@ -20,7 +20,9 @@
 		}
 
 		public function add() {
-			$complaint = $this->Complaints->newEntity();
+			$complaint = $this->Complaints->newEntity([
+					'user_id' => $this->Auth->user('id')
+			]);
 			if($this->request->is('post')) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
 				$complaint->dateCreated = new DateTime();
@@ -29,7 +31,9 @@
 					return $this->toIndex();
 				}
 				$this->setErrorMessage('An error has occurred');
-			}
+			} else
+				$this->set('categories', $this->Complaints->Categories->find('list'));
+
 			$this->set(compact('complaint'));
 		}
 	}

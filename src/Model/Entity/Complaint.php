@@ -9,6 +9,6 @@
 		];
 
 		public function _getCreated() {
-			return $this->properties['dateCreated']->format('d/m/Y H:i');
+			return $this->_properties['dateCreated']->format('d/m/Y H:i');
 		}
 	}

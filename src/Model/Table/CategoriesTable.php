@@ -6,6 +6,7 @@
 	class CategoriesTable extends Table {
 		public function initialize(array $config) {
 			$this->belongsTo('Users');
+			$this->hasMany('Complaints');
 		}
 
         public function isOwnedBy($id, $user_id) {
