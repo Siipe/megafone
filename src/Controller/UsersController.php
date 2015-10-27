@@ -35,8 +35,7 @@
         public function updateImage() {
             if($picture = $this->Upload->decodeAndMoveBase64File($this->request->data('cropped-image'))) {
                 $this->Upload->deleteFile($this->Auth->user('picture'));
-                $query = $this->Users->query();
-                $query->update()->set(['picture' => $picture])->where(['id' => $this->Auth->user('id')])->execute();
+                $this->Users->updateImage($this->Auth->user('id'), $picture);
                 $this->updateUserInSession();
                 $this->setSuccessMessage('Image updated successfully!');
             }
@@ -59,8 +58,8 @@
                     $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
                     $this->Auth->setUser($user->toArray());
                     return $this->redirect(['action' => 'account']);
-                } else
-                    $this->setErrorMessage('An error has occurred');
+                }
+                $this->setErrorMessage('An error has occurred');
             }
             $this->set(compact('user'));
         }
@@ -73,8 +72,8 @@
                     $this->updateUserInSession($user);
                     $this->setSuccessMessage('Your account has been modified successfully!');
                     return $this->redirect(['action' => 'account']);
-                } else
-                    $this->setErrorMessage('An error has occurred');
+                }
+                $this->setErrorMessage('An error has occurred');
             }
             $this->set(compact('user'));
         }

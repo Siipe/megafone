@@ -6,13 +6,13 @@
 	class ComplaintsController extends AppController {
 		public function initialize() {
 			$this->loadComponent('Paginator');
-			$this->set('class', 'complaints');
+			$this->set('class', 'complaint');
 			parent::initialize();
 		}
 
 		public function index() {
 			$this->paginate = [
-				'limit' => 10,
+				'limit' => 9,
 				'contain' => ['Users', 'Categories']
 			];
 
@@ -27,7 +27,7 @@
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
 				$complaint->dateCreated = new DateTime();
 				if($complaint = $this->Complaints->save($complaint)) {
-					$this->setSuccessMessage("Complaint $complaint->name added successfully!");
+					$this->setSuccessMessage("Complaint \"$complaint->name\" added successfully!");
 					return $this->toIndex();
 				}
 				$this->setErrorMessage('An error has occurred');

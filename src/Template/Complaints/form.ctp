@@ -8,7 +8,7 @@
 		<?= $this->Form->select('category_id', $categories, ['label' => false]) ?>
 	</div>
 	<div>
-		<label>Name</label>
+		<label>Description</label>
 		<?= $this->Form->textarea('description', ['label' => false]) ?>
 	</div>
 	<div class="button">

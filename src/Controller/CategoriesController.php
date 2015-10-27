@@ -12,6 +12,7 @@
 
 		public function index() {
 			$this->paginate = [
+                'limit' => 9,
 				'contain' => 'Users'
 			];
 			$this->set('categories', $this->paginate($this->Categories));
@@ -29,10 +30,10 @@
 				$category->user_id = $this->Auth->user('id');
 				$category->dateCreated = new DateTime();
 				if($category = $this->Categories->save($category)) {
-					$this->setSuccessMessage("Category $category->name added successfully!");
+					$this->setSuccessMessage("Category \"$category->name\" added successfully!");
 					return $this->toIndex();
-				} else
-					$this->setErrorMessage('An error has occurred');
+				}
+				$this->setErrorMessage('An error has occurred');
 			}
 			$this->set(compact('category'));
 		}
@@ -42,10 +43,10 @@
             if($this->request->is(['post', 'patch', 'put'])) {
                 $category = $this->Categories->patchEntity($category, $this->request->data);
                 if($category = $this->Categories->save($category)) {
-                    $this->setSuccessMessage("Category $category->name modified successfully!");
+                    $this->setSuccessMessage("Category \"$category->name\" modified successfully!");
                     return $this->toIndex();
-                } else
-                    $this->setErrorMessage('An error has occurred');
+                }
+                $this->setErrorMessage('An error has occurred');
             }
             $this->set(compact('category'));
         }

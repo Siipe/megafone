@@ -27,7 +27,7 @@ use Cake\Controller\Controller;
 class AppController extends Controller
 {
 
-    public $paginate = ['limit' => 6];
+    public $paginate = ['limit' => 9];
 
     /**
      * Initialization hook method.
