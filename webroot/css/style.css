@@ -109,6 +109,16 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #basic-list .display-item .options a:hover {background:#F7F7F7}
 	/*END BASIC LIST*/
 
+	/*COMPLAINTS LIST*/
+	#view-complaints {margin-top:2%}
+	#view-complaints li {padding:20px 0 20px 5px; overflow: auto}
+	#view-complaints li:nth-child(2n) {background:#F7F7F7}
+	#view-complaints li div.complaint-details {float:left}
+	#view-complaints li div.complaint-user-details {float:right}
+	#view-complaints li div.fulfill-line {overflow:hidden}
+	#view-complaints li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}
+	/*END COMPLAINTS LIST*/
+
     /*PAGINATION*/
     .paginator {clear:both; text-align:center}
     .paginator ul {clear:both; display:inline-block; margin:2% 0}

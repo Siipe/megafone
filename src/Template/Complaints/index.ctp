@@ -6,14 +6,23 @@
 		<h1>View Complaints</h1>
 		<div class="button"><?= $this->Html->link(__('Add a complaint'), ['controller' => 'Complaints', 'action' => 'add']) ?></div>
 	</div>
-	<?php foreach($complaints as $complaint): ?>
-		<div><?= $complaint->name ?></div>
-		<div><?= $complaint->description ?></div>
-		<div><?= $complaint->created ?></div>
-		<div><?= $complaint->user->name ?></div>
-		<div><?= $complaint->category->name ?></div>
-		<hr />
-	<?php endforeach; ?>
+    <ul id="view-complaints">
+    	<?php foreach($complaints as $complaint): ?>
+            <li>
+        		<div class="complaint-details">
+                    <?= $complaint->name ?> <br />
+                    <footer><?= $complaint->category->name ?></footer>
+                </div>
+        		<div class="complaint-user-details">
+                    <?= $complaint->user->name ?> <br />
+                    <footer><?= $complaint->created ?></footer>
+                </div>
+                <div class="fulfill-line">
+                    <span></span>
+                </div>
+            </li>
+    	<?php endforeach; ?>
+    </ul>
 	<div class="paginator">
         <ul class="pagination">
             <?php
