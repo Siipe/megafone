@@ -17,4 +17,13 @@
         public function _getJoined() {
             return $this->_properties['dateJoined']->format('d/m/Y H:i');
         }
+
+        public function _getImage() {
+            $imagePath = "uploads/";
+            $image = $this->_properties['picture'];
+            if($image == null) 
+                $image = "user-default.png";
+
+            return $imagePath.$image;
+        }
     }

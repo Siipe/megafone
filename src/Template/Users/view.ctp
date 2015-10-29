@@ -5,7 +5,7 @@
     <h1>View User</h1>
     <section id="user-view">
         <div class="user-image">
-            <?= $user['picture'] ? $this->Html->image('uploads/'.$user['picture']) : $this->Html->image('user-default.png')?>
+            <?= $this->Html->image($user->image) ?>
         </div>
         <div class="information">
             <h1>Basic information</h1>

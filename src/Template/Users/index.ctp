@@ -8,7 +8,7 @@
             <?php foreach($users as $user): ?>
                 <li>
                     <div class="display-item">
-                        <?= $user->picture ? $this->Html->image('uploads/'.$user->picture) : $this->Html->image('user-default.png') ?>
+                        <?= $this->Html->image($user->image) ?>
                         <div class="details">
                             <?= $this->Html->link($user->name, ['controller' => 'Users', 'action' => 'view', $user->id]) ?>
                             <footer>Joined: <?= $user->joined ?></footer>

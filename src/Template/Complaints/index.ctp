@@ -9,16 +9,23 @@
     <ul id="view-complaints">
     	<?php foreach($complaints as $complaint): ?>
             <li>
-        		<div class="complaint-details">
-                    <?= $complaint->name ?> <br />
-                    <footer><?= $complaint->category->name ?></footer>
+                <div class="container">
+            		<div class="complaint-details">
+                        <p><?= $complaint->name ?></p>
+                    </div>
+            		<div class="complaint-user-details">
+                        <p><?= $complaint->user->name ?> </p>
+                    </div>
+                    <div class="fulfill-line">
+                        <span></span>
+                    </div>
                 </div>
-        		<div class="complaint-user-details">
-                    <?= $complaint->user->name ?> <br />
-                    <footer><?= $complaint->created ?></footer>
+                <div class="image">
+                    <?= $this->Html->image($complaint->user->image) ?>
                 </div>
-                <div class="fulfill-line">
-                    <span></span>
+                <div class="container">
+                    <footer class="category"><?= $complaint->category->name ?></footer>
+                    <footer class="created"><?= $complaint->created ?></footer>
                 </div>
             </li>
     	<?php endforeach; ?>
