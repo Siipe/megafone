@@ -13,7 +13,8 @@
 		public function index() {
 			$this->paginate = [
 				'limit' => 9,
-				'contain' => ['Users', 'Categories']
+				'contain' => ['Users', 'Categories'],
+				'order' => ['dateCreated' => 'desc']
 			];
 
 			$this->set('complaints', $this->paginate($this->Complaints));
@@ -26,8 +27,8 @@
 			if($this->request->is('post')) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
 				$complaint->dateCreated = new DateTime();
-				if($complaint = $this->Complaints->save($complaint)) {
-					$this->setSuccessMessage("Complaint \"$complaint->name\" added successfully!");
+				if($this->Complaints->save($complaint)) {
+					$this->setSuccessMessage('Complaint added successfully!');
 					return $this->toIndex();
 				}
 				$this->setErrorMessage('An error has occurred');

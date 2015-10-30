@@ -50,7 +50,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#main-content {width: 70%; margin: 0 auto}
 	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; box-shadow: 2px 3px 3px #AAA}
 	#content article {padding: 2.3%; overflow: auto}
-	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block}
+	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block; word-break:break-all}
 	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic}
     #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight: bold}
     #content article footer a:hover {text-decoration: underline}
@@ -99,7 +99,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #basic-list .display-item {border:solid 1px #CCC; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
     #basic-list .display-item img {width:70px; border: solid 1px #BBB; float:left}
     #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
-    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none}
+    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none;     max-width: 95%; overflow: hidden; display: inline-block; text-overflow: ellipsis}
     #basic-list .display-item a:hover {text-decoration:underline}
     #basic-list .display-item footer {font-size: .8em; margin:4% 0}
 
@@ -113,11 +113,10 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#view-complaints {margin:2% 0}
 	#view-complaints li {padding:20px 10px; overflow: auto}
 	#view-complaints li:nth-child(2n) {background:#F7F7F7}
-	#view-complaints li div p {line-height: normal}
-	#view-complaints li div a {color:#333; font-weight:normal; text-decoration: none}
+	#view-complaints li div a {color:#333; font-weight:normal; text-decoration: none; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; display: block; padding-bottom: 2px}
 	#view-complaints li div a:hover {text-decoration:underline}
 
-	#view-complaints li div.complaint-details {float:left; max-width:70%; overflow: hidden}
+	#view-complaints li div.complaint-details {float:left; max-width:70%}
 	#view-complaints li div.complaint-user-details {float:right; text-align:right}
 	#view-complaints li div.fulfill-line {overflow:hidden; padding:0 7px}
 	#view-complaints li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}

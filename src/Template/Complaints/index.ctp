@@ -11,10 +11,10 @@
             <li>
                 <div class="container">
             		<div class="complaint-details">
-                        <p><?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?></p>
+                        <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?>
                     </div>
             		<div class="complaint-user-details">
-                        <p><?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?> </p>
+                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?>
                     </div>
                     <div class="fulfill-line">
                         <span></span>

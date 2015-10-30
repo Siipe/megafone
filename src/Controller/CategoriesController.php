@@ -13,7 +13,8 @@
 		public function index() {
 			$this->paginate = [
                 'limit' => 9,
-				'contain' => 'Users'
+				'contain' => 'Users',
+				'order' => ['dateCreated' => 'desc']
 			];
 			$this->set('categories', $this->paginate($this->Categories));
 		}

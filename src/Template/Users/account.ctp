@@ -8,7 +8,7 @@ $this->assign('title', $user['name']);
     ?>
     <section id="user-view">
         <div class="user-image">
-            <?= $user['picture'] ? $this->Html->image('uploads/'.$user['picture']) : $this->Html->image('user-default.png')?>
+            <?= $user['picture'] ? $this->Html->image('uploads/'.$user['picture']) : $this->Html->image('uploads/user-default.png')?>
             <p><a href="#" id="update-image">Update image</a></p>
         </div>
         <div class="information">

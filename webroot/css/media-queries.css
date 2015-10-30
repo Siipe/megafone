@@ -47,14 +47,7 @@
     #user-view .user-image, #user-view .information {float:none}
     #user-view .information {margin:4% 0 0 0}
 
-    /*#view-complaints {margin-top:2%}
-    #view-complaints li {padding:20px 10px; overflow: auto}
-    #view-complaints li:nth-child(2n) {background:#F7F7F7}
-    #view-complaints li div p {line-height: normal}
-    #view-complaints li div a {color:#333; font-weight:normal; text-decoration: none}
-    #view-complaints li div a:hover {text-decoration:underline}
-
-    #view-complaints li div.complaint-details {float:left; max-width:70%; overflow: hidden}
+    /*#view-complaints li div.complaint-details {float:left; max-width:70%; overflow: hidden}
     #view-complaints li div.complaint-user-details {float:right; text-align:right}
     #view-complaints li div.fulfill-line {overflow:hidden; padding:0 7px}
     #view-complaints li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}

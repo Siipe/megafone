@@ -17,7 +17,7 @@
             $conditions = ['profile' => false];
             if($this->Auth->user())
                 $conditions['id <>'] = $this->Auth->user('id');
-            $query = $this->Users->find('all')->where($conditions);
+            $query = $this->Users->find('all')->where($conditions)->order(['dateJoined' => 'desc']);
             $users = $this->paginate($query);
             $this->set('users', $users);
         }
