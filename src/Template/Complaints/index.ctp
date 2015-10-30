@@ -11,10 +11,10 @@
             <li>
                 <div class="container">
             		<div class="complaint-details">
-                        <p><?= $complaint->name ?></p>
+                        <p><?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?></p>
                     </div>
             		<div class="complaint-user-details">
-                        <p><?= $complaint->user->name ?> </p>
+                        <p><?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?> </p>
                     </div>
                     <div class="fulfill-line">
                         <span></span>
@@ -24,7 +24,7 @@
                     <?= $this->Html->image($complaint->user->image) ?>
                 </div>
                 <div class="container">
-                    <footer class="category"><?= $complaint->category->name ?></footer>
+                    <footer class="category"><?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?></footer>
                     <footer class="created"><?= $complaint->created ?></footer>
                 </div>
             </li>
