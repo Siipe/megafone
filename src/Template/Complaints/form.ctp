@@ -11,6 +11,12 @@
 		<label>Description</label>
 		<?= $this->Form->textarea('description', ['label' => false]) ?>
 	</div>
+	<?php if($this->request->action === 'add'): ?>
+		<div>
+			<label>Anonymous?</label>
+			<?= $this->Form->checkbox('anonymous', ['label' => false, 'hiddenField' => false, 'value' => true]) ?>
+		</div>
+	<?php endif; ?>
 	<div class="button">
 		<?= $this->Form->button(__('Send')) ?>
 	</div>

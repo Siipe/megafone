@@ -21,11 +21,13 @@
 		}
 
 		public function add() {
-			$complaint = $this->Complaints->newEntity([
-					'user_id' => $this->Auth->user('id')
-			]);
+			$complaint = $this->Complaints->newEntity();
 			if($this->request->is('post')) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
+
+				if(!$this->request->data('anonymous'))
+					$complaint->user_id = $this->Auth->user('id');
+
 				$complaint->dateCreated = new DateTime();
 				if($this->Complaints->save($complaint)) {
 					$this->setSuccessMessage('Complaint added successfully!');

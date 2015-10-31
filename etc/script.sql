@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS complaints (
   name VARCHAR(100) NOT NULL,
   description VARCHAR(2000) NOT NULL,
   dateCreated DATETIME NOT NULL,
-  user_id INT NOT NULL,
+  user_id INT,
   category_id INT NOT NULL,
   FOREIGN KEY FK_USER_COMPLAINT (user_id) REFERENCES users(id),
   FOREIGN KEY FK_CATEGORY_COMPLAINT (category_id) REFERENCES categories(id)
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS comments (
   body VARCHAR(2000) NOT NULL,
   level TINYINT NOT NULL,
   dateCreated DATETIME NOT NULL,
-  user_id INT NOT NULL,
+  user_id INT,
   complaint_id INT NOT NULL,
   comment_id INT,
   FOREIGN KEY FK_USER_COMMENT (user_id) REFERENCES users(id),

@@ -14,14 +14,24 @@
                         <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?>
                     </div>
             		<div class="complaint-user-details">
-                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?>
+                        <?php 
+                            if($complaint->user)
+                                echo $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]);
+                            else
+                                echo '<h2>Anonymous</h2>';
+                        ?>
                     </div>
                     <div class="fulfill-line">
                         <span></span>
                     </div>
                 </div>
                 <div class="image">
-                    <?= $this->Html->image($complaint->user->image) ?>
+                    <?php
+                        if($complaint->user)
+                            echo $this->Html->image($complaint->user->image);
+                        else
+                            echo $this->Html->image('uploads/user-default.png');
+                    ?>
                 </div>
                 <div class="container">
                     <footer class="category"><?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?></footer>
