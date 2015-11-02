@@ -6,7 +6,7 @@
 		<h1>View Complaints</h1>
 		<div class="button"><?= $this->Html->link(__('Add a complaint'), ['controller' => 'Complaints', 'action' => 'add']) ?></div>
 	</div>
-    <ul id="view-complaints">
+    <ul id="complaints-list">
     	<?php foreach($complaints as $complaint): ?>
             <li>
                 <div class="container">

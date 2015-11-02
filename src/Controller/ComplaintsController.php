@@ -20,6 +20,11 @@
 			$this->set('complaints', $this->paginate($this->Complaints));
 		}
 
+		public function view($id = null) {
+			$complaint = $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]);
+			$this->set(compact('complaint'));
+		}
+
 		public function add() {
 			$complaint = $this->Complaints->newEntity();
 			if($this->request->is('post')) {

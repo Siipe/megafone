@@ -1,20 +1,24 @@
 /*FOR SMARTPHONES*/
 @media only screen and (min-width:150px) and (max-width:600px) {
+
+    /*DEFAULT PAGE WIDTH*/
+    #top-header,#main-content, nav ul, .message, body>footer div, div#modal {width: 96%}
+
     /*HEADER*/
     header {background: none}
-    #top-header {width: 96%; padding: 13px 2%; background: linear-gradient(to top, #353535, #777); background: -moz-linear-gradient(to top, #353535, #777); background: -ms-linear-gradient(to top, #353535, #777)}
+    #top-header {padding: 13px 2%; background: linear-gradient(to top, #353535, #777); background: -moz-linear-gradient(to top, #353535, #777); background: -ms-linear-gradient(to top, #353535, #777)}
     #top-header p {display: none}
     /*END HEADER*/
 
     /*MENU*/
-    nav ul {width: 96%; padding: 0 2%}
+    nav ul {padding: 0 2%}
     nav ul li {float:none}
     nav ul li a {display:block; text-align:center; height:10px; line-height: 8px}
     nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
     /*END MENU*/
 
     /*FLASH MESSAGES*/
-    .message {width:96%; padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
+    .message {padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
     .message p {line-height: 27px}
     .message .close-message {display:block}
     /*END FLASH MESSAGES*/
@@ -26,7 +30,7 @@
     #content article p {text-align: justify}
     #content article footer {margin: 4% 0}
 
-    div#modal {width:96%; left:2%}
+    div#modal {left:2%}
 
     .images {float: none; width: 90%; margin-bottom: 4%}
 
@@ -47,24 +51,11 @@
     #user-view .user-image, #user-view .information {float:none}
     #user-view .information {margin:4% 0 0 0}
 
-    /*#view-complaints li div.complaint-details {float:left; max-width:70%; overflow: hidden}
-    #view-complaints li div.complaint-user-details {float:right; text-align:right}
-    #view-complaints li div.fulfill-line {overflow:hidden; padding:0 7px}
-    #view-complaints li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}
-
-    #view-complaints li div.container {float:left; width:calc(100% - 47px)}
-    #view-complaints li div.container footer {font-size:.8em; margin:5px 0}
-    #view-complaints li div.container footer.category {float:left}
-    #view-complaints li div.container footer.created {float:right}
-
-    #view-complaints li div.image {float:right; margin-left:7px}
-    #view-complaints li div.image img {width:40px; float:right}*/
-
     .crop {height:300px}
     /*END CONTENT*/
 
     /*FOOTER*/
-    body>footer div {width: 96%; padding: 0 2%}
+    body>footer div {padding: 0 2%}
     body>footer div p {width: 60%}
     /*END FOOTER*/
 }
