@@ -2,7 +2,14 @@
     $this->assign('title', $category->name);
 ?>
 <article>
-    <h1><?= $category->name ?></h1>
+	<div>
+		<h1><?= $category->name ?></h1>
+		<?php if($userSession && $userSession['id'] == $category->user->id): ?>
+			<div class="button">
+				<?= $this->Html->link(__('Edit'), ['controller' => 'Categories', 'action' => 'edit', $category->id]) ?>
+			</div>
+		<?php endif; ?>
+	</div>
     <footer>Created in <?= $category->created ?> by <?= $this->Html->link($category->user->name, ['controller' => 'Users', 'action' => 'view', $category->user->id]) ?></footer>
     <p><?= $category->description ?></p>
 </article>
