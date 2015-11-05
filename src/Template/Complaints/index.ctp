@@ -9,33 +9,24 @@
     <ul id="complaints-list">
     	<?php foreach($complaints as $complaint): ?>
             <li>
-                <div class="container">
-            		<div class="complaint-details">
-                        <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?>
-                    </div>
-            		<div class="complaint-user-details">
-                        <?php 
-                            if($complaint->user)
-                                echo $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]);
-                            else
-                                echo '<h2>Anonymous</h2>';
-                        ?>
-                    </div>
-                    <div class="fulfill-line">
-                        <span></span>
-                    </div>
+                <div class="complaint-name">
+                    <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint-> id]) ?>
                 </div>
-                <div class="image">
-                    <?php
-                        if($complaint->user)
-                            echo $this->Html->image($complaint->user->image);
-                        else
-                            echo $this->Html->image('uploads/user-default.png');
-                    ?>
+                <div class="user-details">
+                    <?php if($complaint->user): ?>
+                        <?= $this->Html->image($complaint->user->image) ?>
+                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?> 
+                    <?php else: ?>
+                        <?= $this->Html->image('uploads/user-default.png') ?>
+                        <h2>Anonymous</h2>
+                    <?php endif; ?>
                 </div>
-                <div class="container">
-                    <footer class="category"><?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?></footer>
-                    <footer class="created"><?= $complaint->created ?></footer>
+                <div class="fulfill-line">
+                    <span></span>
+                </div>
+                <div class="complaint-details">
+                    <?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?>
+                    <span><?= $complaint->created ?></span>
                 </div>
             </li>
     	<?php endforeach; ?>

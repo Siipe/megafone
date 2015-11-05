@@ -115,24 +115,25 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 
 	/*COMPLAINTS LIST*/
 	#complaints-list {margin:2% 0}
-	#complaints-list li {padding:20px 10px; overflow: auto}
+	#complaints-list li {padding:20px 10px 10px 10px; overflow: auto}
 	#complaints-list li:nth-child(2n) {background:#F7F7F7}
-	#complaints-list li div a {color:#444; font-weight:normal; text-decoration: none; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; display: block; padding-bottom: 2px}
+	#complaints-list li div a {color:#444; font-weight:normal; text-decoration: none; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; padding-bottom: 2px}
 	#complaints-list li div a:hover {text-decoration:underline}
 
-	#complaints-list li div.complaint-details {float:left; max-width:70%}
-	#complaints-list li div.complaint-user-details {float:right; text-align:right}
-	#complaints-list li div.complaint-user-details h2 {font-style:italic; color:#f29113}
+	#complaints-list li div.complaint-name {float:left; max-width:40%}
+	#complaints-list li div.complaint-name a {display: block}
+
+	#complaints-list li div.user-details {float:right; max-width:40%; text-align:right}
+	#complaints-list li div.user-details a {float:left}
+	#complaints-list li div.user-details img {width:40px; margin-left:7px; border:solid 1px #DDD; float:right}
+	#complaints-list li div.user-details h2 {font-style:italic; color:#f29113; float: left}
+
 	#complaints-list li div.fulfill-line {overflow:hidden; padding:0 7px}
 	#complaints-list li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}
 
-	#complaints-list li div.container {float:left; width:calc(100% - 50px)}
-	#complaints-list li div.container footer {font-size:.8em; margin:5px 0}
-	#complaints-list li div.container footer.category {float:left}
-	#complaints-list li div.container footer.created {float:right}
+	#complaints-list li div.complaint-details {font-size:.8em; clear:both; position:relative; top:-20px; width:calc(100% - 50px);}
+	#complaints-list li div.complaint-details span {float:right}
 
-	#complaints-list li div.image {float:right; margin-left:7px}
-	#complaints-list li div.image img {width:40px; border:solid 1px #DDD}
 	/*END COMPLAINTS LIST*/
 
 	/*VIEW COMPLAINT*/
