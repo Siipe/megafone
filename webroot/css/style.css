@@ -53,7 +53,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#main-content {margin: 0 auto}
 	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; box-shadow: 2px 3px 3px #AAA}
 	#content article {padding: 2.3%; overflow: auto}
-	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block; word-break:break-all}
+	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block; word-break:break-all; line-height: 25px}
 	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic}
     #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight: bold}
     #content article footer a:hover {text-decoration: underline}
@@ -66,10 +66,10 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	.images img {width: 90%; height: auto; margin: 0 1.5%; opacity:.77}
 	/*END HOME*/
 
-	div.button {float:right}
-	div.button *, .default-button {padding: 7px 20px; color: #FFF; text-decoration: none; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 0.9em; border:none; cursor:pointer; display:inline-block; outline: none}
-	div.button * {background: #fab357;}
-	div.button *:hover {background: #FCCB8C}
+	#content article div.button {float:right}
+	#content article div.button *, .default-button {padding: 7px 20px; color: #FFF; text-decoration: none; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 0.9em; border:none; cursor:pointer; display:inline-block; outline: none}
+	#content article div.button * {background: #fab357;}
+	#content article div.button *:hover {background: #FCCB8C}
 
     .default-button {background:#777; margin-top:10px}
     .default-button:hover {background:#999}
@@ -103,45 +103,57 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #basic-list .display-item {border:solid 1px #CCC; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
     #basic-list .display-item img {width:70px; border: solid 1px #BBB; float:left}
     #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
-    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none;     max-width: 95%; overflow: hidden; display: inline-block; text-overflow: ellipsis}
+    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none; max-width: 93%; overflow: hidden; display:block; text-overflow: ellipsis; white-space: nowrap; padding-bottom:2px}
     #basic-list .display-item a:hover {text-decoration:underline}
     #basic-list .display-item footer {font-size: .8em; margin:4% 0}
 
-    #basic-list .display-item .dropdown {display:inline-block; cursor: pointer; height:12px; width:12px; background:url('../img/arrow-down.png') center center no-repeat; position:absolute; right:5px; top: 5px}
-    #basic-list .display-item .options {z-index:900; display:none; position:absolute; right:5px; top: 22px; background:#FFF; border:solid 1px #CCC; border-radius:3px}
-    #basic-list .display-item .options a {padding:5px 10px; display:block; font-size:.8em; color:#666; text-decoration: none; font-weight:normal}
-    #basic-list .display-item .options a:hover {background:#F7F7F7}
+    #basic-list .manager {position:absolute; right:5px; top: 5px; background:url('../img/arrow-down.png') center center no-repeat}
+    #basic-list .options {position:absolute; right:5px; top: 22px}
 	/*END BASIC LIST*/
+
+	/*MANAGER LINKS*/
+	#content article .manager {display:inline-block; cursor: pointer; height:13px; width:13px}
+    #content article .options {z-index:900; display:none; background:#FFF; border:solid 1px #CCC; border-radius:3px}
+    #content article .options ul, #content article .options ul li {margin:0; padding:0}
+    #content article .options a {padding:5px 10px; display:block; font-size:.8em; color:#666; text-decoration:none; font-weight:normal}
+    #content article .options a:hover {background:#F7F7F7; text-decoration:none}
+	/*END MANAGER LINKS*/
 
 	/*COMPLAINTS LIST*/
 	#complaints-list {margin:2% 0}
-	#complaints-list li {padding:20px 10px 10px 10px; overflow: auto}
-	#complaints-list li:nth-child(2n) {background:#F7F7F7}
-	#complaints-list li div a {color:#444; font-weight:normal; text-decoration: none; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; padding-bottom: 2px}
-	#complaints-list li div a:hover {text-decoration:underline}
+	#complaints-list > li {padding:20px 10px 10px 10px}
+	#complaints-list > li:nth-child(2n) {background:#F7F7F7}
+	#complaints-list div a {color:#444; font-weight:normal; text-decoration: none; padding-bottom: 2px}
+	#complaints-list div a:hover {text-decoration:underline}
 
-	#complaints-list li div.complaint-name {float:left; max-width:40%}
-	#complaints-list li div.complaint-name a {display: block}
+	#complaints-list div.complaint-name {float:left; max-width:40%}
+	#complaints-list div.complaint-name a {display: block; overflow: hidden; text-overflow:ellipsis; white-space: nowrap}
 
-	#complaints-list li div.user-details {float:right; max-width:40%; text-align:right}
-	#complaints-list li div.user-details a {float:left}
-	#complaints-list li div.user-details img {width:40px; margin-left:7px; border:solid 1px #DDD; float:right}
-	#complaints-list li div.user-details h2 {font-style:italic; color:#f29113; float: left}
+	#complaints-list div.user-details {float:right; max-width:35%; text-align:right}
+	#complaints-list div.user-details img {width:40px; margin-left:7px; border:solid 1px #DDD; float:right}
+	#complaints-list div.user-details h2 {font-style:italic; color:#f29113; float:left}
 
-	#complaints-list li div.fulfill-line {overflow:hidden; padding:0 7px}
+	#complaints-list div.fulfill-line {overflow:hidden; padding:0 7px}
 	#complaints-list li div.fulfill-line span {display:block; border-top:solid 1px #DDD; margin-top:3px}
 
-	#complaints-list li div.complaint-details {font-size:.8em; clear:both; position:relative; top:-20px; width:calc(100% - 50px);}
-	#complaints-list li div.complaint-details span {float:right}
+	#complaints-list div.complaint-details {font-size:.8em; clear:both; position:relative; top:-20px}
+	#complaints-list div.complaint-details a {margin-right:15px}
+	#complaints-list div.complaint-details span {color:#777}
 
+	#complaints-list .manager-container {position:relative}
+	#complaints-list .manager {background:url('../img/arrow-right.png') center center no-repeat}
+	#complaints-list .options {position:absolute; left:20px; top:0}
 	/*END COMPLAINTS LIST*/
 
 	/*VIEW COMPLAINT*/
-	#view-complaint > div {float:left;}
-	#view-complaint img {width:50px; height:auto; border:solid 1px #DDD}
-	#view-complaint .complaint-details {margin-left:10px}
-	#view-complaint .complaint-details .date {display:inline-block; color: #777; margin-left:15px}
+	#view-complaint .user {overflow:auto; margin-bottom:2%; display: inline-block; min-width: 100%; background: linear-gradient(to bottom, #F7F7F7, #FFF); padding: 3px; border-radius:5px}
+	#view-complaint .user a {color:#666; text-decoration: none; padding-bottom: 2px}
+	#view-complaint .user a:hover {text-decoration:underline}
+	#view-complaint .user h2 {font-style:italic; color:#f29113; font-weight:bold}
+	#view-complaint .user span {display:block; color: #777; font-size:.9em; font-style:italic; margin-top:6px}
+	#view-complaint .user img {float:left; width:40px; height:auto; border:solid 1px #DDD; margin-right:7px}
 	#view-complaint .complaint-details p {margin-top:.5%}
+	#view-complaint .complaint-details footer {margin-bottom:0}
 	/*END VIEW COMPLAINT*/
 
     /*PAGINATION*/
@@ -166,7 +178,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #user-view .user-image, #user-view .information {float:left}
     #user-view .information {margin-left:10px}
     #user-view .information h1 {color:#888}
-    #user-view .information div {margin:3% 0; font-style:italic}
+    #user-view .information div {margin:10px 0; font-style:italic}
     #user-view .information label {font-weight:bold}
     #user-view #update-image {text-decoration:none; color:#555; font-size:.9em; display:block; text-align:center}
     #user-view #update-image:hover {text-decoration:underline}

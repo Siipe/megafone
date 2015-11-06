@@ -20,15 +20,24 @@
 		}
 
         public function view($id = null) {
+            $this->paginate = [
+                'limit' => 5,
+                'contain' => 'Users',
+                'order' => ['dateCreated' => 'desc']
+            ];
+
             $category = $this->Categories->get($id, ['contain' => 'Users']);
-            $this->set(compact('category'));
+            $complaints = $this->paginate($this->Categories->Complaints->findByCategoryId($id));
+            
+            $this->set(compact('category', 'complaints'));
         }
 
 		public function add() {
-			$category = $this->Categories->newEntity();
+			$category = $this->Categories->newEntity([
+                    'user_id' => $this->Auth->user('id')
+                ]);
 			if($this->request->is('post')) {
 				$category = $this->Categories->patchEntity($category, $this->request->data);
-				$category->user_id = $this->Auth->user('id');
 				$category->dateCreated = new DateTime();
 				if($category = $this->Categories->save($category)) {
 					$this->setSuccessMessage("Category \"$category->name\" added successfully!");
@@ -68,9 +77,8 @@
 
             if(in_array($this->request->action, ['edit', 'delete'])) {
                 $id = $this->request->params['pass'][0];
-                if($this->Categories->isOwnedBy($id, $this->Auth->user('id'))) {
+                if($this->Categories->isOwnedBy($id, $this->Auth->user('id')))
                     return true;
-                }
             }
 
             $this->setErrorMessage('You have no permission for such operation');

@@ -29,7 +29,7 @@ $(document).ready(function(){
         $(this).val('');
     });
 
-    $('.dropdown').on('click', function() {
+    $('.manager').on('click', function() {
         $(this).siblings('.options').toggle();
     });
 });

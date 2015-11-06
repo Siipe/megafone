@@ -13,8 +13,8 @@
             <?php foreach ($categories as $category): ?>
                 <li>
                     <div class="display-item">
-                        <?php if($userSession['id'] == $category->user->id): ?>
-                            <span class="dropdown"></span>
+                        <?php if($userSession && $userSession['id'] == $category->user->id): ?>
+                            <span class="manager"></span>
                             <span class="options">
                                 <ul>
                                     <li><?= $this->Html->link('Edit', ['controller' => 'Categories', 'action' => 'edit', $category->id]) ?></li>

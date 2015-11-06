@@ -14,8 +14,11 @@
                 </div>
                 <div class="user-details">
                     <?php if($complaint->user): ?>
-                        <?= $this->Html->image($complaint->user->image) ?>
-                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?> 
+                        <?= $this->Html->image($complaint->user->image, [
+                            'alt' => $complaint->user->name.'\'s image',
+                            ]) 
+                        ?>
+                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?>
                     <?php else: ?>
                         <?= $this->Html->image('uploads/user-default.png') ?>
                         <h2>Anonymous</h2>
@@ -28,6 +31,17 @@
                     <?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?>
                     <span><?= $complaint->created ?></span>
                 </div>
+                <?php if($userSession && $complaint->user && $userSession['id'] == $complaint->user->id): ?>
+                    <div class="manager-container">
+                        <span class="manager"></span>
+                        <span class="options">
+                            <ul>
+                                <li><?= $this->Html->link('Edit', ['controller' => 'Complaints', 'action' => 'edit', $complaint->id]) ?></li>
+                                <li><?= $this->Html->link('Delete', ['controller' => 'Complaints', 'action' => 'delete', $complaint->id]) ?></li>
+                            </ul>
+                        </span>
+                    </div>
+                <?php endif; ?>
             </li>
     	<?php endforeach; ?>
     </ul>

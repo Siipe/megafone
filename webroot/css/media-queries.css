@@ -34,7 +34,7 @@
 
     .images {float: none; width: 90%; margin-bottom: 4%}
 
-    div.button {float: none; margin: 20px 0}
+    #content article div.button {float: none; margin: 20px 0}
 
     #form>div input,#form>div textarea {width: 90%}
     #form>div {margin-bottom: 4%}
@@ -52,6 +52,25 @@
     #user-view .information {margin:4% 0 0 0}
 
     .crop {height:300px}
+
+    #complaints-list {margin:4% 0}
+    #complaints-list li {padding:10px 5px}
+    #complaints-list > li:nth-child(2n) {background:#F1F1F1}
+
+    #complaints-list li div.complaint-name {border-bottom:dotted 1px #CCC}
+    #complaints-list li div.complaint-name, #complaints-list li div.user-details {float:none; max-width:100%; text-align:left; margin-bottom:4%; overflow:auto}
+    #complaints-list li div.user-details a {display: block; overflow: hidden; text-overflow:ellipsis; white-space: nowrap}
+    
+    #complaints-list li div.user-details img {margin-right:7px; margin-left:0; float:left}
+
+    #complaints-list li div.fulfill-line {display:none}
+
+    #complaints-list li div.complaint-details {position:initial}
+    #complaints-list li div.complaint-details a {margin:0}
+    #complaints-list li div.complaint-details span {display:block; margin:10px 0 10px 0}
+
+    #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF);}
+    #view-complaint .complaint-details h1 {margin:2% 0}
     /*END CONTENT*/
 
     /*FOOTER*/
