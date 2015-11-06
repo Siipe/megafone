@@ -1,3 +1,6 @@
+  CREATE DATABASE megafone;
+  USE megafone;
+
 -- phpMyAdmin SQL Dump
 -- version 4.3.11
 -- http://www.phpmyadmin.net
