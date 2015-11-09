@@ -69,10 +69,11 @@
     #complaints-list li div.complaint-details a {margin:0}
     #complaints-list li div.complaint-details span {display:block; margin:10px 0 10px 0}
 
-    #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF);}
+    #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF)}
     #view-complaint .complaint-details h1 {margin:2% 0}
 
     #comments > ul > li, #comments .user {margin:4% 0}
+    #comments .user {background: linear-gradient(to bottom, #F1F1F1, #FFF)}
     #comments .comments-details {margin-left:2%}
     #comments .comments-details .comment-date {display:block}
     #comments .comments-details p {text-align: initial; line-height: 18px}

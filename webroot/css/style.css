@@ -169,7 +169,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #comments .comments-details {width:70%; float:left; margin-left: 1%; position:relative; padding-right:20px}
     #comments .comments-details a {display:block; font-size:.98em; text-decoration:none; color:#666; font-weight:bold; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; padding-bottom:2px}
     #comments .comments-details .comment-date {display:block; font-size: .73em; margin-top:7px; color:#999}
-    #comments .comments-details p {line-height:18px; margin-top:7px}
+    #comments .comments-details p {line-height:18px; margin-top:1%}
 
     #comments .manager {position:absolute; right:0; top:0; background:url('../img/arrow-down.png') center center no-repeat}
     #comments .options {position:absolute; right:0; top:17px}
