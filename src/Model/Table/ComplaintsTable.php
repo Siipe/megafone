@@ -7,6 +7,7 @@
 		public function initialize(array $config) {
 			$this->belongsTo('Categories');
 			$this->belongsTo('Users');
+			$this->hasMany('Comments');
 		}
 
 		public function isOwnedBy($id, $user_id) {

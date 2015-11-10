@@ -2,6 +2,7 @@
 	namespace App\Controller;
 
 	use DateTime;
+	use Cake\ORM\TableRegistry;
 
 	class ComplaintsController extends AppController {
 		public function initialize() {
@@ -21,8 +22,15 @@
 		}
 
 		public function view($id = null) {
-			$complaint = $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]);
-			$this->set(compact('complaint'));
+			$response = [
+				'complaint' => $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]),
+				'comments' => $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->order(['dateCreated' => 'DESC'])
+			];
+
+			if($this->Auth->user())
+				$response['newComment'] = TableRegistry::get('Comments')->newEntity();
+
+			$this->set($response);
 		}
 
 		public function add() {
@@ -60,8 +68,7 @@
 		}
 
 		public function delete($id = null) {
-			$complaint = $this->Complaints->get($id);
-			if($this->Complaints->delete($complaint))
+			if($this->Complaints->delete($this->Complaints->get($id)))
 				$this->setSuccessMessage('Complaint removed successfully!');
 			else
 				$this->setErrorMessage('An error has occurred');

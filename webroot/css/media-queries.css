@@ -71,6 +71,11 @@
 
     #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF);}
     #view-complaint .complaint-details h1 {margin:2% 0}
+
+    #comments > ul > li, #comments .user {margin:4% 0}
+    #comments .comments-details {margin-left:2%}
+    #comments .comments-details .comment-date {display:block}
+    #comments .comments-details p {text-align: initial; line-height: 18px}
     /*END CONTENT*/
 
     /*FOOTER*/
@@ -82,7 +87,7 @@
 /*FOR TABLETS*/
 @media only screen and (min-width:600px) and (max-width:1000px) {
      /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content,nav ul, .message, body>footer div, div#modal {width: 90%}
+    #top-header,#main-content,nav ul, .message, body>footer div, div#modal {width: 96%}
 
     div#modal {left:5%}
     #form>div input,#form>div textarea {width: 50%}

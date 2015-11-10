@@ -62,8 +62,7 @@
         }
 
         public function delete($id = null) {
-            $category = $this->Categories->get($id);
-            if($this->Categories->delete($category))
+            if($this->Categories->delete($this->Categories->get($id)))
                 $this->setSuccessMessage("Category removed successfully!");
             else
                 $this->setErrorMessage('An error has occurred');
