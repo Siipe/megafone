@@ -1,0 +1,82 @@
+# Users
+
+msgid "My account"
+msgstr "Minha conta"
+
+msgid "Basic information"
+msgstr "Informações básicas"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Joined in"
+msgstr "Entrou em"
+
+msgid "Edit basic information"
+msgstr "Editar informações básicas"
+
+msgid "Update image"
+msgstr "Atualizar imagem"
+
+msgid "Sign up"
+msgstr "Cadastro"
+
+msgid "Sign in"
+msgstr "Entrar"
+
+msgid "Logout"
+msgstr "Deslogar"
+
+msgid "Editing {0}"
+msgstr "Editando {0}"
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Crop and save"
+msgstr "Cortar e salvar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "View Users"
+msgstr "Visualizar Usuários"
+
+msgid "Joined in {0}"
+msgstr "Entrou em {0}"
+
+msgid "Authentication"
+msgstr "Autenticação"
+
+msgid "View User"
+msgstr "Visualizar Usuário"
+
+msgid "Hello, {0}"
+msgstr "Olá, {0}"
+
+msgid "Image updated successfully!"
+msgstr "Imagem atualizada com sucesso!"
+
+msgid "You are already a member"
+msgstr "Você já é um membro"
+
+msgid "Congratulations, {0}! This is your first login! Enjoy!"
+msgstr "Parabéns, {0}! Este é o seu primeiro login! Aproveite!"
+
+msgid "Your account has been modified successfully!"
+msgstr "Sua conta foi modificada com sucesso!"
+
+msgid "You are already logged in"
+msgstr "Você já efetuou o login"
+
+msgid "Login failed. Check your credentials and try again"
+msgstr "Falha no login. Verifique suas credenciais e tente novamente"
+
+msgid "You are now logged out"
+msgstr "Você está deslogado"
+
+msgid "Sign in to see"
+msgstr "Faça o login para ver"
+
+msgid "Page {0} of {1}, showing {2} records out of {3} total, starting on record {4}, ending on {5}"
+msgstr "Página {0} de {1}, exibindo {2} registro(s) do total de {3}, com início no registro {4} e fim no {5}"

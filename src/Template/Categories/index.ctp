@@ -1,9 +1,9 @@
 <?php 
-	$this->assign('title', 'View Categories');
+	$this->assign('title', __('View Categories'));
 ?>
 <article>
     <div>
-        <h1>View Categories</h1>
+        <h1><?= __('View Categories') ?></h1>
         <div class="button">
             <?= $this->Html->link(__('Add a category'), ['controller' => 'Categories', 'action' => 'add']) ?>
         </div>
@@ -13,39 +13,20 @@
             <?php foreach ($categories as $category): ?>
                 <li>
                     <div class="display-item">
-                        <?php if($userSession && $userSession['id'] == $category->user->id): ?>
-                            <span class="manager"></span>
-                            <span class="options">
-                                <ul>
-                                    <li><?= $this->Html->link('Edit', ['controller' => 'Categories', 'action' => 'edit', $category->id]) ?></li>
-                                    <li><?= $this->Html->link('Delete', ['controller' => 'Categories', 'action' => 'delete', $category->id]) ?></li>
-                                </ul>
-                            </span>
-                        <?php endif; ?>
+                        
+                        <?= $this->element('optionsEditAndDelete', [
+                            'entity' => $category,
+                            'controller' => 'Categories' 
+                        ]) ?>
+                        
                         <?= $this->Html->link($category->name, ['controller' => 'Categories', 'action' => 'view', $category->id]) ?>
-                        <footer>Created in: <?= $category->created ?></footer>
+                        <footer><?= __('Created in: {0}', $category->created) ?></footer>
                     </div>
                 </li>
             <?php endforeach; ?>
         </ul>
     </section>
-	<div class="paginator">
-        <ul class="pagination">
-            <?php
-                echo $this->Paginator->first('<<');
-                echo $this->Paginator->prev('<');
-                echo $this->Paginator->numbers();
-                echo $this->Paginator->next('>');
-                echo $this->Paginator->last('>>');
-            ?>
-        </ul>
-        <p class="pagination-info">
-            <?php 
-                echo $this->Paginator->counter(
-                    'Page {{page}} of {{pages}}, showing {{current}} records out of
-                    {{count}} total, starting on record {{start}}, ending on {{end}}'
-                );
-            ?>
-        </p>
-    </div>
+	
+    <?= $this->element('defaultPaginator') ?>
+
 </article>

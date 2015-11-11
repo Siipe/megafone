@@ -45,10 +45,10 @@
 
 				$complaint->dateCreated = new DateTime();
 				if($this->Complaints->save($complaint)) {
-					$this->setSuccessMessage('Complaint added successfully!');
+					$this->setSuccessMessage(__('Complaint added successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage('An error has occurred');
+				$this->setErrorMessage(__('An error has occurred'));
 			} else
 				$this->set('categories', $this->Complaints->Categories->find('list'));
 
@@ -60,10 +60,10 @@
 			if($this->request->is(['post', 'patch', 'put'])) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
 				if($this->Complaints->save($complaint)) {
-					$this->setSuccessMessage('Complaint modified successfully!');
+					$this->setSuccessMessage(__('Complaint modified successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage('An error has occurred');
+				$this->setErrorMessage(__('An error has occurred'));
 			} else
 				$this->set('categories', $this->Complaints->Categories->find('list'));
 			$this->set(compact('complaint'));
@@ -71,9 +71,9 @@
 
 		public function delete($id = null) {
 			if($this->Complaints->delete($this->Complaints->get($id)))
-				$this->setSuccessMessage('Complaint removed successfully!');
+				$this->setSuccessMessage(__('Complaint removed successfully!'));
 			else
-				$this->setErrorMessage('An error has occurred');
+				$this->setErrorMessage(__('An error has occurred'));
 
 			return $this->toIndex();
 		}
@@ -88,7 +88,7 @@
 					return true;
 			}
 
-			$this->setErrorMessage('You have no permission for such operation');
+			$this->setErrorMessage(__('You have no permission for such operation'));
 			return false;
 		}
 	}

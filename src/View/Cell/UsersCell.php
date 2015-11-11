@@ -5,6 +5,6 @@
 
 	class UsersCell extends Cell {
 		public function display() {
-			$this->set('userSession', $this->request->session()->read('Auth.User'));
+			$this->set('userLogged', $this->request->session()->read('Auth.User'));
 		}
 	}

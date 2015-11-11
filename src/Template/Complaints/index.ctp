@@ -1,9 +1,9 @@
 <?php
-	$this->assign('title', 'View Complaints');
+	$this->assign('title', __('View Complaints'));
 ?>
 <article>
 	<div>
-		<h1>View Complaints</h1>
+		<h1><?= __('View Complaints') ?></h1>
 		<div class="button"><?= $this->Html->link(__('Add a complaint'), ['controller' => 'Complaints', 'action' => 'add']) ?></div>
 	</div>
     <ul id="complaints-list">
@@ -13,16 +13,11 @@
                     <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint-> id]) ?>
                 </div>
                 <div class="user-details">
-                    <?php if($complaint->user): ?>
-                        <?= $this->Html->image($complaint->user->image, [
-                            'alt' => $complaint->user->name.'\'s image',
-                            ]) 
-                        ?>
-                        <?= $this->Html->link($complaint->user->name, ['controller' => 'Users', 'action' => 'view', $complaint->user->id]) ?>
-                    <?php else: ?>
-                        <?= $this->Html->image('uploads/user-default.png') ?>
-                        <h2>Anonymous</h2>
-                    <?php endif; ?>
+                    
+                    <?= $this->element('complaintOwner', [
+                        'complaint' => $complaint
+                    ]) ?>
+
                 </div>
                 <div class="fulfill-line">
                     <span></span>
@@ -31,37 +26,16 @@
                     <?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?>
                     <span><?= $complaint->created ?></span>
                 </div>
-                <?php if($userSession && $complaint->user && $userSession['id'] == $complaint->user->id): ?>
-                    <div class="manager-container">
-                        <span class="manager"></span>
-                        <span class="options">
-                            <ul>
-                                <li><?= $this->Html->link('Edit', ['controller' => 'Complaints', 'action' => 'edit', $complaint->id]) ?></li>
-                                <li><?= $this->Html->link('Delete', ['controller' => 'Complaints', 'action' => 'delete', $complaint->id]) ?></li>
-                            </ul>
-                        </span>
-                    </div>
-                <?php endif; ?>
+                
+                <?= $this->element('optionsEditAndDelete', [
+                    'entity' => $complaint,
+                    'controller' => 'Complaints' 
+                ]) ?>
+
             </li>
     	<?php endforeach; ?>
     </ul>
-	<div class="paginator">
-        <ul class="pagination">
-            <?php
-                echo $this->Paginator->first('<<');
-                echo $this->Paginator->prev('<');
-                echo $this->Paginator->numbers();
-                echo $this->Paginator->next('>');
-                echo $this->Paginator->last('>>');
-            ?>
-        </ul>
-        <p class="pagination-info">
-            <?php 
-                echo $this->Paginator->counter(
-                    'Page {{page}} of {{pages}}, showing {{current}} records out of
-                    {{count}} total, starting on record {{start}}, ending on {{end}}'
-                );
-            ?>
-        </p>
-    </div>
+	
+    <?= $this->element('defaultPaginator') ?>
+
 </article>

@@ -1,8 +1,8 @@
 <?php
-    $this->assign('title', 'Editing '.$category->name);
+    $this->assign('title', __('Editing {0}', $category->name));
 ?>
 <article>
-    <h1>Editing <?= $category->name ?></h1>
+    <h1><?= __('Editing {0}', $category->name) ?></h1>
     <?php
         require "form.ctp";
     ?>

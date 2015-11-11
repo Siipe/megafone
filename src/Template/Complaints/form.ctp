@@ -1,19 +1,19 @@
 <?= $this->Form->create($complaint, ['id' => 'form']) ?>
 	<div>
-		<label>Name</label>
+		<label><?= __('Name') ?></label>
 		<?= $this->Form->input('name', ['label' => false]) ?>
 	</div>
 	<div>
-		<label>Category</label>
+		<label><?= __('Category') ?></label>
 		<?= $this->Form->select('category_id', $categories, ['label' => false]) ?>
 	</div>
 	<div>
-		<label>Description</label>
+		<label><?= __('Description') ?></label>
 		<?= $this->Form->textarea('description', ['label' => false]) ?>
 	</div>
 	<?php if($this->request->action === 'add'): ?>
 		<div>
-			<label>Anonymous?</label>
+			<label><?= __('Anonymous?') ?></label>
 			<?= $this->Form->checkbox('anonymous', ['label' => false, 'hiddenField' => false, 'value' => true]) ?>
 		</div>
 	<?php endif; ?>

@@ -23,8 +23,7 @@
         }
 
         public function account() {
-            $user = $this->Auth->user();
-            $this->set('user', $user);
+            $this->set('user', $this->Auth->user());
         }
 
         public function view($id = null) {
@@ -37,16 +36,16 @@
                 $this->Upload->deleteFile($this->Auth->user('picture'));
                 $this->Users->updateImage($this->Auth->user('id'), $picture);
                 $this->updateUserInSession();
-                $this->setSuccessMessage('Image updated successfully!');
+                $this->setSuccessMessage(__('Image updated successfully!'));
             }
             else
-                $this->setErrorMessage('An error has occurred');
+                $this->setErrorMessage(__('An error has occurred'));
 
             return $this->toPrevious();
         }
 
         public function add() {
-            $this->checkUserIntention('You are already a member');
+            $this->checkUserIntention(__('You are already a member'));
 
             $user = $this->Users->newEntity();
             if($this->request->is('post')) {
@@ -55,11 +54,11 @@
                 $user->picture = null;
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if($user = $this->Users->save($user)) {
-                    $this->setSuccessMessage("Congratulations, $user->name! This is your first login! Enjoy!");
+                    $this->setSuccessMessage(__('Congratulations, {0}! This is your first login! Enjoy!', $user->name));
                     $this->Auth->setUser($user->toArray());
                     return $this->redirect(['action' => 'account']);
                 }
-                $this->setErrorMessage('An error has occurred');
+                $this->setErrorMessage(__('An error has occurred'));
             }
             $this->set(compact('user'));
         }
@@ -70,16 +69,16 @@
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if($user = $this->Users->save($user)) {
                     $this->updateUserInSession($user);
-                    $this->setSuccessMessage('Your account has been modified successfully!');
+                    $this->setSuccessMessage(__('Your account has been modified successfully!'));
                     return $this->redirect(['action' => 'account']);
                 }
-                $this->setErrorMessage('An error has occurred');
+                $this->setErrorMessage(__('An error has occurred'));
             }
             $this->set(compact('user'));
         }
 
         public function login() {
-            $this->checkUserIntention('You are already logged in');
+            $this->checkUserIntention(__('You are already logged in'));
 
             if($this->request->is('post')) {
                 $user = $this->Auth->identify();
@@ -87,13 +86,13 @@
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl());
                 }
-                $this->setErrorMessage('Login failed. Check your credentials and try again');
+                $this->setErrorMessage(__('Login failed. Check your credentials and try again'));
             }
         }
 
         public function logout() {
             $this->Auth->logout();
-            $this->setWarningMessage('You are now logged out');
+            $this->setWarningMessage(__('You are now logged out'));
             return $this->toHome();
         }
 

@@ -1,8 +1,8 @@
 <?php  
-	$this->assign('title', 'Add Category');
+	$this->assign('title', __('Add Category'));
 ?>
 <article>
-	<h1>Add category</h1>
+	<h1><?= __('Add Category') ?></h1>
 	<?php 
 		require "form.ctp";
 	?>

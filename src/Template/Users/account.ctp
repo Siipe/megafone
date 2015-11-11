@@ -2,31 +2,31 @@
 $this->assign('title', $user['name']);
 ?>
 <article>
-    <h1>My account</h1>
+    <h1><?= __('My account') ?></h1>
     <?php
         require_once('image-form.ctp')
     ?>
     <section id="user-view">
         <div class="user-image">
             <?= $user['picture'] ? $this->Html->image('uploads/'.$user['picture']) : $this->Html->image('uploads/user-default.png')?>
-            <p><a href="#" id="update-image">Update image</a></p>
+            <p><?= $this->Html->link(__('Update image'), '#', ['id' => 'update-image']) ?></p>
         </div>
         <div class="information">
-            <h1>Basic information</h1>
+            <h1><?= __('Basic information') ?></h1>
             <div>
-                <label>Name</label>
+                <label><?= __('Name') ?></label>
                 <?= $user['name'] ?>
             </div>
             <div>
-                <label>Login</label>
+                <label><?= __('Login') ?></label>
                 <?= $user['login'] ?>
             </div>
             <div>
-                <label>E-mail</label>
+                <label><?= __('E-mail') ?></label>
                 <?= $user['email'] ?>
             </div>
             <div>
-                <label>Joined in</label>
+                <label><?= __('Joined in') ?></label>
                 <?= $user['dateJoined']->format('d/m/Y H:i') ?>
             </div>
         </div>

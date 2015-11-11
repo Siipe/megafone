@@ -45,10 +45,10 @@
 				$category = $this->Categories->patchEntity($category, $this->request->data);
 				$category->dateCreated = new DateTime();
 				if($category = $this->Categories->save($category)) {
-					$this->setSuccessMessage("Category \"$category->name\" added successfully!");
+					$this->setSuccessMessage(__('Category "{0}" added successfully!', $category->name));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage('An error has occurred');
+				$this->setErrorMessage(__('An error has occurred'));
 			}
 			$this->set(compact('category'));
 		}
@@ -58,19 +58,19 @@
             if($this->request->is(['post', 'patch', 'put'])) {
                 $category = $this->Categories->patchEntity($category, $this->request->data);
                 if($category = $this->Categories->save($category)) {
-                    $this->setSuccessMessage("Category \"$category->name\" modified successfully!");
+                    $this->setSuccessMessage(__('Category "{0}" modified successfully!', $category->name));
                     return $this->toIndex();
                 }
-                $this->setErrorMessage('An error has occurred');
+                $this->setErrorMessage(__('An error has occurred'));
             }
             $this->set(compact('category'));
         }
 
         public function delete($id = null) {
             if($this->Categories->delete($this->Categories->get($id)))
-                $this->setSuccessMessage("Category removed successfully!");
+                $this->setSuccessMessage(__('Category removed successfully!'));
             else
-                $this->setErrorMessage('An error has occurred');
+                $this->setErrorMessage(__('An error has occurred'));
 
             return $this->toIndex();
         }
@@ -85,7 +85,7 @@
                     return true;
             }
 
-            $this->setErrorMessage('You have no permission for such operation');
+            $this->setErrorMessage(__('You have no permission for such operation'));
             return false;
         }
 	}

@@ -2,25 +2,23 @@
     $this->assign('title', $user->name);
 ?>
 <article>
-    <h1>View User</h1>
+    <h1><?= __('View User') ?></h1>
     <section id="user-view">
         <div class="user-image">
             <?= $this->Html->image($user->image) ?>
         </div>
         <div class="information">
-            <h1>Basic information</h1>
+            <h1><?= __('Basic information') ?></h1>
             <div>
-                <label>Name</label>
+                <label><?= __('Name') ?></label>
                 <?= $user->name ?>
             </div>
-            <?php if($userSession): ?>
-                <div>
-                    <label>E-mail</label>
-                    <?= $user->email ?>
-                </div>
-            <?php endif; ?>
             <div>
-                <label>Joined in</label>
+                <label><?= __('E-mail') ?></label>
+                <?= $this->element('userEmail') ?>
+            </div>
+            <div>
+                <label><?= __('Joined in') ?></label>
                 <?= $user->joined ?>
             </div>
         </div>

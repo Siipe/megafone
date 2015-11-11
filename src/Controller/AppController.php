@@ -59,6 +59,7 @@ class AppController extends Controller
             ]
         ]);
         
+        $this->set('userSession', $this->Auth->user());
         $this->Auth->allow(['index', 'view', 'display']);
     }
 

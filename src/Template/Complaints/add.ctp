@@ -1,8 +1,8 @@
 <?php 
-	$this->assign('title', 'Add complaint');
+	$this->assign('title', __('Add complaint'));
 ?>
 <article>
-	<h1>Add complaint</h1>
+	<h1><?= __('Add complaint') ?></h1>
 	<?php 
 		require 'form.ctp';
 	?>

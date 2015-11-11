@@ -1,10 +1,10 @@
 <?= $this->Form->create($category, ['id' => 'form']) ?>
 	<div>
-		<label>Name</label>
+		<label><?= __('Name') ?></label>
 		<?= $this->Form->input('name', ['label' => false]) ?>
 	</div>
 	<div>
-		<label>Description</label>
+		<label><?= __('Description') ?></label>
 		<?= $this->Form->textarea('description', ['label' => false]) ?>
 	</div>
 	<div class="button">

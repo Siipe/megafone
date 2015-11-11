@@ -8,10 +8,6 @@
 			parent::initialize();
 		}
 
-		public function index() {
-			return $this->toPrevious();
-		}
-
 		public function add() {
 			if($this->request->is('post')) {
 				$comment = $this->Comments->newEntity([
@@ -22,7 +18,7 @@
 
 				$comment = $this->Comments->patchEntity($comment, $this->request->data);
 				if(!$this->Comments->save($comment))
-					$this->setErrorMessage('An error has occurred');
+					$this->setErrorMessage(__('An error has occurred'));
 
 				return $this->toPrevious();
 			}
@@ -30,7 +26,7 @@
 
 		public function delete($id = null) {
 			if(!$this->Comments->delete($this->Comments->get($id)))
-				$this->setErrorMessage('An error has occurred');
+				$this->setErrorMessage(__('An error has occurred'));
 
 			return $this->toPrevious();
 		}
@@ -45,7 +41,7 @@
 					return true;
 			}
 
-			$this->setErrorMessage('You have no permission for such operation');
+			$this->setErrorMessage(__('You have no permission for such operation'));
 			$this->redirect($this->referer());
 			return false;
 		} 

@@ -9,6 +9,6 @@
             <div class="overlay-inner"></div>
         </div>
     </div>
-    <button class="default-button js-crop">Crop and save</button>
-    <button class="default-button cancel-modal">Cancel</button>
+    <button class="default-button js-crop"><?= __('Crop and save') ?></button>
+    <button class="default-button cancel-modal"><?= __('Cancel') ?></button>
 </div>

@@ -1,8 +1,8 @@
 <section id="panel">
 	<?php 
-		if($userSession) {
-			$cssClass = $userSession['profile'] ? 'admin' : 'username';
-			echo "<h1 class=$cssClass>".__('Hello, ').$userSession['name']."</h1>".
+		if($userLogged) {
+			$cssClass = $userLogged['profile'] ? 'admin' : 'username';
+			echo "<h1 class=$cssClass>".__('Hello, {0}', $userLogged['name'])."</h1>".
 				$this->Html->link(__('My account'), ['controller' => 'Users', 'action' => 'account']).
 				$this->Html->link(__('Logout'), ['controller' => 'Users', 'action' => 'logout']);
 		} else {

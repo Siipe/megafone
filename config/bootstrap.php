@@ -194,6 +194,8 @@ if (Configure::read('debug')) {
 DispatcherFactory::add('Asset');
 DispatcherFactory::add('Routing');
 DispatcherFactory::add('ControllerFactory');
+DispatcherFactory::add('LocaleSelector');
+DispatcherFactory::add('LocaleSelector', ['locales' => ['en_US', 'pt_BR']]);
 
 /**
  * Enable default locale format parsing.

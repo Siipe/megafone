@@ -1,15 +1,15 @@
 <?php
-    $this->assign('title', 'Authentication');
+    $this->assign('title', __('Authentication'));
 ?>
 <article>
-    <h1>Authentication</h1>
+    <h1><?= __('Authentication') ?></h1>
     <?= $this->Form->create(null, ['id' => 'form']) ?>
         <div>
-            <label>Login</label>
+            <label><?= __('Login') ?></label>
             <?= $this->Form->input('login', ['label' => false]) ?>
         </div>
     <div>
-        <label>Password</label>
+        <label><?= __('Password') ?></label>
         <?= $this->Form->input('password', ['label' => false]) ?>
     </div>
     <div class="button">

@@ -36,11 +36,11 @@ class UploadComponent extends Component {
             $filename = $file['name'];
             $tmp = $file['tmp_name'];
             if(!$this->isValidExtension($filename))
-                throw new InternalErrorException('File extension not allowed');
+                throw new InternalErrorException(__('File extension not allowed'));
             elseif(is_uploaded_file($tmp)) {
                 $newName = Text::uuid() . '-' . $filename;
                 if (!move_uploaded_file($tmp, $dir.DS.$newName))
-                    throw new InternalErrorException('It was not possible to move the file');
+                    throw new InternalErrorException(__('It was not possible to move the file'));
 
                 return $newName;
             }
