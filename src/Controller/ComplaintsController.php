@@ -22,9 +22,11 @@
 		}
 
 		public function view($id = null) {
+			$query = $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->where(['level' => 0])->order(['dateCreated' => 'DESC']);
 			$response = [
 				'complaint' => $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]),
-				'comments' => $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->order(['dateCreated' => 'DESC'])
+				'comments' => $query,
+				'commentsCount' => $query->count()
 			];
 
 			if($this->Auth->user())

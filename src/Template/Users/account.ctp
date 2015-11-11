@@ -26,7 +26,7 @@ $this->assign('title', $user['name']);
                 <?= $user['email'] ?>
             </div>
             <div>
-                <label>Member since</label>
+                <label>Joined in</label>
                 <?= $user['dateJoined']->format('d/m/Y H:i') ?>
             </div>
         </div>

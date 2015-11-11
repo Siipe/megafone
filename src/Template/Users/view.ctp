@@ -20,7 +20,7 @@
                 </div>
             <?php endif; ?>
             <div>
-                <label>Joined</label>
+                <label>Joined in</label>
                 <?= $user->joined ?>
             </div>
         </div>

@@ -18,9 +18,8 @@
     <body>
         <header>
             <div id="top-header">
-                <?php 
-                    require_once('panel.ctp');
-                ?>
+                <?php  $cell = $this->cell('Users'); ?>
+                <?= $cell ?>
                 <h1>Megafone</h1>
                 <?= $this->Html->image('megafone.png', ['alt' => 'Megafone logo']); ?>
             </div>

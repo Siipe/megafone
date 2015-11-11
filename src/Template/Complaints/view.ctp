@@ -36,7 +36,7 @@
 </article>
 <div class="interval"></div>
 <article>
-    <h1>Comments</h1>
+    <h1>Comments (<?= $commentsCount ?>)</h1>
     <section id="comments">
         <?php if($userSession): ?>
             <?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'add']]) ?>
@@ -53,21 +53,24 @@
             <?= $this->Form->end(); ?>
         <?php endif; ?>
         <ul>
+        	<?php if($comments->isEmpty()): ?>
+        		<p class="no-comments">Nothing to show</p>
+        	<?php endif; ?>
 	        <?php foreach($comments as $comment): ?>
 	            <li>
 	                <?= $this->html->image('uploads/'.$comment->user->picture) ?>
 	                <div class="comments-details">
 	                    <?= $this->Html->link($comment->user->name, ['controller' => 'Users', 'action' => 'view', $comment->user->id]) ?>
-	                    <p><?= $comment->body ?> <span class="comment-date"><?= $comment->created ?></span></p>
+	                    <p><?= $comment->body ?></p>
+	                    <span class="comment-date"><?= $comment->created ?></span>
 	                    <?php if($userSession): ?>
 	                        <span class="manager"></span>
 	                        <span class="options">
 	                            <ul>
-	                            	<?php if(!$comment->level): ?>
-	                            		<li><?= $this->Html->link(__('Reply'), ['controller' => 'Comments', 'action' => 'reply', $comment->id]) ?></li>
-	                            	<?php endif; ?>
-	                            	<li><?= $this->Html->link(__('Report'), ['controller' => 'Comments', 'action' => 'report', $comment->id]) ?></li>
-	                            	<?php if($userSession['id'] == $comment->user->id): ?>
+	                            	<li><?= $this->Html->link(__('Reply'), ['controller' => 'Comments', 'action' => 'reply', $comment->id]) ?></li>
+	                            	<?php if($userSession['id'] !== $comment->user->id): ?>
+	                            		<li><?= $this->Html->link(__('Report'), ['controller' => 'Comments', 'action' => 'report', $comment->id]) ?></li>
+	                            	<?php else: ?>
 	                            		<li><?= $this->Html->link(__('Delete'), ['controller' => 'Comments', 'action' => 'delete', $comment->id]) ?></li>
 	                            	<?php endif; ?>
 	                            </ul>

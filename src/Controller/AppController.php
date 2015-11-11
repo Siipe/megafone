@@ -58,8 +58,8 @@ class AppController extends Controller
                 'action' => 'login'
             ]
         ]);
+        
         $this->Auth->allow(['index', 'view', 'display']);
-        $this->set('userSession', $this->Auth->user());
     }
 
     /**

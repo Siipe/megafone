@@ -15,7 +15,7 @@
 </article>
 <div class="interval"></div>
 <article>
-    <h1>Related Complaints</h1>
+    <h1>Related Complaints (<?= $complaintsCount ?>)</h1>
     <ul id="complaints-list">
     	<?php foreach($complaints as $complaint): ?>
             <li>

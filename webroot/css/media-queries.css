@@ -6,7 +6,7 @@
 
     /*HEADER*/
     header {background: none}
-    #top-header {padding: 13px 2%; background: linear-gradient(to top, #353535, #777); background: -moz-linear-gradient(to top, #353535, #777); background: -ms-linear-gradient(to top, #353535, #777)}
+    #top-header {padding: 13px 2%; background: linear-gradient(to top, #353535, #777)}
     #top-header p {display: none}
     /*END HEADER*/
 
@@ -14,7 +14,7 @@
     nav ul {padding: 0 2%}
     nav ul li {float:none}
     nav ul li a {display:block; text-align:center; height:10px; line-height: 8px}
-    nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
+    nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px}
     /*END MENU*/
 
     /*FLASH MESSAGES*/

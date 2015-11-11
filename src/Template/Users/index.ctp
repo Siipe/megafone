@@ -11,7 +11,7 @@
                         <?= $this->Html->image($user->image) ?>
                         <div class="details">
                             <?= $this->Html->link($user->name, ['controller' => 'Users', 'action' => 'view', $user->id]) ?>
-                            <footer>Joined: <?= $user->joined ?></footer>
+                            <footer>Joined in <?= $user->joined ?></footer>
                         </div>
                         <div class="clear"></div>
                     </div>

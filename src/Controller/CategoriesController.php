@@ -26,10 +26,15 @@
                 'order' => ['dateCreated' => 'desc']
             ];
 
-            $category = $this->Categories->get($id, ['contain' => 'Users']);
-            $complaints = $this->paginate($this->Categories->Complaints->findByCategoryId($id));
+            $complaints = $this->Categories->Complaints->findByCategoryId($id);
+            $response = [
+                'category' => $this->Categories->get($id, ['contain' => 'Users']),
+                'complaints' => $this->paginate($complaints),
+                'complaintsCount' => $complaints->count()
+
+            ];
             
-            $this->set(compact('category', 'complaints'));
+            $this->set($response);
         }
 
 		public function add() {
