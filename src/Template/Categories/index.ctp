@@ -1,9 +1,9 @@
 <?php 
-	$this->assign('title', __('View Categories'));
+	$this->assign('title', __('Categories'));
 ?>
 <article>
     <div>
-        <h1><?= __('View Categories') ?></h1>
+        <h1><?= __('Categories') ?></h1>
         <div class="button">
             <?= $this->Html->link(__('Add a category'), ['controller' => 'Categories', 'action' => 'add']) ?>
         </div>

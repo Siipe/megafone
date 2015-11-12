@@ -1,3 +1,17 @@
+# General
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Editing {0}"
+msgstr "Editando {0}"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Send"
+msgstr "Enviar"
+
 # Users
 
 msgid "My account"
@@ -5,9 +19,6 @@ msgstr "Minha conta"
 
 msgid "Basic information"
 msgstr "Informações básicas"
-
-msgid "Name"
-msgstr "Nome"
 
 msgid "Joined in"
 msgstr "Entrou em"
@@ -27,9 +38,6 @@ msgstr "Entrar"
 msgid "Logout"
 msgstr "Deslogar"
 
-msgid "Editing {0}"
-msgstr "Editando {0}"
-
 msgid "Password"
 msgstr "Senha"
 
@@ -39,8 +47,8 @@ msgstr "Cortar e salvar"
 msgid "Cancel"
 msgstr "Cancelar"
 
-msgid "View Users"
-msgstr "Visualizar Usuários"
+msgid "Users"
+msgstr "Usuários"
 
 msgid "Joined in {0}"
 msgstr "Entrou em {0}"
@@ -80,3 +88,35 @@ msgstr "Faça o login para ver"
 
 msgid "Page {0} of {1}, showing {2} records out of {3} total, starting on record {4}, ending on {5}"
 msgstr "Página {0} de {1}, exibindo {2} registro(s) do total de {3}, com início no registro {4} e fim no {5}"
+
+# Categories
+
+msgid "Add Category"
+msgstr "Adicionar Categoria"
+
+msgid "Categories"
+msgstr "Categorias"
+
+msgid "Add a category"
+msgstr "Adicionar uma categoria"
+
+msgid "Created in: {0}"
+msgstr "Criada em: {0}"
+
+msgid "Created in {0} by {1}"
+msgstr "Criada em {0} por {1}"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""

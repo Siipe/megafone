@@ -1,8 +1,8 @@
 <?php 
-	$this->assign('title', __('View Users'));
+	$this->assign('title', __('Users'));
 ?>
 <article>
-	<h1><?= __('View Users') ?></h1> 
+	<h1><?= __('Users') ?></h1> 
 	<section id="basic-list">
         <ul>
             <?php foreach($users as $user): ?>
