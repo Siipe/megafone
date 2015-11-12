@@ -1,9 +1,9 @@
 <?php
-	$this->assign('title', __('View Complaints'));
+	$this->assign('title', __('Complaints'));
 ?>
 <article>
 	<div>
-		<h1><?= __('View Complaints') ?></h1>
+		<h1><?= __('Complaints') ?></h1>
 		<div class="button"><?= $this->Html->link(__('Add a complaint'), ['controller' => 'Complaints', 'action' => 'add']) ?></div>
 	</div>
     <ul id="complaints-list">

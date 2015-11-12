@@ -1,6 +1,6 @@
 <?= $this->Form->create($complaint, ['id' => 'form']) ?>
 	<div>
-		<label><?= __('Name') ?></label>
+		<label><?= __('Title') ?></label>
 		<?= $this->Form->input('name', ['label' => false]) ?>
 	</div>
 	<div>

@@ -12,6 +12,55 @@ msgstr "Descrição"
 msgid "Send"
 msgstr "Enviar"
 
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Remover"
+
+msgid "An error has occurred"
+msgstr "Ocorreu um erro durante a execução"
+
+msgid "You have no permission for such operation"
+msgstr "Você não possui permissão para tal operação"
+
+msgid "Online System for Complaints"
+msgstr "Sistema Online de Reclamações"
+
+msgid "Siipe {0} - &copy; All rights reserved"
+msgstr "Siipe {0} - &copy; Todos os direitos reservados"
+
+
+# Home
+
+msgid "Welcome to Megafone!"
+msgstr "Bem vindo ao Megafone!"
+
+msgid "Work well. Claim your rights. Complain if necessary!"
+msgstr "Trabalhe bem. Reivindique seus direitos. Reclame se necessário!"
+
+msgid "homepageMessage"
+msgstr "Seu ambiente de trabalho é confortável? Ele atende às suas expectativas? Você tem acesso direto aos recursos que ele te oferece? Comumente estamos lidando com questões chatas no trabalho. Dependendo da situação, um computador lento, bem como más condições posturais, podem tornar seu dia-a-dia um caos. Este sistema é inteiramente para você! Aqui você tem a chance de fazer reclamações sobre tais situações. Aproveite!"
+
+msgid "Slow computer?"
+msgstr "Computador lento?"
+
+msgid "Broken air conditioning?"
+msgstr "Ar condicionado quebrado?"
+
+msgid "Broken coffee machine?"
+msgstr "Máquina de café quebrada?"
+
+
+# Menu
+
+msgid "Home"
+msgstr "Página inicial"
+
+msgid "About"
+msgstr "Sobre"
+
+
 # Users
 
 msgid "My account"
@@ -89,6 +138,7 @@ msgstr "Faça o login para ver"
 msgid "Page {0} of {1}, showing {2} records out of {3} total, starting on record {4}, ending on {5}"
 msgstr "Página {0} de {1}, exibindo {2} registro(s) do total de {3}, com início no registro {4} e fim no {5}"
 
+
 # Categories
 
 msgid "Add Category"
@@ -106,17 +156,79 @@ msgstr "Criada em: {0}"
 msgid "Created in {0} by {1}"
 msgstr "Criada em {0} por {1}"
 
-msgid ""
-msgstr ""
+msgid "Related Complaints ({0})"
+msgstr "Reclamações relacionadas ({0})"
 
-msgid ""
-msgstr ""
+msgid "Category \"{0}\" added successfully!"
+msgstr "Categoria \"{0}\" adicionada com sucesso!"
 
-msgid ""
-msgstr ""
+msgid "Category \"{0}\" modified successfully!"
+msgstr "Categoria \"{0}\" modificada com sucesso!"
 
-msgid ""
-msgstr ""
+msgid "Category removed successfully!"
+msgstr "Categoria removida com sucesso"
 
-msgid ""
-msgstr ""
+
+# Complaints
+
+msgid "Add complaint"
+msgstr "Adicionar reclamação"
+
+msgid "Your comment here"
+msgstr "Seu comentário aqui"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Anonymous?"
+msgstr "Anônima?"
+
+msgid "Complaints"
+msgstr "Reclamações"
+
+msgid "Add a complaint"
+msgstr "Fazer uma reclamação"
+
+msgid "complaint added in {0}"
+msgstr "reclamação feita em {0}"
+
+msgid "Category: {0}"
+msgstr "Categoria: {0}"
+
+msgid "Comments ({0})"
+msgstr "Comentários ({0})"
+
+msgid "Nothing to show"
+msgstr "Nada a mostrar"
+
+msgid "Anonymous"
+msgstr "Anônimo"
+
+msgid "Complaint added successfully!"
+msgstr "Reclamação feita com sucesso!"
+
+msgid "Complaint modified successfully!"
+msgstr "Reclamação modificada com sucesso!"
+
+msgid "Complaint removed successfully!"
+msgstr "Reclamação removida com sucesso!"
+
+
+# Comments
+
+msgid "Reply"
+msgstr "Responder"
+
+msgid "Report"
+msgstr "Reportar"
+
+# About
+
+msgid "About us"
+msgstr "Sobre nós"
+
+msgid "Here will be created the about page"
+msgstr "Aqui será criada a página de sobre"

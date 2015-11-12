@@ -44,9 +44,8 @@
         <footer>
             <div>
                 <p>
-                    Online System for Complaints<br/>
-                    Project III - CES-JF<br/ >
-                    Siipe <?= date('Y') ?> - &copy; All rights reserved
+                    <?= __('Online System for Complaints') ?> <br/>
+                    <?= __('Siipe {0} - &copy; All rights reserved', date('Y')) ?>
                 </p>
                 <h1>Megafone</h1>
                 <?= $this->Html->image('megafone-footer.png', ['alt' => 'Megafone footer']); ?>
