@@ -5,7 +5,7 @@
     <h1><?= __('View User') ?></h1>
     <section id="user-view">
         <div class="user-image">
-            <?= $this->Html->image($user->image) ?>
+            <?= $this->Html->image($user->image, ['alt' => __("{0}'s image", $user->image)]) ?>
         </div>
         <div class="information">
             <h1><?= __('Basic information') ?></h1>

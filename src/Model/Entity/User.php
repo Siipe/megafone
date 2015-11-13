@@ -19,10 +19,12 @@
         }
 
         public function _getImage() {
-            $imagePath = "uploads/";
+            $imagePath = 'uploads/';
             $image = $this->_properties['picture'];
-            if($image == null) 
-                $image = "user-default.png";
+            if(!$image) {
+                $imagePath = 'default/';
+                $image = 'user-default.png';
+            }
 
             return $imagePath.$image;
         }

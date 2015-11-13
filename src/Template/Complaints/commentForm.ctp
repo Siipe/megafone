@@ -1,7 +1,11 @@
 <?php if($userSession): ?>
     <?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'add']]) ?>
         <div class="user">
-            <?= $userSession['picture'] ? $this->html->image('uploads/'.$userSession['picture']) : $this->html->image('uploads/user-default.png') ?>
+            
+            <?= $this->element('userSessionPicture', [
+                'currentUser' => $userSession
+            ]) ?>
+            
             <div class="textarea-wrapper">
                 <?= $this->Form->textarea('body', ['label' => false, 'placeholder' => __('Your comment here')]) ?>
                 <?= $this->Form->hidden('complaint_id', ['value' => $complaint->id]) ?>

@@ -41,7 +41,7 @@
         	<?php endif; ?>
 	        <?php foreach($comments as $comment): ?>
 	            <li>
-	                <?= $this->html->image($comment->user->image) ?>
+	                <?= $this->html->image($comment->user->image, ['alt' => __("{0}'s image", $comment->user->name)]) ?>
 	                <div class="comments-details">
 	                    <?= $this->Html->link($comment->user->name, ['controller' => 'Users', 'action' => 'view', $comment->user->id]) ?>
 	                    <p><?= $comment->body ?></p>

@@ -30,6 +30,15 @@ msgstr "Sistema Online de Reclamações"
 msgid "Siipe {0} - &copy; All rights reserved"
 msgstr "Siipe {0} - &copy; Todos os direitos reservados"
 
+msgid "{0}'s image"
+msgstr "Imagem de {0}"
+
+msgid "Users default image"
+msgstr "Imagem padrão de usuários"
+
+msgid "Image for anonymous"
+msgstr "Imagem para anônimos"
+
 
 # Home
 
