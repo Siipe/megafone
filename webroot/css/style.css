@@ -75,17 +75,22 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     .default-button:hover {background:#999}
 
 	textarea {resize: none; font-size: 86.7%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif}
+	strong {font-weight:bold}
+	i {font-style:italic}
 
 	/*FORMS*/
 	#form {width: 100%; margin-top: 3%}
 	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px; box-sizing:border-box}
 	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
-	#form > div {margin: 2% 0}
-	#form input, #form textarea {width: 45%; padding: 2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
+	#form > div {margin: 2% 0; overflow:auto}
+	#form .input-wrapper {float:left; width:50%}
+	#form input, #form textarea {width: 100%; padding: 2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
 	#form input[type="checkbox"] {width:initial; height:initial; padding:0; margin:7px 0 0 0}
 	#form input {height: 35px}
-	#form select {width: 25%; height: 35px}
+	#form select {width: 60%; height: 35px}
 	#form textarea {height: 130px}
+
+	#form .maximum {border:solid 1px #f29113}
 	/*END FORMS*/
 
 	div.interval {width: 96%; border-top: dotted 1px #BBB; height: 2px; margin: 1.1% auto; clear: both}

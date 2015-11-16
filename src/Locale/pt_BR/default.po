@@ -24,6 +24,9 @@ msgstr "Ocorreu um erro durante a execução"
 msgid "You have no permission for such operation"
 msgstr "Você não possui permissão para tal operação"
 
+msgid "The record you requested doesn't exist"
+msgstr "O registro requisitado não existe"
+
 msgid "Online System for Complaints"
 msgstr "Sistema Online de Reclamações"
 

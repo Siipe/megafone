@@ -42,6 +42,14 @@ function cleanCropperComponent() {
     $('.resize-container').remove();
 }
 
+function handleMaxlengthEvent($obj) {
+    $maxlength = parseInt($obj.attr('maxlength'));
+    if($obj.val().length == $maxlength)
+        $obj.addClass('maximum');
+    else
+        $obj.removeClass('maximum');
+}
+
 function commonHandlers() {
     $('.message').on('mouseover', function() {
         $('.close-message').show();
@@ -73,10 +81,14 @@ function commonHandlers() {
         $(this).siblings('.options').toggle();
     });
 
-    $('input:text, input:password, textarea').on('keyup focus', function() {
-        $maxlength = parseInt($(this).attr('maxlength'));
-        $borderColor = $(this).val().length == $maxlength ? '#f29113' : '#BBB';
-        $(this).css('border-color', $borderColor);
+    $('input:not(input:checkbox, input:radio), textarea').on('keydown keyup', function() {
+        handleMaxlengthEvent($(this));
+    })
+    .bind('paste', function() {
+        $self = $(this);
+        setTimeout(function() {
+            handleMaxlengthEvent($self);
+        }, 1);
     });
 
 }

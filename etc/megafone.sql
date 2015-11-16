@@ -80,7 +80,7 @@ INSERT INTO `comments` (`id`, `body`, `level`, `dateCreated`, `user_id`, `compla
 
 CREATE TABLE IF NOT EXISTS `complaints` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `description` varchar(2000) NOT NULL,
   `dateCreated` datetime NOT NULL,
   `user_id` int(11) DEFAULT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `complaints` (
 -- Dumping data for table `complaints`
 --
 
-INSERT INTO `complaints` (`id`, `name`, `description`, `dateCreated`, `user_id`, `category_id`) VALUES
+INSERT INTO `complaints` (`id`, `title`, `description`, `dateCreated`, `user_id`, `category_id`) VALUES
 (2, 'I''m getting tired of the same level!', 'My owner, testing the game, makes me go across the same level every time and for hours! I''m getting tired!', '2015-10-30 20:54:54', 3, 2),
 (3, 'Dwarves are trying to steal my gold', 'I''m losing my patience. But I''d love to play with them before killing them. This is not certain, although death is!', '2015-10-30 21:06:45', 4, 3),
 (4, 'Shao Kahn thinks he commands me, but he doesn''t!', 'I was reprogrammed by the Lin Kuei, the great master ever! So I will never surrender my free will for that lumbering fool!', '2015-10-30 21:13:19', 5, 4),

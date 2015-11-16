@@ -2,6 +2,7 @@
 	namespace App\Controller;
 
 	use DateTime;
+    use Cake\Datasource\Exception\RecordNotFoundException;
 
 	class CategoriesController extends AppController {
 		public function initialize() {
@@ -20,21 +21,26 @@
 		}
 
         public function view($id = null) {
-            $this->paginate = [
-                'limit' => 5,
-                'contain' => 'Users',
-                'order' => ['dateCreated' => 'desc']
-            ];
+            try {
+                $this->paginate = [
+                    'limit' => 5,
+                    'contain' => 'Users',
+                    'order' => ['dateCreated' => 'desc']
+                ];
 
-            $complaints = $this->Categories->Complaints->findByCategoryId($id);
-            $response = [
-                'category' => $this->Categories->get($id, ['contain' => 'Users']),
-                'complaints' => $this->paginate($complaints),
-                'complaintsCount' => $complaints->count()
+                $complaints = $this->Categories->Complaints->findByCategoryId($id); 
+                $response = [
+                    'category' => $this->Categories->get($id, ['contain' => 'Users']),
+                    'complaints' => $this->paginate($complaints),
+                    'complaintsCount' => $complaints->count()
 
-            ];
-            
-            $this->set($response);
+                ];
+                $this->set($response);
+
+            } catch(RecordNotFoundException $e) {
+                $this->setErrorMessage(__('The record you requested doesn\'t exist'));
+                return $this->toIndex();
+            }
         }
 
 		public function add() {

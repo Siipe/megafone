@@ -4,6 +4,7 @@
     use Cake\Event\Event;
     use DateTime;
     use Cake\Utility\Text;
+    use Cake\Datasource\Exception\RecordNotFoundException;
 
     class UsersController extends AppController {
         public function initialize() {
@@ -27,8 +28,14 @@
         }
 
         public function view($id = null) {
-            $user = $this->Users->get($id);
-            $this->set(compact('user'));
+            try {
+                $user = $this->Users->get($id);
+                $this->set(compact('user'));
+
+            } catch(RecordNotFoundException $e) {
+                $this->setErrorMessage(__('The record you requested doesn\'t exist'));
+                return $this->toIndex();
+            }
         }
 
         public function updateImage() {

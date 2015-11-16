@@ -14,6 +14,18 @@
             return $hasher->hash($password);
         }
 
+        public function _setName($name) {
+            return $this->stripHtml($name);
+        }
+
+        public function _setLogin($login) {
+            return $this->stripHtml($login);
+        }
+
+        public function _setEmail($email) {
+            return $this->stripHtml($email);
+        }
+
         public function _getJoined() {
             return $this->_properties['dateJoined']->format('d/m/Y H:i');
         }
@@ -27,5 +39,9 @@
             }
 
             return $imagePath.$image;
+        }
+
+        private function stripHtml($string, $allowed = null) {
+            return strip_tags($string, $allowed);
         }
     }

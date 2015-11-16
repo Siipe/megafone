@@ -21,7 +21,7 @@
     	<?php foreach($complaints as $complaint): ?>
             <li>
                 <div class="complaint-name">
-                    <?= $this->Html->link($complaint->name, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?>
+                    <?= $this->Html->link($complaint->title, ['controller' => 'Complaints', 'action' => 'view', $complaint->id]) ?>
                 </div>
                 <div class="user-details">
                     

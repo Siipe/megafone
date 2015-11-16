@@ -1,5 +1,5 @@
 <?php 
-	$this->assign('title', $complaint->name);
+	$this->assign('title', $complaint->title);
 ?>
 <article>
 	<section id="view-complaint">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="complaint-details">
 			<div>
-				<h1><?= $complaint->name ?></h1>
+				<h1><?= $complaint->title ?></h1>
 				
 				<?= $this->element('editButton', [
 					'entity' => $complaint,

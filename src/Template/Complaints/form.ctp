@@ -1,20 +1,28 @@
 <?= $this->Form->create($complaint, ['id' => 'form']) ?>
 	<div>
 		<label><?= __('Title') ?></label>
-		<?= $this->Form->input('name', ['label' => false]) ?>
+		<div class="input-wrapper">
+			<?= $this->Form->input('title', ['label' => false]) ?>
+		</div>
 	</div>
 	<div>
 		<label><?= __('Category') ?></label>
-		<?= $this->Form->select('category_id', $categories, ['label' => false]) ?>
+		<div class="input-wrapper">
+			<?= $this->Form->select('category_id', $categories, ['label' => false]) ?>
+		</div>
 	</div>
 	<div>
 		<label><?= __('Description') ?></label>
-		<?= $this->Form->textarea('description', ['label' => false]) ?>
+		<div class="input-wrapper">
+			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '2000']) ?>
+		</div>
 	</div>
 	<?php if($this->request->action === 'add'): ?>
 		<div>
 			<label><?= __('Anonymous?') ?></label>
-			<?= $this->Form->checkbox('anonymous', ['label' => false, 'hiddenField' => false, 'value' => true]) ?>
+			<div class="input-wrapper">
+				<?= $this->Form->checkbox('anonymous', ['label' => false, 'hiddenField' => false, 'value' => true]) ?>
+			</div>
 		</div>
 	<?php endif; ?>
 	<div class="button">

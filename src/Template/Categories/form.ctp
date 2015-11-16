@@ -1,12 +1,14 @@
 <?= $this->Form->create($category, ['id' => 'form']) ?>
 	<div>
 		<label><?= __('Name') ?></label>
-		<?= $this->Form->input('name', ['label' => false]) ?>
+		<div class="input-wrapper">
+			<?= $this->Form->input('name', ['label' => false]) ?>
+		</div>
 	</div>
 	<div>
 		<label><?= __('Description') ?></label>
 		<div class="input-wrapper">
-			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '10']) ?>
+			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '2000']) ?>
 		</div>
 	</div>
 	<div class="button">

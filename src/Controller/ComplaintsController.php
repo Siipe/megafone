@@ -3,6 +3,7 @@
 
 	use DateTime;
 	use Cake\ORM\TableRegistry;
+	use Cake\Datasource\Exception\RecordNotFoundException;
 
 	class ComplaintsController extends AppController {
 		public function initialize() {
@@ -22,17 +23,23 @@
 		}
 
 		public function view($id = null) {
-			$query = $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->where(['level' => 0])->order(['dateCreated' => 'DESC']);
-			$response = [
-				'complaint' => $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]),
-				'comments' => $query,
-				'commentsCount' => $query->count()
-			];
+			try {
+				$query = $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->where(['level' => 0])->order(['dateCreated' => 'DESC']);
+				$response = [
+					'complaint' => $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]),
+					'comments' => $query,
+					'commentsCount' => $query->count()
+				];
 
-			if($this->Auth->user())
-				$response['newComment'] = TableRegistry::get('Comments')->newEntity();
+				if($this->Auth->user())
+					$response['newComment'] = TableRegistry::get('Comments')->newEntity();
 
-			$this->set($response);
+				$this->set($response);
+
+			} catch(RecordNotFoundException $e) {
+                $this->setErrorMessage(__('The record you requested doesn\'t exist'));
+                return $this->toIndex();
+            }
 		}
 
 		public function add() {
@@ -74,8 +81,8 @@
 				$this->setSuccessMessage(__('Complaint removed successfully!'));
 			else
 				$this->setErrorMessage(__('An error has occurred'));
-
-			return $this->toIndex();
+			
+            return $this->toIndex();
 		}
 
 		public function isAuthorized($user) {

@@ -6,11 +6,15 @@
     <?= $this->Form->create(null, ['id' => 'form']) ?>
         <div>
             <label><?= __('Login') ?></label>
-            <?= $this->Form->input('login', ['label' => false]) ?>
+            <div class="input-wrapper">
+                <?= $this->Form->input('login', ['label' => false, 'maxlength' => '20']) ?>
+            </div>
         </div>
     <div>
         <label><?= __('Password') ?></label>
-        <?= $this->Form->input('password', ['label' => false]) ?>
+        <div class="input-wrapper">
+            <?= $this->Form->input('password', ['label' => false, 'maxlength' => '60']) ?>
+        </div>
     </div>
     <div class="button">
         <?= $this->Form->button(__('Send')) ?>
