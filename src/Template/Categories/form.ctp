@@ -5,7 +5,9 @@
 	</div>
 	<div>
 		<label><?= __('Description') ?></label>
-		<?= $this->Form->textarea('description', ['label' => false]) ?>
+		<div class="input-wrapper">
+			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '10']) ?>
+		</div>
 	</div>
 	<div class="button">
 		<?= $this->Form->button(__('Send')) ?>

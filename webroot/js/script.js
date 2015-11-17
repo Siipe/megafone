@@ -72,4 +72,11 @@ function commonHandlers() {
     $('.manager').on('click', function() {
         $(this).siblings('.options').toggle();
     });
+
+    $('input:text, input:password, textarea').on('keyup focus', function() {
+        $maxlength = parseInt($(this).attr('maxlength'));
+        $borderColor = $(this).val().length == $maxlength ? '#f29113' : '#BBB';
+        $(this).css('border-color', $borderColor);
+    });
+
 }

@@ -78,14 +78,14 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 
 	/*FORMS*/
 	#form {width: 100%; margin-top: 3%}
-	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px}
+	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px; box-sizing:border-box}
 	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
 	#form > div {margin: 2% 0}
-	#form input, #form textarea {width: 45%; padding: 2px; border:solid 1px #BBB}
+	#form input, #form textarea {width: 45%; padding: 2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
 	#form input[type="checkbox"] {width:initial; height:initial; padding:0; margin:7px 0 0 0}
-	#form input {height: 25px}
-	#form select {width: 25%; height: 31px}
-	#form textarea {height: 100px}
+	#form input {height: 35px}
+	#form select {width: 25%; height: 35px}
+	#form textarea {height: 130px}
 	/*END FORMS*/
 
 	div.interval {width: 96%; border-top: dotted 1px #BBB; height: 2px; margin: 1.1% auto; clear: both}
