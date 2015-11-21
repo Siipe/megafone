@@ -2,7 +2,7 @@
 @media only screen and (min-width:150px) and (max-width:600px) {
 
     /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content, nav ul, .message, body>footer div, div#modal {width: 96%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 96%}
 
     /*HEADER*/
     header {background: none}
@@ -18,9 +18,9 @@
     /*END MENU*/
 
     /*FLASH MESSAGES*/
-    .message {padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
-    .message p {line-height: 27px}
-    .message .close-message {display:block}
+    .flash .message {padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
+    .flash .message p {line-height: 27px}
+    .flash .message .close-message {display:block}
     /*END FLASH MESSAGES*/
 
     /*CONTENT*/
@@ -89,7 +89,7 @@
 /*FOR TABLETS*/
 @media only screen and (min-width:600px) and (max-width:1000px) {
      /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content,nav ul, .message, body>footer div, div#modal {width: 96%}
+    #top-header,#main-content,nav ul, .flash .message, body>footer div, div#modal {width: 96%}
 
     div#modal {left:5%}
 
@@ -104,6 +104,6 @@
 
 /*FOR HIGHER RESOLUTIONS*/
 @media only screen and (min-width:1600px) {
-    #top-header,#main-content, nav ul, .message, body>footer div, div#modal {width: 55%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 55%}
     div#modal {left:22.5%}
 }

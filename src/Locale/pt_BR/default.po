@@ -42,6 +42,18 @@ msgstr "Imagem padrão de usuários"
 msgid "Image for anonymous"
 msgstr "Imagem para anônimos"
 
+msgid "Your {0} must have at least {1} digits"
+msgstr "O campo {0} deve possuir no mínimo {1} dígitos"
+
+msgid "Please enter a valid E-mail"
+msgstr "Por favor informe um E-mail válido"
+
+msgid "This field cannot be left empty"
+msgstr "Este campo não pode ser vazio"
+
+msgid "This value is already in use"
+msgstr "Este valor já está sendo usado"
+
 
 # Home
 

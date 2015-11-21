@@ -18,7 +18,7 @@
 
 				$comment = $this->Comments->patchEntity($comment, $this->request->data);
 				if(!$this->Comments->save($comment))
-					$this->setErrorMessage(__('An error has occurred'));
+					$this->setErrorMessage($this->defaultError);
 
 				return $this->toPrevious();
 			}
@@ -26,7 +26,7 @@
 
 		public function delete($id = null) {
 			if(!$this->Comments->delete($this->Comments->get($id)))
-				$this->setErrorMessage(__('An error has occurred'));
+				$this->setErrorMessage($this->defaultError);
 
 			return $this->toPrevious();
 		}

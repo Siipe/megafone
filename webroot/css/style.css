@@ -3,7 +3,7 @@
 body {width: 100%; font-size: 86.7%; clear: both; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; background: #DDD}
 
  /*DEFAULT PAGE WIDTH*/
- #top-header,#main-content, nav ul, .message, body>footer div, div#modal {width: 77%}
+ #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 77%}
 
 /*HEADER*/
 header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535, #777)}
@@ -31,22 +31,22 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 /*END HEADER*/
 
 /*FLASH MESSAGES*/
-.message {margin:0 auto .7%; padding:.2% .5%; overflow:auto; vertical-align:center; border-radius:7px; box-sizing:border-box; position:relative }
-.message span {float:left; height:31px; width:31px; margin-right:5px}
-.message p {line-height:35px; font-size:1.1em}
-.message .close-message {position:absolute; top:0; right:0; border-radius:4px; border:none; color:#FFF; cursor:pointer; outline:none; display:none}
+.flash .message {margin:0 auto .7%; padding:.2% .5%; overflow:auto; vertical-align:center; border-radius:7px; box-sizing:border-box; position:relative }
+.flash .message span {float:left; height:31px; width:31px; margin-right:5px}
+.flash .message p {line-height:35px; font-size:1.1em}
+.flash .message .close-message {position:absolute; top:0; right:0; border-radius:4px; border:none; color:#FFF; cursor:pointer; outline:none; display:none}
 
-.success {background:#adf2a2; color:#389645; border:solid 1px #77cd69}
-.success span {background:url('../img/message-icons.png') no-repeat left center}
-.success .close-message {background:#77cd69}
+.flash .success {background:#adf2a2; color:#389645; border:solid 1px #77cd69}
+.flash .success span {background:url('../img/message-icons.png') no-repeat left center}
+.flash .success .close-message {background:#77cd69}
 
-.error {background:#fed2d3; color:#8a1724; border:solid 1px #d8929c}
-.error span {background:url('../img/message-icons.png') no-repeat right center}
-.error .close-message {background:#d8929c}
+.flash .error {background:#fed2d3; color:#8a1724; border:solid 1px #d8929c}
+.flash .error span {background:url('../img/message-icons.png') no-repeat right center}
+.flash .error .close-message {background:#d8929c}
 
-.warning {background:#fefccb; color:#88892c; border:solid 1px #c3c94f}
-.warning span {background:url('../img/message-icons.png') no-repeat center center}
-.warning .close-message {background:#c3c94f}
+.flash .warning {background:#fefccb; color:#88892c; border:solid 1px #c3c94f}
+.flash .warning span {background:url('../img/message-icons.png') no-repeat center center}
+.flash .warning .close-message {background:#c3c94f}
 /*FLASH MESSAGES*/
 
 /*CONTENT*/
@@ -82,7 +82,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#form {width: 100%; margin-top: 3%}
 	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px; box-sizing:border-box}
 	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
-	#form > div {margin: 2% 0; overflow:auto}
+	#form > div {margin: 2% 0; padding:2px 0; overflow:auto}
 	#form .input-wrapper {float:left; width:50%}
 	#form input, #form textarea {width: 100%; padding: 2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
 	#form input[type="checkbox"] {width:initial; height:initial; padding:0; margin:7px 0 0 0}
@@ -91,6 +91,9 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#form textarea {height: 130px}
 
 	#form .maximum {border:solid 1px #f29113}
+
+	#form .input-wrapper .error input, #form .input-wrapper .error textarea, #form .input-wrapper .error select {border-color:#F00}
+	#form .input-wrapper .error .error-message {color:#F00; font-size:.9em; margin-top:4px}
 	/*END FORMS*/
 
 	div.interval {width: 96%; border-top: dotted 1px #BBB; height: 2px; margin: 1.1% auto; clear: both}

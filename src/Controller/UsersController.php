@@ -46,7 +46,7 @@
                 $this->setSuccessMessage(__('Image updated successfully!'));
             }
             else
-                $this->setErrorMessage(__('An error has occurred'));
+                $this->setErrorMessage($this->defaultError);
 
             return $this->toPrevious();
         }
@@ -59,14 +59,16 @@
                 $user->dateJoined = new DateTime();
                 $user->profile = false;
                 $user->picture = null;
+                
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                if($user = $this->Users->save($user)) {
+
+                if($this->Users->save($user) && !$user->errors()) {
                     $this->setSuccessMessage(__('Congratulations, {0}! This is your first login! Enjoy!', $user->name));
                     $this->Auth->setUser($user->toArray());
                     return $this->redirect(['action' => 'account']);
                 }
-                $this->setErrorMessage(__('An error has occurred'));
             }
+
             $this->set(compact('user'));
         }
 
@@ -74,13 +76,13 @@
             $user = $this->Users->get($this->Auth->user('id'));
             if($this->request->is(['post', 'patch', 'put'])) {
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                if($user = $this->Users->save($user)) {
+                if($this->Users->save($user) && !$user->errors()) {
                     $this->updateUserInSession($user);
                     $this->setSuccessMessage(__('Your account has been modified successfully!'));
                     return $this->redirect(['action' => 'account']);
                 }
-                $this->setErrorMessage(__('An error has occurred'));
             }
+
             $this->set(compact('user'));
         }
 

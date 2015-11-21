@@ -7,13 +7,13 @@
         <div>
             <label><?= __('Login') ?></label>
             <div class="input-wrapper">
-                <?= $this->Form->input('login', ['label' => false, 'maxlength' => '20']) ?>
+                <?= $this->Form->input('login', ['label' => false, 'maxlength' => '20',  'required' => false]) ?>
             </div>
         </div>
     <div>
         <label><?= __('Password') ?></label>
         <div class="input-wrapper">
-            <?= $this->Form->input('password', ['label' => false, 'maxlength' => '60']) ?>
+            <?= $this->Form->input('password', ['label' => false, 'maxlength' => '60',  'required' => false]) ?>
         </div>
     </div>
     <div class="button">

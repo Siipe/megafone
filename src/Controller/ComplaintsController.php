@@ -55,7 +55,7 @@
 					$this->setSuccessMessage(__('Complaint added successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage(__('An error has occurred'));
+				$this->setErrorMessage($this->defaultError);
 			} else
 				$this->set('categories', $this->Complaints->Categories->find('list'));
 
@@ -70,7 +70,7 @@
 					$this->setSuccessMessage(__('Complaint modified successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage(__('An error has occurred'));
+				$this->setErrorMessage($this->defaultError);
 			} else
 				$this->set('categories', $this->Complaints->Categories->find('list'));
 			$this->set(compact('complaint'));
@@ -80,7 +80,7 @@
 			if($this->Complaints->delete($this->Complaints->get($id)))
 				$this->setSuccessMessage(__('Complaint removed successfully!'));
 			else
-				$this->setErrorMessage(__('An error has occurred'));
+				$this->setErrorMessage($this->defaultError);
 			
             return $this->toIndex();
 		}

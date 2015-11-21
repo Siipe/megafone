@@ -54,7 +54,7 @@
 					$this->setSuccessMessage(__('Category "{0}" added successfully!', $category->name));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage(__('An error has occurred'));
+				$this->setErrorMessage($this->defaultError);
 			}
 			$this->set(compact('category'));
 		}
@@ -67,7 +67,7 @@
                     $this->setSuccessMessage(__('Category "{0}" modified successfully!', $category->name));
                     return $this->toIndex();
                 }
-                $this->setErrorMessage(__('An error has occurred'));
+                $this->setErrorMessage($this->defaultError);
             }
             $this->set(compact('category'));
         }
@@ -76,7 +76,7 @@
             if($this->Categories->delete($this->Categories->get($id)))
                 $this->setSuccessMessage(__('Category removed successfully!'));
             else
-                $this->setErrorMessage(__('An error has occurred'));
+                $this->setErrorMessage($this->defaultError);
 
             return $this->toIndex();
         }

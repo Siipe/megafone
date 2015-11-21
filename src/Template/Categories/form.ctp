@@ -2,13 +2,13 @@
 	<div>
 		<label><?= __('Name') ?></label>
 		<div class="input-wrapper">
-			<?= $this->Form->input('name', ['label' => false]) ?>
+			<?= $this->Form->input('name', ['label' => false,  'required' => false]) ?>
 		</div>
 	</div>
 	<div>
 		<label><?= __('Description') ?></label>
 		<div class="input-wrapper">
-			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '2000']) ?>
+			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '2000',  'required' => false]) ?>
 		</div>
 	</div>
 	<div class="button">

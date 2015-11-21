@@ -29,6 +29,8 @@ class AppController extends Controller
 
     public $paginate = ['limit' => 9];
 
+    public $defaultError;
+
     /**
      * Initialization hook method.
      *
@@ -61,6 +63,8 @@ class AppController extends Controller
         
         $this->set('userSession', $this->Auth->user());
         $this->Auth->allow(['index', 'view', 'display']);
+
+        $this->defaultError = __('An error has occurred');
     }
 
     /**
