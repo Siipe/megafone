@@ -18,16 +18,16 @@
         public function validationDefault(Validator $validator) {
             return $validator
                         ->add('name', 'length', [
-                            'rule' => ['minLength', 5],
-                            'message' => __('Your {0} must have at least {1} digits', __('Name'), 5)
+                            'rule' => ['lengthBetween', 5, 80],
+                            'message' => __('The {0} must contain between {1} and {2} digits', __('Name'), 5, 80)
                         ])
                         ->add('login', 'length', [
-                            'rule' => ['minLength', 4],
-                            'message' => __('Your {0} must have at least {1} digits', __('Login'), 4)
+                            'rule' => ['lengthBetween', 4, 20],
+                            'message' => __('The {0} must contain between {1} and {2} digits', __('Login'), 4, 20)
                         ])
                         ->add('password', 'length', [
-                            'rule' => ['minLength', 8],
-                            'message' => __('Your {0} must have at least {1} digits', __('Password'), 8)
+                            'rule' => ['lengthBetween', 8, 60],
+                            'message' => __('The {0} must contain between {1} and {2} digits', __('Password'), 8, 60)
                         ])
                         ->add('email', 'email', [
                             'rule' => 'email',
@@ -37,7 +37,7 @@
 
         public function buildRules(RulesChecker $rules) {
             return $rules
-                        ->add($rules->isUnique(['login']), 'uniqueLogin', ['message' => 'This field is not allowed.'])
+                        ->add($rules->isUnique(['login']))
                         ->add($rules->isUnique(['email']));
         }
     }

@@ -51,13 +51,12 @@
 					$complaint->user_id = $this->Auth->user('id');
 
 				$complaint->dateCreated = new DateTime();
-				if($this->Complaints->save($complaint)) {
+				if($this->Complaints->save($complaint) && !$complaint->errors()) {
 					$this->setSuccessMessage(__('Complaint added successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage($this->defaultError);
-			} else
-				$this->set('categories', $this->Complaints->Categories->find('list'));
+			}
+			$this->set('categories', $this->Complaints->Categories->find('list'));
 
 			$this->set(compact('complaint'));
 		}
@@ -66,13 +65,12 @@
 			$complaint = $this->Complaints->get($id);
 			if($this->request->is(['post', 'patch', 'put'])) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
-				if($this->Complaints->save($complaint)) {
+				if($this->Complaints->save($complaint) && !$complaint->errors()) {
 					$this->setSuccessMessage(__('Complaint modified successfully!'));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage($this->defaultError);
-			} else
-				$this->set('categories', $this->Complaints->Categories->find('list'));
+			}
+			$this->set('categories', $this->Complaints->Categories->find('list'));
 			$this->set(compact('complaint'));
 		}
 

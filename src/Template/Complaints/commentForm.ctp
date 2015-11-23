@@ -7,7 +7,7 @@
             ]) ?>
             
             <div class="textarea-wrapper">
-                <?= $this->Form->textarea('body', ['label' => false, 'placeholder' => __('Your comment here')]) ?>
+                <?= $this->Form->input('body', ['type' => 'textarea', 'label' => false, 'placeholder' => __('Your comment here')]) ?>
                 <?= $this->Form->hidden('complaint_id', ['value' => $complaint->id]) ?>
                 <div class="comment-button">
                     <?= $this->Form->button(__('Send')) ?>

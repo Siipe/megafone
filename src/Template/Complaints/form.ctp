@@ -14,7 +14,7 @@
 	<div>
 		<label><?= __('Description') ?></label>
 		<div class="input-wrapper">
-			<?= $this->Form->textarea('description', ['label' => false, 'maxlength' => '2000',  'required' => false]) ?>
+			<?= $this->Form->input('description', ['type' => 'textarea', 'label' => false, 'maxlength' => '2000',  'required' => false]) ?>
 		</div>
 	</div>
 	<?php if($this->request->action === 'add'): ?>

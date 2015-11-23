@@ -50,11 +50,10 @@
 			if($this->request->is('post')) {
 				$category = $this->Categories->patchEntity($category, $this->request->data);
 				$category->dateCreated = new DateTime();
-				if($category = $this->Categories->save($category)) {
+				if($this->Categories->save($category) && !$category->errors()) {
 					$this->setSuccessMessage(__('Category "{0}" added successfully!', $category->name));
 					return $this->toIndex();
 				}
-				$this->setErrorMessage($this->defaultError);
 			}
 			$this->set(compact('category'));
 		}
@@ -63,11 +62,10 @@
             $category = $this->Categories->get($id);
             if($this->request->is(['post', 'patch', 'put'])) {
                 $category = $this->Categories->patchEntity($category, $this->request->data);
-                if($category = $this->Categories->save($category)) {
+                if($this->Categories->save($category) && !$category->errors()) {
                     $this->setSuccessMessage(__('Category "{0}" modified successfully!', $category->name));
                     return $this->toIndex();
                 }
-                $this->setErrorMessage($this->defaultError);
             }
             $this->set(compact('category'));
         }

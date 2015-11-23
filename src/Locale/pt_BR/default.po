@@ -45,6 +45,9 @@ msgstr "Imagem para anônimos"
 msgid "Your {0} must have at least {1} digits"
 msgstr "O campo {0} deve possuir no mínimo {1} dígitos"
 
+msgid "The {0} must contain between {1} and {2} digits"
+msgstr "O campo {0} deve conter entre {1} e {2} dígitos"
+
 msgid "Please enter a valid E-mail"
 msgstr "Por favor informe um E-mail válido"
 
@@ -53,6 +56,9 @@ msgstr "Este campo não pode ser vazio"
 
 msgid "This value is already in use"
 msgstr "Este valor já está sendo usado"
+
+msgid "Page {0} of {1}, showing {2} records out of {3} total, starting on record {4}, ending on {5}"
+msgstr "Página {0} de {1}, exibindo {2} registro(s) do total de {3}, com início no registro {4} e fim no {5}"
 
 
 # Home
@@ -135,6 +141,9 @@ msgstr "Visualizar Usuário"
 msgid "Hello, {0}"
 msgstr "Olá, {0}"
 
+msgid "Hold SHIFT to keep the aspect ratio"
+msgstr "Segure SHIFT para manter a proporção"
+
 msgid "Image updated successfully!"
 msgstr "Imagem atualizada com sucesso!"
 
@@ -158,9 +167,6 @@ msgstr "Você está deslogado"
 
 msgid "Sign in to see"
 msgstr "Faça o login para ver"
-
-msgid "Page {0} of {1}, showing {2} records out of {3} total, starting on record {4}, ending on {5}"
-msgstr "Página {0} de {1}, exibindo {2} registro(s) do total de {3}, com início no registro {4} e fim no {5}"
 
 
 # Categories
