@@ -9,7 +9,7 @@
         <?= $this->Html->meta('megaicon.ico','/megaicon.ico', ['type' => 'icon']) ?>
 
         <?= $this->Html->css(['reset', 'style', 'cropper', 'media-queries']) ?>
-        <?= $this->Html->script(['jquery.1.11.3.min', 'script']) ?>
+        <?= $this->Html->script(['jquery.1.11.3.min', 'commonHandlers', 'script']) ?>
 
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>

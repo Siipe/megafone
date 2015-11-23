@@ -1,5 +1,5 @@
 <?php if($userSession): ?>
-    <?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'add']]) ?>
+    <?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'add'], 'id' => 'commentForm']) ?>
         <div class="user">
             
             <?= $this->element('userSessionPicture', [

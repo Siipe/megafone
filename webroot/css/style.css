@@ -90,7 +90,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#form select {width: 60%; height: 35px}
 	#form textarea {height: 130px}
 
-	#form .maximum {border:solid 1px #f29113}
+	#content article form .maximum {border:solid 1px #f29113}
 
 	#form .input-wrapper .error input, #form .input-wrapper .error textarea, #form .input-wrapper .error select {border-color:#F00}
 	#form .input-wrapper .error .error-message {color:#F00; font-size:.9em; margin-top:4px}
@@ -174,7 +174,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #comments .comment-button * {padding:3px 8px; background:#BBB; color:#FFF; border:none; cursor:pointer; border-radius:3px}
     #comments .comment-button *:hover {background:#CCC}
     #comments img {float:left; height:48px; width:48px; border:solid 1px #DDD}
-    #comments .user textarea {width:100%; height:48px; padding:2px; border:solid 1px #DDD; box-sizing: border-box}
+    #comments .user textarea {width:100%; height:48px; padding:2px; border:solid 1px #DDD; box-sizing: border-box; outline:none}
     #comments .comments-details {width:70%; float:left; margin-left: 1%; position:relative; padding-right:20px}
     #comments .comments-details a {display:block; font-size:.98em; text-decoration:none; color:#666; font-weight:bold; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; padding-bottom:2px}
     #comments .comments-details .comment-date {display:block; font-size: .73em; margin-top:7px; color:#999}
