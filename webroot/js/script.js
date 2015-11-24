@@ -7,8 +7,7 @@ $(document).ready(function(){
 });
 
 function openModal() {
-    var $overlay = $('<div />').attr('id', 'super-overlay');
-    $overlay.prependTo('body').add($('#modal')).fadeIn('slow');
+    $('#super-overlay').prependTo('body').add($('#modal')).fadeIn('slow');
 }
 
 function closeModal() {

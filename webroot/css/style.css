@@ -54,7 +54,7 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; box-shadow: 2px 3px 3px #AAA}
 	#content article {padding: 2.3%; overflow: auto}
 	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block; word-wrap:break-word; line-height: 25px}
-	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic}
+	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic; line-height: 18px}
     #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight: bold}
     #content article footer a:hover {text-decoration: underline}
 	#content article p {line-height: 25px; font-size: 0.98em; color: #444}
@@ -70,6 +70,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#content article div.button *, .default-button {padding: 7px 20px; color: #FFF; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; border:none; cursor:pointer; display:inline-block; outline: none}
 	#content article div.button * {background: #fab357;}
 	#content article div.button *:hover {background: #FCCB8C}
+
+	#content article p.no-results {width:100%; text-align:center; font-size:.9em; font-style:italic; color:#999}
 
     .default-button {background:#777; margin-top:10px}
     .default-button:hover {background:#999}
@@ -116,12 +118,12 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #basic-list .display-item a:hover {text-decoration:underline}
     #basic-list .display-item footer {font-size: .8em; margin:4% 0}
 
-    #basic-list .manager {position:absolute; right:5px; top: 5px; background:url('../img/arrow-down.png') center center no-repeat}
+    #basic-list .manager {position:absolute; right:5px; top: 5px; background:url('../img/arrow-down.png') top left no-repeat}
     #basic-list .options {position:absolute; right:5px; top: 22px}
 	/*END BASIC LIST*/
 
 	/*MANAGER LINKS*/
-	#content article .manager {display:inline-block; cursor: pointer; height:13px; width:13px}
+	#content article .manager {display:inline-block; cursor: pointer; height:15px; width:15px}
     #content article .options {z-index:900; display:none; background:#FFF; border:solid 1px #CCC; border-radius:3px}
     #content article .options ul, #content article .options ul li {margin:0; padding:0}
     #content article .options a {padding:5px 10px; display:block; font-size:.8em; color:#666; text-decoration:none; font-weight:normal}
@@ -147,10 +149,12 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 
 	#complaints-list div.complaint-details {font-size:.8em; clear:both; position:relative; top:-20px}
 	#complaints-list div.complaint-details a {margin-right:15px}
-	#complaints-list div.complaint-details span {color:#777}
+	#complaints-list div.complaint-details span {color:#777; margin-right:10px}
+
+	#complaints-list p.comments-count {font-size:.75em; color:#666; font-weight:bold; position:relative; top:-15px}
 
 	#complaints-list .manager-container {position:relative}
-	#complaints-list .manager {background:url('../img/arrow-right.png') center center no-repeat}
+	#complaints-list .manager {background:url('../img/arrow-right.png') top left no-repeat}
 	#complaints-list .options {position:absolute; left:20px; top:0}
 	/*END COMPLAINTS LIST*/
 
@@ -180,10 +184,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     #comments .comments-details .comment-date {display:block; font-size: .73em; margin-top:7px; color:#999}
     #comments .comments-details p {line-height:18px; margin-top:1%}
 
-    #comments .manager {position:absolute; right:0; top:0; background:url('../img/arrow-down.png') center center no-repeat}
+    #comments .manager {position:absolute; right:0; top:0; background:url('../img/arrow-down.png') top left no-repeat}
     #comments .options {position:absolute; right:0; top:17px}
-
-    #comments .no-comments {width:100%; text-align:center; font-size:.9em; font-style:italic; color:#999}
     /*END COMMENTS*/
 
     /*PAGINATION*/

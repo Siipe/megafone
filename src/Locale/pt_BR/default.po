@@ -246,6 +246,9 @@ msgstr "Reclamação modificada com sucesso!"
 msgid "Complaint removed successfully!"
 msgstr "Reclamação removida com sucesso!"
 
+msgid "{0} comments(s)"
+msgstr "{0} comentário(s)"
+
 
 # Comments
 

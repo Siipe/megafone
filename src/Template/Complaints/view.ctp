@@ -28,32 +28,37 @@
 </article>
 <div class="interval"></div>
 <article>
-    <h1> <?= __('Comments ({0})', $commentsCount) ?></h1>
+    <h1> <?= __('Comments ({0})', count($complaint->comments)) ?></h1>
     <section id="comments">
         
 	    <?php 
 	    	require "commentForm.ctp";
 	    ?>
 
-        <ul>
-        	<?php if($comments->isEmpty()): ?>
-        		<p class="no-comments"><?= __('Nothing to show') ?></p>
-        	<?php endif; ?>
-	        <?php foreach($comments as $comment): ?>
-	            <li>
-	                <?= $this->html->image($comment->user->image, ['alt' => __("{0}'s image", $comment->user->name)]) ?>
-	                <div class="comments-details">
-	                    <?= $this->Html->link($comment->user->name, ['controller' => 'Users', 'action' => 'view', $comment->user->id]) ?>
-	                    <p><?= $comment->body ?></p>
-	                    <span class="comment-date"><?= $comment->created ?></span>
-	                    
-	                    <?= $this->element('commentOptions', [
-	                    	'comment' => $comment
-	                    ]) ?>
+        <?php if(!$complaint->comments): ?>
+        	<p class="no-results"><?= __('Nothing to show') ?></p>
+        <?php else: ?>
+	        <ul>
+		        <?php foreach($complaint->comments as $comment): ?>
+		            <li>
+		                <?= $this->html->image($comment->user->image, ['alt' => __("{0}'s image", $comment->user->name)]) ?>
+		                <div class="comments-details">
+		                    <?= $this->Html->link($comment->user->name, ['controller' => 'Users', 'action' => 'view', $comment->user->id]) ?>
+		                    <p><?= $comment->body ?></p>
+		                    <span class="comment-date"><?= $comment->created ?></span>
+		                    
+		                    <?= $this->element('commentOptions', [
+		                    	'comment' => $comment
+		                    ]) ?>
 
-	                </div>
-	            </li>
-	        <?php endforeach; ?>
-        <ul>
+		                </div>
+		                <?php foreach($comment->replies as $reply): ?>
+		                	<p><?= $reply->body ?></p>
+		                	<?= $this->Html->image($reply->user->image) ?>
+		                <?php endforeach; ?>
+		            </li>
+		        <?php endforeach; ?>
+	        <ul>
+        <?php endif; ?>
     </section>
 </article>

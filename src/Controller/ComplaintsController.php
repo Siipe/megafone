@@ -15,7 +15,13 @@
 		public function index() {
 			$this->paginate = [
 				'limit' => 9,
-				'contain' => ['Users', 'Categories'],
+				'contain' => [
+					'Users', 
+					'Categories', 
+					'Comments' => function($q) {
+						return $q->where(['Comments.level' => 0]);
+					}
+				],
 				'order' => ['dateCreated' => 'desc']
 			];
 
@@ -24,11 +30,25 @@
 
 		public function view($id = null) {
 			try {
-				$query = $this->Complaints->Comments->findByComplaintId($id)->contain('Users')->where(['level' => 0])->order(['dateCreated' => 'DESC']);
 				$response = [
-					'complaint' => $this->Complaints->get($id, ['contain' => ['Users', 'Categories']]),
-					'comments' => $query,
-					'commentsCount' => $query->count()
+					'complaint' => $this->Complaints->get($id, [
+						'contain' => [
+							'Users', 
+							'Categories', 
+							'Comments' => function($q) {
+								return $q
+										->where(['Comments.level' => 0])
+										->order(['dateCreated' => 'DESC']);
+							}, 
+							'Comments.Users', 
+							'Comments.Replies' => function($q) {
+								return $q
+										->where(['Replies.level' => 1])
+										->order(['dateCreated' => 'DESC']);
+							}, 
+							'Comments.Replies.Users'
+						]
+					])
 				];
 
 				if($this->Auth->user())

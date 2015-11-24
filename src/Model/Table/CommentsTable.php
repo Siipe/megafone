@@ -7,8 +7,13 @@
 		public function initialize(array $config) {
 			$this->belongsTo('Users');
 			$this->belongsTo('Complaints');
-			$this->belongsTo('Comments');
-			$this->hasMany('Comments', ['foreignKey' => 'comment_id']);
+			$this->belongsTo('ParentComments', [
+					'className' => 'Comments'
+				]);
+			$this->hasMany('Replies', [
+				'className' => 'Comments',
+				'foreignKey' => 'comment_id'
+				]);
 		}
 
 		public function isOwnedBy($id, $user_id) {

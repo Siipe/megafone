@@ -16,6 +16,7 @@
         <?= $this->fetch('script') ?>
     </head>
     <body>
+        <div id="super-overlay"></div>
         <header>
             <div id="top-header">
                 <?php  $cell = $this->cell('Users'); ?>

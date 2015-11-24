@@ -69,6 +69,7 @@
     #complaints-list li div.complaint-details {position:initial}
     #complaints-list li div.complaint-details a {margin:0}
     #complaints-list li div.complaint-details span {display:block; margin:10px 0 10px 0}
+    #complaints-list p.comments-count {position:initial; margin-bottom:10px}
 
     #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF)}
     #view-complaint .complaint-details h1 {margin:2% 0}

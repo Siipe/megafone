@@ -16,7 +16,7 @@
 </article>
 <div class="interval"></div>
 <article>
-    <h1><?= __('Related Complaints ({0})', $complaintsCount) ?></h1>
+    <h1><?= __('Related Complaints ({0})', count($complaints)) ?></h1>
     <ul id="complaints-list">
     	<?php foreach($complaints as $complaint): ?>
             <li>
@@ -36,6 +36,7 @@
                 <div class="complaint-details">
                     <span><?= $complaint->created ?></span>
                 </div>
+                <p class="comments-count"><?= __('{0} comments(s)', count($complaint->comments)) ?></p>
                 
                 <?= $this->element('optionsEditAndDelete', [
                     'entity' => $complaint,

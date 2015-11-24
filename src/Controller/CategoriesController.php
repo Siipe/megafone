@@ -28,12 +28,14 @@
                     'order' => ['dateCreated' => 'desc']
                 ];
 
-                $complaints = $this->Categories->Complaints->findByCategoryId($id); 
+                $complaint = $this->Categories->Complaints->findByCategoryId($id)->contain([
+                    'Comments' => function($q){
+                        return $q->where(['Comments.level' => 0]);
+                    }]);
+
                 $response = [
                     'category' => $this->Categories->get($id, ['contain' => 'Users']),
-                    'complaints' => $this->paginate($complaints),
-                    'complaintsCount' => $complaints->count()
-
+                    'complaints' => $this->paginate($complaint)
                 ];
                 $this->set($response);
 
