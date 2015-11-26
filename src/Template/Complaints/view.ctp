@@ -12,18 +12,18 @@
 		<div class="complaint-details">
 			<div>
 				<h1><?= $complaint->title ?></h1>
-				
-				<?= $this->element('editButton', [
-					'entity' => $complaint,
-					'controller' => 'Complaints'
-				]) ?>
-
 			</div>
 			<p><?= $complaint->description ?></p>
 			<footer>
 				<?= __('Category: {0}', $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id])) ?>
 			</footer>
 		</div>
+
+		<?= $this->element('editButton', [
+			'entity' => $complaint,
+			'controller' => 'Complaints'
+		]) ?>
+				
 	</section>
 </article>
 <div class="interval"></div>

@@ -26,7 +26,7 @@
                     <?= $this->Html->link($complaint->category->name, ['controller' => 'Categories', 'action' => 'view', $complaint->category->id]) ?>
                     <span><?= $complaint->created ?></span>
                 </div>
-                <p class="comments-count"><?= __('{0} comments(s)', count($complaint->comments)) ?></p>
+                <p class="comments-count"><?= __('{0,plural,=0{No comments yet} =1{1 comment} other{# comments}}', count($complaint->comments)) ?></p>
                 
                 <?= $this->element('optionsEditAndDelete', [
                     'entity' => $complaint,

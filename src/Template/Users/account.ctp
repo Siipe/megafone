@@ -13,7 +13,7 @@ $this->assign('title', $user['name']);
                 'currentUser' => $user
             ]) ?>
 
-            <p><?= $this->Html->link(__('Update image'), '#', ['id' => 'update-image']) ?></p>
+            <p><?= $this->Html->link(__('Update image'), 'javascript:void(0)', ['id' => 'update-image']) ?></p>
         </div>
         <div class="information">
             <h1><?= __('Basic information') ?></h1>

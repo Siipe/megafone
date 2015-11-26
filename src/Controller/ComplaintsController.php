@@ -19,7 +19,7 @@
 					'Users', 
 					'Categories', 
 					'Comments' => function($q) {
-						return $q->where(['Comments.level' => 0]);
+						return $q->where(['Comments.comment_id IS' => null]);
 					}
 				],
 				'order' => ['dateCreated' => 'desc']
@@ -37,13 +37,13 @@
 							'Categories', 
 							'Comments' => function($q) {
 								return $q
-										->where(['Comments.level' => 0])
+										->where(['Comments.comment_id IS' => null])
 										->order(['dateCreated' => 'DESC']);
 							}, 
 							'Comments.Users', 
 							'Comments.Replies' => function($q) {
 								return $q
-										->where(['Replies.level' => 1])
+										->where(['Replies.comment_id IS NOT' => null])
 										->order(['dateCreated' => 'DESC']);
 							}, 
 							'Comments.Replies.Users'

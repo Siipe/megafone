@@ -12,7 +12,8 @@
 				]);
 			$this->hasMany('Replies', [
 				'className' => 'Comments',
-				'foreignKey' => 'comment_id'
+				'foreignKey' => 'comment_id',
+				'dependent' => true
 				]);
 		}
 

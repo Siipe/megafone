@@ -16,7 +16,11 @@
 			return $this->_properties['dateCreated']->format('d/m/Y H:i');
 		}
 
+		public function _getAnswerable() {
+			return $this->_properties['comment_id'] == null;
+		}
+
 		private function stripHtml($string, $allowed = null) {
-            return strip_tags($string, $allowed).trim();
+            return trim(strip_tags($string, $allowed));
         }
 	}

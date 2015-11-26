@@ -13,7 +13,6 @@
 				$comment = $this->Comments->newEntity([
 						'user_id' => $this->Auth->user('id'),
 						'dateCreated' => new DateTime(),
-						'level' => 0
 					]);
 
 				$comment = $this->Comments->patchEntity($comment, $this->request->data);

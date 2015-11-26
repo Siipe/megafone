@@ -30,7 +30,7 @@
 
                 $complaint = $this->Categories->Complaints->findByCategoryId($id)->contain([
                     'Comments' => function($q){
-                        return $q->where(['Comments.level' => 0]);
+                        return $q->where(['Comments.comment_id IS' => null]);
                     }]);
 
                 $response = [

@@ -67,7 +67,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	/*END HOME*/
 
 	#content article div.button {float:right}
-	#content article div.button *, .default-button {padding:7px 20px; color:#FFF; text-decoration:none; font-weight:bold; border-radius:5px; font-size:0.9em; border:none; cursor:pointer; display:inline-block; outline:none}
+	#content article div.button *, .default-button {padding:4px 14px; color:#FFF; text-decoration:none; font-weight:bold; border-radius:5px; font-size:0.9em; border:none; cursor:pointer; display:inline-block; outline:none}
 	#content article div.button * {background:#fab357;}
 	#content article div.button *:hover {background:#FCCB8C}
 
@@ -88,7 +88,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	#form > div {margin:2% 0; padding:2px 0; overflow:auto}
 	#form .input-wrapper {float:left; width:50%}
 	#form input, #form textarea {width:100%; padding:2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
-	#form input[type="checkbox"] {width:initial; height:initial; padding:0; margin:7px 0 0 0}
+	#form input[type="checkbox"] {width:auto; height:auto; padding:0; margin:7px 0 0 0}
 	#form input {height:35px}
 	#form select {width:60%; height:35px}
 	#form textarea {height:130px}
@@ -117,7 +117,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
     #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
     #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none; max-width:93%; overflow:hidden; display:block; text-overflow:ellipsis; white-space:nowrap; padding-bottom:2px}
     #basic-list .display-item a:hover {text-decoration:underline}
-    #basic-list .display-item footer {font-size:.8em; margin:4% 0}
+    #basic-list .display-item footer {font-size:.8em; margin:4% 0; line-height: unset}
 
     #basic-list .manager {position:absolute; right:5px; top:5px; background:url('../img/arrow-down.png') top left no-repeat}
     #basic-list .options {position:absolute; right:5px; top:22px}
@@ -202,7 +202,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	    .comment-reply .reply-wrapper {width:95%}
 	    .comment-reply .reply-wrapper textarea {display:block; margin:10px 0 5px 0; height:35px; width:100%; padding:2px; border:solid 1px #DDD; box-sizing:border-box; outline:none}
 	    .comment-reply .reply-wrapper .reply-buttons {text-align:right}
-	    .comment-reply .reply-wrapper .reply-buttons button {padding:0 3px; background:#EEE; color:#777; cursor:pointer; border-radius:2px; font-size:.8em; border:solid.1px #BBB}
+	    .comment-reply .reply-wrapper .reply-buttons button {padding:0 3px; background:#EEE; color:#777; cursor:pointer; border-radius:2px; font-size:.8em; border:solid 1px #BBB}
 	    /*END REPLY FORM*/
     /*END COMMENTS*/
 

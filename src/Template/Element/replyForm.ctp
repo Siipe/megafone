@@ -1,4 +1,4 @@
-<?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'reply'], 'id' => 'reply-form']) ?>
+<?= $this->Form->create($newComment, ['url' => ['controller' => 'Comments', 'action' => 'add'], 'id' => 'reply-form']) ?>
 	<div class="reply-wrapper">
 		<?= $this->Form->input('complaint_id', ['type' => 'hidden', 'value' => $complaint->id]) ?>
 		<?= $this->Form->input('comment_id', ['type' => 'hidden', 'id' => 'comment-id']) ?>

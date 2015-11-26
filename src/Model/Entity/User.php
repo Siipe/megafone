@@ -42,6 +42,6 @@
         }
 
         private function stripHtml($string, $allowed = null) {
-            return strip_tags($string, $allowed).trim();
+            return trim(strip_tags($string, $allowed));
         }
     }
