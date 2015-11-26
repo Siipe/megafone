@@ -15,4 +15,8 @@
             </div>
         </div>
     <?= $this->Form->end(); ?>
+    
+    <div id="reply-form-container">
+        <?= $this->element('replyForm') ?>
+    </div>
 <?php endif; ?>

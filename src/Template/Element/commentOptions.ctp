@@ -1,13 +1,13 @@
 <?php if($userSession): ?>
-    <span class="manager"></span>
-    <span class="options">
+    <span class="comment-options">
         <ul>
-        	<li><?= $this->Html->link(__('Reply'), ['controller' => 'Comments', 'action' => 'reply', $comment->id]) ?></li>
-        	<?php if($userSession['id'] !== $comment->user->id): ?>
-        		<li><?= $this->Html->link(__('Report'), ['controller' => 'Comments', 'action' => 'report', $comment->id]) ?></li>
-        	<?php else: ?>
-        		<li><?= $this->Html->link(__('Delete'), ['controller' => 'Comments', 'action' => 'delete', $comment->id]) ?></li>
-        	<?php endif; ?>
+            <?php 
+                if(!$comment->level)
+                    echo "<li>".$this->Html->link(__('Reply'), "javascript:void(0)", ['onclick' => 'reply(this)'])."</li>";
+                
+                if($userSession['id'] == $comment->user->id)
+                    echo "<li>".$this->Html->link(__('Delete'), ['controller' => 'Comments', 'action' => 'delete', $comment->id])."</li>";
+            ?>
         </ul>
     </span>
 <?php endif; ?>

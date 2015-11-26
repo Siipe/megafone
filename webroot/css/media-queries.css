@@ -2,45 +2,45 @@
 @media only screen and (min-width:150px) and (max-width:600px) {
 
     /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 96%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:96%}
 
     /*HEADER*/
-    header {background: none}
-    #top-header {padding: 13px 2%; background: linear-gradient(to top, #353535, #777)}
-    #top-header p {display: none}
+    header {background:none}
+    #top-header {padding:13px 2%; background:linear-gradient(to top, #353535, #777)}
+    #top-header p {display:none}
     /*END HEADER*/
 
     /*MENU*/
-    nav ul {padding: 0 2%}
+    nav ul {padding:0 2%}
     nav ul li {float:none}
-    nav ul li a {display:block; text-align:center; height:10px; line-height: 8px}
+    nav ul li a {display:block; text-align:center; height:10px; line-height:8px}
     nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {background:#AAA; border-radius:4px}
     /*END MENU*/
 
     /*FLASH MESSAGES*/
-    .flash .message {padding:.2% 2%; line-height: 25px;  margin:0 auto 1.4%;}
-    .flash .message p {line-height: 27px}
+    .flash .message {padding:.2% 2%; line-height:25px;  margin:0 auto 1.4%;}
+    .flash .message p {line-height:27px}
     .flash .message .close-message {display:block}
     /*END FLASH MESSAGES*/
 
     /*CONTENT*/
-    #main-content {width: 96%}
-    #content {min-height: initial}
-    #content article {padding: 4%}
-    #content article p {text-align: justify}
-    #content article footer {margin: 4% 0}
+    #main-content {width:96%}
+    #content {min-height:initial}
+    #content article {padding:4%}
+    #content article p {text-align:justify}
+    #content article footer {margin:4% 0}
 
     div#modal {left:2%}
 
-    .images {float: none; width: 90%; margin-bottom: 4%}
+    .images {float:none; width:90%; margin-bottom:4%}
 
-    #content article div.button {float: none; margin: 20px 0}
+    #content article div.button {float:none; margin:20px 0}
 
-    #form > div input, #form>div textarea {width: 100%}
-    #form > div {margin-bottom: 4%}
+    #form > div input, #form>div textarea {width:100%}
+    #form > div {margin-bottom:4%}
     #form .input-wrapper {float:none; width:90%}
-    #form select {min-width: 50%}
-    #form label {float: none; display: block; text-align: left; padding: 0px}
+    #form select {min-width:50%}
+    #form label {float:none; display:block; text-align:left; padding:0px}
 
     #basic-list {margin:8% auto;}
     #basic-list ul li {float:none; width:100%; margin:4% 0}
@@ -60,7 +60,7 @@
 
     #complaints-list li div.complaint-name {border-bottom:dotted 1px #CCC}
     #complaints-list li div.complaint-name, #complaints-list li div.user-details {float:none; max-width:100%; text-align:left; margin-bottom:4%; overflow:auto}
-    #complaints-list li div.user-details a {display: block; overflow: hidden; text-overflow:ellipsis; white-space: nowrap}
+    #complaints-list li div.user-details a {display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
     
     #complaints-list li div.user-details img {margin-right:7px; margin-left:0; float:left}
 
@@ -71,31 +71,31 @@
     #complaints-list li div.complaint-details span {display:block; margin:10px 0 10px 0}
     #complaints-list p.comments-count {position:initial; margin-bottom:10px}
 
-    #view-complaint .user {background: linear-gradient(to bottom, #F1F1F1, #FFF)}
+    #view-complaint .user {background:linear-gradient(to bottom, #F1F1F1, #FFF)}
     #view-complaint .complaint-details h1 {margin:2% 0}
 
-    #comments > ul > li, #comments .user {margin:4% 0}
-    #comments .user {background: linear-gradient(to bottom, #F1F1F1, #FFF)}
-    #comments .comments-details {margin-left:2%}
-    #comments .comments-details .comment-date {display:block}
-    #comments .comments-details p {text-align: initial; line-height: 18px}
+    #comments ul.comments > li, #comments .user {margin:4% 0}
+    #comments .user {background:linear-gradient(to bottom, #F1F1F1, #FFF)}
+    #comments .comments-details {margin-left:2%; width:calc(98% - 50px);}
+    #comments .comments-details .comments-details {padding:0}
+    #comments .comments-details p {text-align:initial; line-height:18px}
     /*END CONTENT*/
 
     /*FOOTER*/
-    body>footer div {padding: 0 2%}
-    body>footer div p {width: 60%}
+    body>footer div {padding:0 2%}
+    body>footer div p {width:60%}
     /*END FOOTER*/
 }
 
 /*FOR TABLETS*/
 @media only screen and (min-width:600px) and (max-width:1000px) {
      /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content,nav ul, .flash .message, body>footer div, div#modal {width: 96%}
+    #top-header,#main-content,nav ul, .flash .message, body>footer div, div#modal {width:96%}
 
     div#modal {left:5%}
 
     #form .input-wrapper {width:50%}
-    #form > div input, #form > div textarea {width: 100%}
+    #form > div input, #form > div textarea {width:100%}
 
     #basic-list {margin:2% auto;}
     #basic-list ul li {width:45%; margin:1% 2.5%}
@@ -105,6 +105,6 @@
 
 /*FOR HIGHER RESOLUTIONS*/
 @media only screen and (min-width:1600px) {
-    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 55%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:55%}
     div#modal {left:22.5%}
 }

@@ -18,6 +18,9 @@ msgstr "Editar"
 msgid "Delete"
 msgstr "Remover"
 
+msgid "Cancel"
+msgstr "Cancelar"
+
 msgid "An error has occurred"
 msgstr "Ocorreu um erro durante a execução"
 
@@ -123,9 +126,6 @@ msgstr "Senha"
 msgid "Crop and save"
 msgstr "Cortar e salvar"
 
-msgid "Cancel"
-msgstr "Cancelar"
-
 msgid "Users"
 msgstr "Usuários"
 
@@ -207,6 +207,9 @@ msgstr "Adicionar reclamação"
 msgid "Your comment here"
 msgstr "Seu comentário aqui"
 
+msgid "Your reply here"
+msgstr "Sua resposta aqui"
+
 msgid "Title"
 msgstr "Título"
 
@@ -257,6 +260,9 @@ msgstr "Responder"
 
 msgid "Report"
 msgstr "Reportar"
+
+msgid "No replies yet"
+msgstr "Nenhuma resposta ainda"
 
 # About
 

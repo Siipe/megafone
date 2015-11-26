@@ -1,15 +1,15 @@
 @CHARSET "utf-8";
 
-body {width: 100%; font-size: 86.7%; clear: both; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; background: #DDD}
+body {width:100%; font-size:86.7%; clear:both; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; background:#DDD}
 
  /*DEFAULT PAGE WIDTH*/
- #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width: 77%}
+ #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:77%}
 
 /*HEADER*/
-header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535, #777)}
-#top-header {margin: 0 auto; color: #FFF; padding: 13px 0}
-#top-header h1 {font-size: 1.5em; color: #fab357; font-weight: bold; margin-bottom: 5px; text-shadow: 1px 1px 2px #222}
-#top-header p {font-size: 0.9em; color: #fab357; float: right; font-weight: bold; width: 200px; text-align: right; line-height: 15px}
+header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #777)}
+#top-header {margin:0 auto; color:#FFF; padding:13px 0}
+#top-header h1 {font-size:1.5em; color:#fab357; font-weight:bold; margin-bottom:5px; text-shadow:1px 1px 2px #222}
+#top-header p {font-size:0.9em; color:#fab357; float:right; font-weight:bold; width:200px; text-align:right; line-height:15px}
 
 	/*PANNEL*/
 	#panel {float:right; text-align:right}
@@ -20,11 +20,11 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	/*END PANEL*/
 
 	/*MENU*/
-	nav {width: 100%; background: #595959; overflow: auto; border-top: solid 2px #444; margin-bottom: 1.5%}
-	nav ul {margin: 0 auto}
-	nav ul li {float: left; display: block}
-	nav ul li a {display: inline-block; height: 20px; padding: 10px 25px; text-decoration: none; font-size: 0.95em; border-top:solid 2px #595959}
-	nav>ul>li>a,nav>ul>li>a:hover,nav>ul>li>a:link,nav>ul>li>a:visited,nav>ul>li>a:active {color: #FFF}
+	nav {width:100%; background:#595959; overflow:auto; border-top:solid 2px #444; margin-bottom:1.5%}
+	nav ul {margin:0 auto}
+	nav ul li {float:left; display:block}
+	nav ul li a {display:inline-block; height:20px; padding:10px 25px; text-decoration:none; font-size:0.95em; border-top:solid 2px #595959}
+	nav>ul>li>a,nav>ul>li>a:hover,nav>ul>li>a:link,nav>ul>li>a:visited,nav>ul>li>a:active {color:#FFF}
 
 	nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {border-top-color:#AAA}
 	/*END MENU*/
@@ -50,47 +50,48 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 /*FLASH MESSAGES*/
 
 /*CONTENT*/
-	#main-content {margin: 0 auto}
-	#content {width: 100%; float: left; min-height: 700px; background: #FFF; border-radius: 7px; box-shadow: 2px 3px 3px #AAA}
-	#content article {padding: 2.3%; overflow: auto}
-	#content article h1 {font-size: 1.2em; color: #f29113; text-transform: uppercase; font-weight: bold; display: inline-block; word-wrap:break-word; line-height: 25px}
-	#content article footer {font-size: 0.9em; margin: 2% 0; font-style: italic; line-height: 18px}
-    #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight: bold}
-    #content article footer a:hover {text-decoration: underline}
-	#content article p {line-height: 25px; font-size: 0.98em; color: #444}
+	#main-content {margin:0 auto}
+	#content {width:100%; float:left; min-height:700px; background:#FFF; border-radius:7px; box-shadow:2px 3px 3px #AAA}
+	#content article {padding:2.3%; overflow:auto}
+	#content article h1 {font-size:1.2em; color:#f29113; text-transform:uppercase; font-weight:bold; display:inline-block; word-wrap:break-word; line-height:25px}
+	#content article footer {font-size:0.9em; margin:2% 0; font-style:italic; line-height:18px}
+    #content article footer a, #content article footer a:visited {text-decoration:none; color:#000; font-weight:bold}
+    #content article footer a:hover {text-decoration:underline}
+	#content article p {line-height:25px; font-size:0.98em; color:#444}
 
 	/*HOME*/
-	.images {float: left; width: 30%}
-	.images span {display: block; margin-top: 10px; color: #888; text-transform: uppercase; font-weight: bold}
-	.images div {margin-right: 5%; background: #F1F1F1}
-	.images img {width: 90%; height: auto; margin: 0 1.5%; opacity:.77}
+	.images {float:left; width:30%}
+	.images span {display:block; margin-top:10px; color:#888; text-transform:uppercase; font-weight:bold}
+	.images div {margin-right:5%; background:#F1F1F1}
+	.images img {width:90%; height:auto; margin:0 1.5%; opacity:.77}
 	/*END HOME*/
 
 	#content article div.button {float:right}
-	#content article div.button *, .default-button {padding: 7px 20px; color: #FFF; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9em; border:none; cursor:pointer; display:inline-block; outline: none}
-	#content article div.button * {background: #fab357;}
-	#content article div.button *:hover {background: #FCCB8C}
+	#content article div.button *, .default-button {padding:7px 20px; color:#FFF; text-decoration:none; font-weight:bold; border-radius:5px; font-size:0.9em; border:none; cursor:pointer; display:inline-block; outline:none}
+	#content article div.button * {background:#fab357;}
+	#content article div.button *:hover {background:#FCCB8C}
 
-	#content article p.no-results {width:100%; text-align:center; font-size:.9em; font-style:italic; color:#999}
+	#content article p.no-results, #content article p.no-replies {width:100%; font-size:.9em; font-style:italic; color:#999}
+	p.no-results {text-align:center}
 
     .default-button {background:#777; margin-top:10px}
     .default-button:hover {background:#999}
 
-	textarea {resize: none; font-size: 86.7%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif}
+	textarea {resize:none; font-size:86.7%; font-family:Helvetica Neue, Helvetica, Arial, sans-serif}
 	strong {font-weight:bold}
 	i {font-style:italic}
 
 	/*FORMS*/
-	#form {width: 100%; margin-top: 3%}
-	#form label {float: left; width: 30%; text-align: right; padding: 3px 10px 0; text-transform: uppercase; font-size: 0.9em; color: #888; font-weight: bold; line-height:25px; box-sizing:border-box}
-	/*#form label:after {content: "*"; font-size: 18px; margin-left: 3px; color: #FE0000}*/
-	#form > div {margin: 2% 0; padding:2px 0; overflow:auto}
+	#form {width:100%; margin-top:3%}
+	#form label {float:left; width:30%; text-align:right; padding:3px 10px 0; text-transform:uppercase; font-size:0.9em; color:#888; font-weight:bold; line-height:25px; box-sizing:border-box}
+	/*#form label:after {content:"*"; font-size:18px; margin-left:3px; color:#FE0000}*/
+	#form > div {margin:2% 0; padding:2px 0; overflow:auto}
 	#form .input-wrapper {float:left; width:50%}
-	#form input, #form textarea {width: 100%; padding: 2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
+	#form input, #form textarea {width:100%; padding:2px; border:solid 1px #BBB; outline:none; box-sizing:border-box}
 	#form input[type="checkbox"] {width:initial; height:initial; padding:0; margin:7px 0 0 0}
-	#form input {height: 35px}
-	#form select {width: 60%; height: 35px}
-	#form textarea {height: 130px}
+	#form input {height:35px}
+	#form select {width:60%; height:35px}
+	#form textarea {height:130px}
 
 	#content article form .maximum {border:solid 1px #f29113}
 
@@ -98,32 +99,32 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#form .input-wrapper .error .error-message {color:#F00; font-size:.9em; margin-top:4px}
 	/*END FORMS*/
 
-	div.interval {width: 96%; border-top: dotted 1px #BBB; height: 2px; margin: 1.1% auto; clear: both}
+	div.interval {width:96%; border-top:dotted 1px #BBB; height:2px; margin:1.1% auto; clear:both}
     div.clear {clear:both}
 
     /*BASIC MODAL*/
     div#super-overlay, div#modal {display:none}
     div#super-overlay {position:fixed; width:100%; height:100%; background:#000; opacity:.8; z-index:1000}
-    div#modal {position: absolute; overflow:hidden; background-color: #CCC; z-index: 1001; top: 5%; left: 11.5%; border-radius:10px; text-align:center; padding:0 10px 10px 10px; box-sizing:border-box}
+    div#modal {position:absolute; overflow:hidden; background-color:#CCC; z-index:1001; top:5%; left:11.5%; border-radius:10px; text-align:center; padding:0 10px 10px 10px; box-sizing:border-box}
     div#modal .hint {margin:4px 0}
     /*END BASIC MODAL*/
 
     /*BASIC LIST*/
     #basic-list {margin:2% auto;}
     #basic-list > ul > li {width:30%; float:left; margin:1% 1.6%}
-    #basic-list .display-item {border:solid 1px #CCC; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position: relative}
-    #basic-list .display-item img {width:70px; border: solid 1px #BBB; float:left}
+    #basic-list .display-item {border:solid 1px #CCC; width:100%; background:linear-gradient(to top, #EEE, #FFF); border-radius:7px; box-sizing:border-box; padding:3px; position:relative}
+    #basic-list .display-item img {width:70px; border:solid 1px #BBB; float:left}
     #basic-list .display-item .details {width:calc(100% - 80px); float:left; margin-left:5px}
-    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none; max-width: 93%; overflow: hidden; display:block; text-overflow: ellipsis; white-space: nowrap; padding-bottom:2px}
+    #basic-list .display-item a {color:#888; font-weight:bold; text-decoration:none; max-width:93%; overflow:hidden; display:block; text-overflow:ellipsis; white-space:nowrap; padding-bottom:2px}
     #basic-list .display-item a:hover {text-decoration:underline}
-    #basic-list .display-item footer {font-size: .8em; margin:4% 0}
+    #basic-list .display-item footer {font-size:.8em; margin:4% 0}
 
-    #basic-list .manager {position:absolute; right:5px; top: 5px; background:url('../img/arrow-down.png') top left no-repeat}
-    #basic-list .options {position:absolute; right:5px; top: 22px}
+    #basic-list .manager {position:absolute; right:5px; top:5px; background:url('../img/arrow-down.png') top left no-repeat}
+    #basic-list .options {position:absolute; right:5px; top:22px}
 	/*END BASIC LIST*/
 
 	/*MANAGER LINKS*/
-	#content article .manager {display:inline-block; cursor: pointer; height:15px; width:15px}
+	#content article .manager {display:inline-block; cursor:pointer; height:15px; width:15px}
     #content article .options {z-index:900; display:none; background:#FFF; border:solid 1px #CCC; border-radius:3px}
     #content article .options ul, #content article .options ul li {margin:0; padding:0}
     #content article .options a {padding:5px 10px; display:block; font-size:.8em; color:#666; text-decoration:none; font-weight:normal}
@@ -134,11 +135,11 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	#complaints-list {margin:2% 0}
 	#complaints-list > li {padding:20px 10px 10px 10px}
 	#complaints-list > li:nth-child(2n) {background:#F8F8F8}
-	#complaints-list div a {color:#444; font-weight:normal; text-decoration: none; padding-bottom: 2px}
+	#complaints-list div a {color:#444; font-weight:normal; text-decoration:none; padding-bottom:2px}
 	#complaints-list div a:hover {text-decoration:underline}
 
 	#complaints-list div.complaint-name {float:left; max-width:40%}
-	#complaints-list div.complaint-name a {display: block; overflow: hidden; text-overflow:ellipsis; white-space: nowrap}
+	#complaints-list div.complaint-name a {display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 
 	#complaints-list div.user-details {float:right; max-width:35%; text-align:right}
 	#complaints-list div.user-details img {width:40px; margin-left:7px; border:solid 1px #DDD; float:right}
@@ -159,33 +160,50 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 	/*END COMPLAINTS LIST*/
 
 	/*VIEW COMPLAINT*/
-	#view-complaint .user {overflow:auto; margin-bottom:2%; display: inline-block; min-width: 100%; background: linear-gradient(to bottom, #F7F7F7, #FFF); padding: 3px; border-radius:5px}
-	#view-complaint .user a {color:#666; text-decoration: none; padding-bottom: 2px}
+	#view-complaint .user {overflow:auto; margin-bottom:2%; display:inline-block; min-width:100%; background:linear-gradient(to bottom, #F7F7F7, #FFF); padding:3px; border-radius:5px}
+	#view-complaint .user a {color:#666; font-weight:bold; text-decoration:none; padding-bottom:2px}
 	#view-complaint .user a:hover {text-decoration:underline}
 	#view-complaint .user h2 {font-style:italic; color:#f29113; font-weight:bold}
-	#view-complaint .user span {display:block; color: #777; font-size:.9em; font-style:italic; margin-top:6px}
-	#view-complaint .user img {float:left; width:40px; height:auto; border:solid 1px #DDD; margin-right:7px}
+	#view-complaint .user span {display:block; color:#777; font-size:.9em; font-style:italic; margin-top:6px}
+	#view-complaint .user img {float:left; width:48px; height:auto; border:solid 1px #DDD; margin-right:7px}
 	#view-complaint .complaint-details p {margin-top:.5%; clear:both}
 	#view-complaint .complaint-details footer {margin-bottom:0}
 	/*END VIEW COMPLAINT*/
 
 	/*COMMENTS*/
     #comments {margin:2% 0}
-    #comments > ul > li {float:left; margin: 1.5% 0; width: 100%}
-    #comments .user {float: left; width:100%; margin: 1% 0; padding: 2% 1%; background:linear-gradient(to bottom, #F7F7F7, #FFF); border:solid 1px #F7F7F7; border-radius: 5px; box-sizing: border-box}
-    #comments .user .textarea-wrapper {width:70%; float: left; margin-left:1%}
-    #comments .comment-button {clear:both; text-align:left; margin-top: 5px}
-    #comments .comment-button * {padding:3px 8px; background:#BBB; color:#FFF; border:none; cursor:pointer; border-radius:3px}
-    #comments .comment-button *:hover {background:#CCC}
-    #comments img {float:left; height:48px; width:48px; border:solid 1px #DDD}
-    #comments .user textarea {width:100%; height:48px; padding:2px; border:solid 1px #DDD; box-sizing: border-box; outline:none}
-    #comments .comments-details {width:70%; float:left; margin-left: 1%; position:relative; padding-right:20px}
-    #comments .comments-details a {display:block; font-size:.98em; text-decoration:none; color:#666; font-weight:bold; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; padding-bottom:2px}
-    #comments .comments-details .comment-date {display:block; font-size: .73em; margin-top:7px; color:#999}
+    #comments img {float:left; border:solid 1px #DDD}
+    #comments ul.comments > li {float:left; margin:1.5% 0; width:100%}
+    #comments .user {float:left; width:100%; margin:1% 0; padding:2% 1%; background:linear-gradient(to bottom, #F7F7F7, #FFF); border:solid 1px #F7F7F7; border-radius:5px; box-sizing:border-box}
+    #comments .user img {width:45px; height:auto}
+    #comments .user .textarea-wrapper {width:70%; float:left; margin-left:1%}
+    #comments .comment-button {clear:both; text-align:left; margin-top:5px}
+    #comments .comment-button button {padding:1px 5px; background:#BBB; color:#FFF; border:none; cursor:pointer; border-radius:2px}
+    #comments .comment-button button:hover {background:#CCC}
+    #comments .user textarea {width:100%; height:45px; padding:2px; border:solid 1px #DDD; box-sizing:border-box; outline:none}
+    
+	#comments .comments img {width:45px; height:auto}
+    #comments .comments-details {width:70%; box-sizing:border-box; float:left; margin-left:1%; position:relative}
+    #comments .comments-details > a {display:block; font-size:.98em; text-decoration:none; color:#666; font-weight:bold; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-bottom:2px}
+    #comments .comments-details .comment-date, #comments .comments-details .comment-options {display:inline-block; font-size:.73em; margin-top:7px; color:#999}
     #comments .comments-details p {line-height:18px; margin-top:1%}
 
-    #comments .manager {position:absolute; right:0; top:0; background:url('../img/arrow-down.png') top left no-repeat}
-    #comments .options {position:absolute; right:0; top:17px}
+    #comments .comments .comments {margin-top:1%}
+    #comments .comments .comments img {width:30px; height:auto}
+
+    #comments .comments-details .comment-options {margin-left:5px}
+    #comments .comments-details .comment-options ul li {float:left}
+    #comments .comments-details .comment-options ul li a {padding:0 5px; color:#666; font-weight:bold; text-decoration:none}
+    #comments .comments-details .comment-options ul li a:hover {text-decoration:underline}
+
+	    /*REPLY FORM*/
+	    #reply-form-container {display:none}
+
+	    .comment-reply .reply-wrapper {width:95%}
+	    .comment-reply .reply-wrapper textarea {display:block; margin:10px 0 5px 0; height:35px; width:100%; padding:2px; border:solid 1px #DDD; box-sizing:border-box; outline:none}
+	    .comment-reply .reply-wrapper .reply-buttons {text-align:right}
+	    .comment-reply .reply-wrapper .reply-buttons button {padding:0 3px; background:#EEE; color:#777; cursor:pointer; border-radius:2px; font-size:.8em; border:solid.1px #BBB}
+	    /*END REPLY FORM*/
     /*END COMMENTS*/
 
     /*PAGINATION*/
@@ -196,9 +214,9 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
     .paginator ul li a:hover {background:linear-gradient(to bottom, #DDD, #FFF)}
 
     .paginator .disabled {opacity:.6}
-    .paginator .disabled a {background:linear-gradient(to bottom, #DDD, #FFF); cursor: default}
+    .paginator .disabled a {background:linear-gradient(to bottom, #DDD, #FFF); cursor:default}
 
-    .paginator .active a, .paginator .active a:hover {background:linear-gradient(to bottom, #FCCB8C, #FFF); color:#f29113; cursor: default; border-color:#FCCB8C}
+    .paginator .active a, .paginator .active a:hover {background:linear-gradient(to bottom, #FCCB8C, #FFF); color:#f29113; cursor:default; border-color:#FCCB8C}
     
     #content .paginator p.pagination-info {text-align:center; font-size:.9em; margin-top:2%}
     /*END PAGINATION*/
@@ -219,8 +237,8 @@ header {width: 100%; margin: 0 auto; background: linear-gradient(to top, #353535
 /*END CONTENT*/
 
 /*FOOTER*/
-body>footer {width: 100%; height: 80px; background: linear-gradient(to bottom, #353535, #777); float: left; margin-top: 1.5%; border-top: solid 2px #2A2A2A; padding-top: 12px}
-body>footer div {margin: 0 auto}
-body>footer div h1 {color: #8b8b8b; text-transform: uppercase; font-weight: bold; margin-bottom: 6px}
-body>footer div p {color: #8b8b8b; font-size: 0.9em; font-weight: bold; float: right; text-align: right; line-height: 15px}
+body>footer {width:100%; height:80px; background:linear-gradient(to bottom, #353535, #777); float:left; margin-top:1.5%; border-top:solid 2px #2A2A2A; padding-top:12px}
+body>footer div {margin:0 auto}
+body>footer div h1 {color:#8b8b8b; text-transform:uppercase; font-weight:bold; margin-bottom:6px}
+body>footer div p {color:#8b8b8b; font-size:0.9em; font-weight:bold; float:right; text-align:right; line-height:15px}
 /*END FOOTER*/

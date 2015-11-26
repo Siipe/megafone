@@ -48,3 +48,15 @@ function handleMaxlengthEvent($obj) {
     else
         $obj.removeClass('maximum');
 }
+
+function reply(element, commentId) {
+    $replyForm = $('#reply-form');
+    $('#comment-id').val(commentId);
+    $(element).parents('.comments-details').find('.comment-reply').append($replyForm);
+    $replyForm.find('textarea').focus();
+}
+
+function cancelReply() {
+    $('#comment-id').val('');
+    $('#reply-form').appendTo($('#reply-form-container'));
+}

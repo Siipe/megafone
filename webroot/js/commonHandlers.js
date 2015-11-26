@@ -39,10 +39,10 @@ function commonHandlers() {
         }, 1);
     });
 
-    $('#commentForm').on('submit', function(e) {
+    $('#commentForm, #reply-form').on('submit', function(e) {
         $element = $(this).find('textarea');
         if(!$element.val().trim()) {
-            $element.val('');
+            $element.val('').focus();
             return false;
         }
 
