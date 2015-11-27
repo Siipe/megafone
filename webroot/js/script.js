@@ -56,7 +56,24 @@ function reply(element, commentId) {
     $replyForm.find('textarea').focus();
 }
 
-function cancelReply() {
-    $('#comment-id').val('');
-    $('#reply-form').appendTo($('#reply-form-container'));
+function sendComment(event, element) {
+    event.preventDefault();
+    $.ajax({
+        url         : '/Comments/add',
+        dataType    : 'text',
+        data        : $(element).parents('form').serialize(),
+        success     : function(response) {
+            alert(response);
+        },
+        error       : function(response) {
+            alert(response);
+        }            
+    });
+    return false;
+}
+
+function cancelReply(event) {
+    event.preventDefault();
+    $('#reply-form').appendTo($('#reply-form-container')).find('#comment-id, textarea').val('');
+    return false;
 }

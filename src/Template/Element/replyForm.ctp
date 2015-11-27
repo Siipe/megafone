@@ -4,8 +4,8 @@
 		<?= $this->Form->input('comment_id', ['type' => 'hidden', 'id' => 'comment-id']) ?>
 		<?= $this->Form->input('body', ['type' => 'textarea', 'label' => false, 'placeholder' => __('Your reply here')]) ?>
 		<div class="reply-buttons">
-			<?= $this->Form->button(__('Send')) ?>
-			<button onclick="cancelReply()"> <?= __('Cancel') ?></button>
+			<?= $this->Form->button(__('Send'), ['type' => 'button', 'onclick' => 'sendComment(event, this)']) ?>
+			<?= $this->Form->button(__('Cancel'), ['type' => 'button', 'onclick' => 'cancelReply(event)']) ?>
 		</div>
 	</div>
 <?= $this->Form->end() ?>

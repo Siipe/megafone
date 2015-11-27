@@ -72,7 +72,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	#content article div.button *:hover {background:#FCCB8C}
 
 	#content article p.no-results, #content article p.no-replies {width:100%; font-size:.9em; font-style:italic; color:#999}
-	p.no-results {text-align:center}
+	#content article p.no-results {text-align:center}
 
     .default-button {background:#777; margin-top:10px}
     .default-button:hover {background:#999}

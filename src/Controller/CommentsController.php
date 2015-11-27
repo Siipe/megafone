@@ -9,18 +9,20 @@
 		}
 
 		public function add() {
-			if($this->request->is('post')) {
+			if($this->request->is('ajax')) {
 				$comment = $this->Comments->newEntity([
 						'user_id' => $this->Auth->user('id'),
 						'dateCreated' => new DateTime(),
 					]);
 
 				$comment = $this->Comments->patchEntity($comment, $this->request->data);
-				if(!$this->Comments->save($comment))
-					$this->setErrorMessage($this->defaultError);
-
-				return $this->toPrevious();
+				if($this->Comments->save($comment))
+					echo "Saved!";
+				else
+					echo "Failed";
 			}
+
+			$this->autoRender = false;
 		}
 
 		public function delete($id = null) {

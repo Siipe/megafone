@@ -10,7 +10,7 @@
                 <?= $this->Form->input('body', ['type' => 'textarea', 'label' => false, 'placeholder' => __('Your comment here')]) ?>
                 <?= $this->Form->hidden('complaint_id', ['value' => $complaint->id]) ?>
                 <div class="comment-button">
-                    <?= $this->Form->button(__('Send')) ?>
+                    <?= $this->Form->button(__('Send'), ['type' => 'button', 'onclick' => 'sendComment(event, this)']) ?>
                 </div>
             </div>
         </div>
