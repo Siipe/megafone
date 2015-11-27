@@ -9,7 +9,7 @@
 		];
 
 		public function _setBody($body) {
-			return $this->stripHtml($body, '<strong><i><u><small><del><sub>');
+			return $this->stripHtml($body);
 		}
 
 		public function _getCreated() {

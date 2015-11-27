@@ -13,7 +13,7 @@
 		}
 
 		public function _setDescription($description) {
-			return $this->stripHtml($description, '<strong><i><u><small><del><sub>');
+			return $this->stripHtml($description);
 		}
 
 		public function _getCreated() {

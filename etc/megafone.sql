@@ -1,5 +1,4 @@
 INSERT INTO `users` (`id`, `login`, `password`, `name`, `email`, `profile`, `dateJoined`, `picture`) VALUES
-(1, 'root', '$2a$10$GBZqyTL5W/0lQoBkin3MJudIwaQFM7yJ/6R2fc8XsXiNXqJDMFAEa', 'RooT', 'lfaugusto.gomes@gmail.com', 1, '2015-11-25 23:59:51', 'root.jpg'),
 (2, 'lfgomes', '$2y$10$6OeytgYY0h81Ao3ZuIS3xenrzwol4gSRBibaiESoKOD0MkYM2HAFu', 'Luiz Felippe Gomes', 'siipecapoeira@gmail.com', 0, '2015-10-30 20:46:53', '577f9762-1928-4a2e-a6d1-993731f213a1.png'),
 (3, 'rheiz', '$2y$10$QSadKpKk5NfG2v0hrPzxfeNQ46uK1AWiJX/9iXOT4VstwOp3YJDc2', 'Rheiz', 'rheiz@gmail.com', 0, '2015-10-30 20:52:06', '737cd3f6-20f6-4c31-9fab-70f141c96de5.png'),
 (4, 'smaug', '$2y$10$o95LIsi2YT9pzWiZmnbRE.KxcYOyQtao6DH4BIW.0hdeUkPkQrOzm', 'SmauG', 'smaug@gmail.com', 0, '2015-10-30 20:57:53', 'aead67ef-f522-443d-a17b-bd3c1875569f.png'),

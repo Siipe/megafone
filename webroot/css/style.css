@@ -67,7 +67,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	/*END HOME*/
 
 	#content article div.button {float:right}
-	#content article div.button *, .default-button {padding:4px 14px; color:#FFF; text-decoration:none; font-weight:bold; border-radius:5px; font-size:0.9em; border:none; cursor:pointer; display:inline-block; outline:none}
+	#content article div.button *, .default-button {padding:4px 10px; color:#FFF; text-decoration:none; border-radius:5px; font-size:0.9em; border:none; cursor:pointer; display:inline-block; outline:none}
 	#content article div.button * {background:#fab357;}
 	#content article div.button *:hover {background:#FCCB8C}
 
@@ -185,6 +185,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	#comments .comments img {width:45px; height:auto}
     #comments .comments-details {width:70%; box-sizing:border-box; float:left; margin-left:1%; position:relative}
     #comments .comments-details > a {display:block; font-size:.98em; text-decoration:none; color:#666; font-weight:bold; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-bottom:2px}
+    #comments .comments-details > a:hover {text-decoration:underline}
     #comments .comments-details .comment-date, #comments .comments-details .comment-options {display:inline-block; font-size:.73em; margin-top:7px; color:#999}
     #comments .comments-details p {line-height:18px; margin-top:1%}
 
