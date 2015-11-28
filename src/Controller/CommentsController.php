@@ -15,21 +15,35 @@
 						'dateCreated' => new DateTime(),
 					]);
 
+				$message = null;
+
 				$comment = $this->Comments->patchEntity($comment, $this->request->data);
 				if($this->Comments->save($comment))
-					echo "Saved!";
-				else
-					echo "Failed";
-			}
+					$message = "Saved!";
 
-			$this->autoRender = false;
+				$this->response->body($message);
+
+				return $this->response;
+			} else {
+				$this->setErrorMessage(__('Invalid access method'));
+				return $this->toPrevious();
+			}
 		}
 
 		public function delete($id = null) {
-			if(!$this->Comments->delete($this->Comments->get($id)))
-				$this->setErrorMessage($this->defaultError);
+			if($this->request->is('ajax')) {
+				$message = null;
 
-			return $this->toPrevious();
+				if($this->Comments->delete($this->Comments->get($id)))
+					$message = "Saved!";
+
+				$this->response->body($message);
+
+				return $this->response;
+			} else {
+				$this->setErrorMessage(__('Invalid access method'));
+				return $this->toPrevious();
+			}
 		}
 
 		public function isAuthorized($user) {

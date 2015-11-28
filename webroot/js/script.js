@@ -58,22 +58,40 @@ function reply(element, commentId) {
 
 function sendComment(event, element) {
     event.preventDefault();
-    $.ajax({
-        url         : '/Comments/add',
-        dataType    : 'text',
-        data        : $(element).parents('form').serialize(),
-        success     : function(response) {
-            alert(response);
-        },
-        error       : function(response) {
-            alert(response);
-        }            
-    });
+    $form = $(element).parents('form');
+    $textarea = $form.find('textarea');
+    if(formIsReady($textarea)) {
+        $.ajax({
+            url         : $(element).data('url'),
+            type        : 'POST',
+            data        : $form.serialize(),
+            success     : function() {
+                                location.reload();
+                            }           
+        });
+    } else
+        $textarea.val('').focus();
+
     return false;
+}
+
+function formIsReady($textarea) {
+    return Boolean($textarea.val().trim());
+}
+
+function deleteComment(element) {
+    $.ajax({
+        url         : $(element).data('url')+'/'+$(element).data('id'),
+        type        : 'GET',
+        success     : function(response) {
+                            location.reload();
+                        }        
+    });
 }
 
 function cancelReply(event) {
     event.preventDefault();
     $('#reply-form').appendTo($('#reply-form-container')).find('#comment-id, textarea').val('');
+
     return false;
 }

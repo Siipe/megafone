@@ -38,14 +38,4 @@ function commonHandlers() {
             handleMaxlengthEvent($self);
         }, 1);
     });
-
-    $('#commentForm, #reply-form').on('submit', function(e) {
-        $element = $(this).find('textarea');
-        if(!$element.val().trim()) {
-            $element.val('').focus();
-            return false;
-        }
-
-        return true;
-    });
 }

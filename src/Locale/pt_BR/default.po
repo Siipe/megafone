@@ -264,6 +264,9 @@ msgstr "Reportar"
 msgid "No replies yet"
 msgstr "Nenhuma resposta ainda"
 
+msgid "Invalid access method"
+msgstr "Método de acesso inválido"
+
 # About
 
 msgid "About us"

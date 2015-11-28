@@ -10,7 +10,11 @@
                 <?= $this->Form->input('body', ['type' => 'textarea', 'label' => false, 'placeholder' => __('Your comment here')]) ?>
                 <?= $this->Form->hidden('complaint_id', ['value' => $complaint->id]) ?>
                 <div class="comment-button">
-                    <?= $this->Form->button(__('Send'), ['type' => 'button', 'onclick' => 'sendComment(event, this)']) ?>
+                    <?= $this->Form->button(__('Send'), [
+                        'type' => 'button', 
+                        'data-url' => $this->Url->build(['controller' => 'Comments', 'action' => 'add'], true), 
+                        'onclick' => 'sendComment(event, this)'
+                    ]) ?>
                 </div>
             </div>
         </div>
@@ -19,4 +23,5 @@
     <div id="reply-form-container">
         <?= $this->element('replyForm') ?>
     </div>
+    
 <?php endif; ?>
