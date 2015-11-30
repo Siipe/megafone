@@ -79,6 +79,8 @@
     #comments .comments-details {margin-left:2%; width:calc(98% - 50px);}
     #comments .comments-details .comments-details {padding:0}
     #comments .comments-details p {text-align:initial; line-height:18px}
+
+    .comment-reply .reply-wrapper {width:95%}
     /*END CONTENT*/
 
     /*FOOTER*/
@@ -101,6 +103,8 @@
     #basic-list ul li {width:45%; margin:1% 2.5%}
     #basic-list .display-item img {width:60px;}
     #basic-list .display-item a {font-size:.9em;}
+
+    .comment-reply .reply-wrapper {width:95%}
 }
 
 /*FOR HIGHER RESOLUTIONS*/

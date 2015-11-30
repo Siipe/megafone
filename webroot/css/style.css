@@ -24,7 +24,7 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	nav ul {margin:0 auto}
 	nav ul li {float:left; display:block}
 	nav ul li a {display:inline-block; height:20px; padding:10px 25px; text-decoration:none; font-size:0.95em; border-top:solid 2px #595959}
-	nav>ul>li>a,nav>ul>li>a:hover,nav>ul>li>a:link,nav>ul>li>a:visited,nav>ul>li>a:active {color:#FFF}
+	nav > ul > li > a, nav > ul > li > a:hover, nav > ul > li > a:link, nav > ul > li >a:visited, nav > ul > li > a:active {color:#FFF}
 
 	nav ul li a:hover, nav.category .categories, nav.user .users, nav.complaint .complaints, nav.home .home, nav.about .about {border-top-color:#AAA}
 	/*END MENU*/
@@ -200,8 +200,8 @@ header {width:100%; margin:0 auto; background:linear-gradient(to top, #353535, #
 	    /*REPLY FORM*/
 	    #reply-form-container {display:none}
 
-	    .comment-reply .reply-wrapper {width:95%}
-	    .comment-reply .reply-wrapper textarea {display:block; margin:10px 0 5px 0; height:35px; width:100%; padding:2px; border:solid 1px #DDD; box-sizing:border-box; outline:none}
+	    .comment-reply .reply-wrapper {width:65%}
+	    .comment-reply .reply-wrapper textarea {display:block; margin:10px 0 5px 0; height:70px; width:100%; padding:2px; border:solid 1px #DDD; box-sizing:border-box; outline:none}
 	    .comment-reply .reply-wrapper .reply-buttons {text-align:right}
 	    .comment-reply .reply-wrapper .reply-buttons button {padding:0 3px; background:#EEE; color:#777; cursor:pointer; border-radius:2px; font-size:.8em; border:solid 1px #BBB}
 	    /*END REPLY FORM*/
