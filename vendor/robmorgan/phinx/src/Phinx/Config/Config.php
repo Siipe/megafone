@@ -210,6 +210,17 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get the aliased value from a supplied alias.
+     *
+     * @param string $alias
+     *
+     * @return string|null
+     */
+    public function getAlias($alias){
+        return !empty($this->values['aliases'][$alias]) ? $this->values['aliases'][$alias] : null;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getConfigFilePath()
@@ -241,6 +252,46 @@ class Config implements ConfigInterface
 
         return $dropNamespace ? substr(strrchr($className, '\\'), 1) : $className;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSeedPath()
+    {
+        if (!isset($this->values['paths']['seeds'])) {
+            throw new \UnexpectedValueException('Seeds path missing from config file');
+        }
+
+        return $this->values['paths']['seeds'];
+    }
+
+    /**
+     * Get the template file name.
+     *
+     * @return string|false
+     */
+     public function getTemplateFile()
+     {
+        if (!isset($this->values['templates']['file'])) {
+            return false;
+        }
+
+        return $this->values['templates']['file'];
+     }
+
+    /**
+     * Get the template class name.
+     *
+     * @return string|false
+     */
+     public function getTemplateClass()
+     {
+        if (!isset($this->values['templates']['class'])) {
+            return false;
+        }
+
+        return $this->values['templates']['class'];
+     }
 
     /**
      * Replace tokens in the specified array.

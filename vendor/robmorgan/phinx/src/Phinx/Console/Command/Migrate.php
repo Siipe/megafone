@@ -87,8 +87,15 @@ EOT
             $output->writeln('<info>using adapter</info> ' . $envOptions['adapter']);
         }
 
+        if (isset($envOptions['wrapper'])) {
+            $output->writeln('<info>using wrapper</info> ' . $envOptions['wrapper']);
+        }
+
         if (isset($envOptions['name'])) {
             $output->writeln('<info>using database</info> ' . $envOptions['name']);
+        } else {
+            $output->writeln('<error>Could not determine database name! Please specify a database name in your config file.</error>');
+            return;
         }
 
         if (isset($envOptions['table_prefix'])) {

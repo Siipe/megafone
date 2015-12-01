@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => false,
+    'debug' => true,
 
     /**
      * Configure basic information about the application.
@@ -62,7 +62,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => 'e97098efd5278890b86c4159c21d07c70309179fe15edf00c1f2e7e684d17d27',
+        'salt' => '6c09ccd97998ff5a498d769edb463291d597f0dcc2ee994a7612a6a450708eeb',
     ],
 
     /**
@@ -87,9 +87,8 @@ return [
         ],
 
         /**
-         * Configure the cache used for general framework caching. Path information,
-         * object listings, and translation cache files are stored with this
-         * configuration.
+         * Configure the cache used for general framework caching.
+         * Translation cache files are stored with this configuration.
          */
         '_cake_core_' => [
             'className' => 'File',
@@ -163,7 +162,7 @@ return [
      *  Debug  - Do not send the email, just return the result
      *
      * You can add custom transports (or override existing transports) by adding the
-     * appropriate file to src/Network/Email.  Transports should be named
+     * appropriate file to src/Mailer/Transport.  Transports should be named
      * 'YourTransport.php', where 'Your' is the name of the transport.
      */
     'EmailTransport' => [

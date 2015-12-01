@@ -17,6 +17,7 @@ Phinx makes it ridiculously easy to manage the database migrations for your PHP 
 * Write database migrations using database agnostic PHP code.
 * Migrate up and down.
 * Migrate on deployment.
+* Seed data after database creation.
 * Get going in less than 5 minutes.
 * Stop worrying about the state of your database.
 * Take advantage of SCM features such as branching.
@@ -40,7 +41,7 @@ The fastest way to install Phinx is to add it to your project using Composer (ht
 1. Install Composer:
 
     ```
-    curl -s https://getcomposer.org/installer | php
+    curl -sS https://getcomposer.org/installer | php
     ```
 
 1. Require Phinx as a dependency using Composer:
@@ -87,7 +88,7 @@ You can also use the Box application to build Phinx as a Phar archive (http://bo
 1. Install Box:
 
     ```
-    curl -s http://box-project.org/installer.php | php
+    curl -LSs https://box-project.github.io/box2/installer.php | php
     ```
 
 1. Create a Phar archive
@@ -111,6 +112,35 @@ Follow Rob (@\_rjm\_) on Twitter to stay up to date (http://twitter.com/_rjm_)
 ## Misc
 
 ### Version History
+
+**0.5.0** (Monday, 30th November 2015)
+
+* Support for seeding data after database creation
+* The migration and seed directories are now nested under `db` by default
+* Moved `Phinx\Migration\Util` to `Phinx\Util\Util`
+* All `insert()` methods now have a slightly different method signature
+* Fixed key/insert operations for MySQL
+* Introduced `AdapterInterface::hasIndexByName()`
+* Improved `dropForeignKey()` handling for SQLite
+* Added support for the MySQL `binary` datatype. BLOBs now use the proper type.
+* The status command shows a count of pending migrations in JSON output
+* We are now testing against PHP 7
+
+**0.4.6** (Friday, 11th September 2015)
+
+* You can now set custom migration templates in the config files
+* Support for MySQL unsigned booleans
+* Support for Postgres `smallint` column types
+* Support for `AFTER` when using `changeColumn()` with MySQL
+* Support for `precision` and `scale` when using the Postgres `decimal` type
+* Fixed a bug where duplicate migration names could be used
+* The schema table is now created with a primary key
+* Fixed issues when using the MySQL `STRICT_TRANS_TABLE` mode
+* Improved the docs in the default migration template
+* Made Box PHAR ignore the bundled `phinx.yml` configuration file
+* Updated Box installer URL
+* Internal code improvements
+* Documentation improvements
 
 **0.4.5** (Tuesday, 1st September 2015)
 

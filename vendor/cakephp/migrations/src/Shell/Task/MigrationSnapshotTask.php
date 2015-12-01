@@ -31,7 +31,7 @@ class MigrationSnapshotTask extends SimpleMigrationTask
      *
      * @var array
      */
-    public $skipTables = ['i18n', 'phinxlog'];
+    public $skipTables = ['phinxlog'];
 
     /**
      * Regex of Table name to skip
@@ -85,7 +85,7 @@ class MigrationSnapshotTask extends SimpleMigrationTask
         list($version, ) = explode('_', $fileName, 2);
 
 
-        $dispatchCommand = 'migrations mark_migrated ' . $version;
+        $dispatchCommand = 'migrations mark_migrated -t ' . $version . ' -o';
         if (!empty($this->params['connection'])) {
             $dispatchCommand .= ' -c ' . $this->params['connection'];
         }
@@ -207,10 +207,10 @@ class MigrationSnapshotTask extends SimpleMigrationTask
         $list = [];
         $tables = $this->findTables($pluginName);
         foreach ($tables as $num => $table) {
-            $list = $list + $this->fetchTableName($table, $pluginName);
+            $list = array_merge($list, $this->fetchTableName($table, $pluginName));
         }
 
-        return $list;
+        return array_unique($list);
     }
 
     /**

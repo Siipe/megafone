@@ -31,6 +31,9 @@ namespace Phinx\Migration;
 use Symfony\Component\Console\Output\OutputInterface;
 use Phinx\Config\ConfigInterface;
 use Phinx\Migration\Manager\Environment;
+use Phinx\Seed\AbstractSeed;
+use Phinx\Seed\SeedInterface;
+use Phinx\Util\Util;
 
 class Manager
 {
@@ -53,6 +56,11 @@ class Manager
      * @var array
      */
     protected $migrations;
+
+    /**
+     * @var array
+     */
+    protected $seeds;
 
     /**
      * Class Constructor.
@@ -119,7 +127,12 @@ class Manager
         if ($format != null) {
             switch ($format) {
                 case 'json':
-                    $output->writeln(json_encode($migrations));
+                    $output->writeln(json_encode(
+                        array(
+                            'pending_count' => count($this->getMigrations()),
+                            'migrations' => $migrations
+                        )
+                    ));
                     break;
                 default:
                     $output->writeln('<info>Unsupported format: '.$format.'</info>');
@@ -250,7 +263,7 @@ class Manager
     }
 
     /**
-     * Execute a migration against the specified Environment.
+     * Execute a migration against the specified environment.
      *
      * @param string $name Environment Name
      * @param MigrationInterface $migration Migration
@@ -275,6 +288,35 @@ class Manager
             ' =='
             . ' <info>' . $migration->getVersion() . ' ' . $migration->getName() . ':</info>'
             . ' <comment>' . ($direction == 'up' ? 'migrated' : 'reverted')
+            . ' ' . sprintf('%.4fs', $end - $start) . '</comment>'
+        );
+    }
+
+    /**
+     * Execute a seeder against the specified environment.
+     *
+     * @param string $name Environment Name
+     * @param SeedInterface $seed Seed
+     * @return void
+     */
+    public function executeSeed($name, SeedInterface $seed)
+    {
+        $this->getOutput()->writeln('');
+        $this->getOutput()->writeln(
+            ' =='
+            . ' <info>' . $seed->getName() . ':</info>'
+            . ' <comment>seeding</comment>'
+        );
+
+        // Execute the seeder and log the time elapsed.
+        $start = microtime(true);
+        $this->getEnvironment($name)->executeSeed($seed);
+        $end = microtime(true);
+
+        $this->getOutput()->writeln(
+            ' =='
+            . ' <info>' . $seed->getName() . ':</info>'
+            . ' <comment>seeded'
             . ' ' . sprintf('%.4fs', $end - $start) . '</comment>'
         );
     }
@@ -331,6 +373,35 @@ class Manager
 
             if (in_array($migration->getVersion(), $versions)) {
                 $this->executeMigration($environment, $migration, MigrationInterface::DOWN);
+            }
+        }
+    }
+
+    /**
+     * Run database seeders against an environment.
+     *
+     * @param string $environment Environment
+     * @param string $seed Seeder
+     * @return void
+     */
+    public function seed($environment, $seed = null)
+    {
+        $seeds = $this->getSeeds();
+        $env = $this->getEnvironment($environment);
+
+        if (null === $seed) {
+            // run all seeders
+            foreach ($seeds as $seeder) {
+                if (array_key_exists($seeder->getName(), $seeds)) {
+                    $this->executeSeed($environment, $seeder);
+                }
+            }
+        } else {
+            // run only one seeder
+            if (array_key_exists($seed, $seeds)) {
+                $this->executeSeed($environment, $seeds[$seed]);
+            } else {
+                throw new \InvalidArgumentException(sprintf('The seed class "%s" does not exist', $seed));
             }
         }
     }
@@ -428,23 +499,15 @@ class Manager
             $versions = array();
 
             foreach ($phpFiles as $filePath) {
-                if (preg_match('/([0-9]+)_([_a-z0-9]*).php/', basename($filePath))) {
-                    $matches = array();
-                    preg_match('/^[0-9]+/', basename($filePath), $matches); // get the version from the start of the filename
-                    $version = $matches[0];
+                if (Util::isValidMigrationFileName(basename($filePath))) {
+                    $version = Util::getVersionFromFileName(basename($filePath));
 
                     if (isset($versions[$version])) {
                         throw new \InvalidArgumentException(sprintf('Duplicate migration - "%s" has the same version as "%s"', $filePath, $versions[$version]->getVersion()));
                     }
 
                     // convert the filename to a class name
-                    $class = preg_replace('/^[0-9]+_/', '', basename($filePath));
-                    $class = str_replace('_', ' ', $class);
-                    $class = ucwords($class);
-                    $class = str_replace(' ', '', $class);
-                    if (false !== strpos($class, '.')) {
-                        $class = substr($class, 0, strpos($class, '.'));
-                    }
+                    $class = Util::mapFileNameToClassName(basename($filePath));
 
                     if (isset($fileNames[$class])) {
                         throw new \InvalidArgumentException(sprintf(
@@ -488,6 +551,75 @@ class Manager
         }
 
         return $this->migrations;
+    }
+
+    /**
+     * Sets the database seeders.
+     *
+     * @param array $seeds Seeders
+     * @return Manager
+     */
+    public function setSeeds(array $seeds)
+    {
+        $this->seeds = $seeds;
+        return $this;
+    }
+
+    /**
+     * Gets an array of database seeders.
+     *
+     * @throws \InvalidArgumentException
+     * @return AbstractSeed[]
+     */
+    public function getSeeds()
+    {
+        if (null === $this->seeds) {
+            $config = $this->getConfig();
+            $phpFiles = glob($config->getSeedPath() . DIRECTORY_SEPARATOR . '*.php');
+
+            // filter the files to only get the ones that match our naming scheme
+            $fileNames = array();
+            /** @var AbstractSeed[] $seeds */
+            $seeds = array();
+
+            foreach ($phpFiles as $filePath) {
+                if (Util::isValidSeedFileName(basename($filePath))) {
+                    // convert the filename to a class name
+                    $class = pathinfo($filePath, PATHINFO_FILENAME);
+                    $fileNames[$class] = basename($filePath);
+
+                    // load the seed file
+                    /** @noinspection PhpIncludeInspection */
+                    require_once $filePath;
+                    if (!class_exists($class)) {
+                        throw new \InvalidArgumentException(sprintf(
+                            'Could not find class "%s" in file "%s"',
+                            $class,
+                            $filePath
+                        ));
+                    }
+
+                    // instantiate it
+                    $seed = new $class();
+
+                    if (!($seed instanceof AbstractSeed)) {
+                        throw new \InvalidArgumentException(sprintf(
+                            'The class "%s" in file "%s" must extend \Phinx\Seed\AbstractSeed',
+                            $class,
+                            $filePath
+                        ));
+                    }
+
+                    $seed->setOutput($this->getOutput());
+                    $seeds[$class] = $seed;
+                }
+            }
+
+            ksort($seeds);
+            $this->setSeeds($seeds);
+        }
+
+        return $this->seeds;
     }
 
     /**

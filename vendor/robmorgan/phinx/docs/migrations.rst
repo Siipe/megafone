@@ -11,8 +11,8 @@ your migrations using the Phinx PHP API, but raw SQL is also supported.
 Creating a New Migration
 ------------------------
 
-Let's start by creating a new Phinx migration. Run Phinx using the
-``create`` command:
+Let's start by creating a new Phinx migration. Run Phinx using the ``create``
+command:
 
 .. code-block:: bash
 
@@ -22,8 +22,7 @@ This will create a new migration in the format
 ``YYYYMMDDHHMMSS_my_new_migration.php`` where the first 14 characters are
 replaced with the current timestamp down to the second.
 
-Phinx automatically creates a skeleton migration file with two empty methods
-and a commented out one:
+Phinx automatically creates a skeleton migration file with a single method:
 
 .. code-block:: php
 
@@ -36,28 +35,25 @@ and a commented out one:
             /**
              * Change Method.
              *
-             * More information on this method is available here:
-             * http://docs.phinx.org/en/latest/migrations.html#the-change-method
+             * Write your reversible migrations using this method.
              *
-             * Uncomment this method if you would like to use it.
+             * More information on writing migrations is available here:
+             * http://docs.phinx.org/en/latest/migrations.html#the-abstractmigration-class
              *
+             * The following commands can be used in this method and Phinx will
+             * automatically reverse them when rolling back:
+             *
+             *    createTable
+             *    renameTable
+             *    addColumn
+             *    renameColumn
+             *    addIndex
+             *    addForeignKey
+             *
+             * Remember to call "create()" or "update()" and NOT "save()" when working
+             * with the Table class.
+             */
             public function change()
-            {
-            }
-            */
-
-            /**
-             * Migrate Up.
-             */
-            public function up()
-            {
-
-            }
-
-            /**
-             * Migrate Down.
-             */
-            public function down()
             {
 
             }
@@ -71,28 +67,13 @@ provides the necessary support to create your database migrations. Database
 migrations can transform your database in many ways such as creating new
 tables, inserting rows, adding indexes and modifying columns.
 
-The Up Method
-~~~~~~~~~~~~~
-
-The up method is automatically run by Phinx when you are migrating up and it
-detects the given migration hasn't been executed previously. You should use the
-up method to transform the database with your intended changes.
-
-The Down Method
-~~~~~~~~~~~~~~~
-
-The down method is automatically run by Phinx when you are migrating down and
-it detects the given migration has been executed in the past. You should use
-the down method to reverse/undo the transformations described in the up method.
-
 The Change Method
 ~~~~~~~~~~~~~~~~~
 
-Phinx 0.2.0 introduced a new feature called reversible migrations. With
-reversible migrations you only need to define the ``up`` logic and Phinx can
-figure out how to migrate down automatically for you. To define a reversible
-migration you must uncomment the ``change`` method in your migration file. For
-example:
+Phinx 0.2.0 introduced a new feature called reversible migrations. This feature
+has now become the default migration method. With reversible migrations you only
+need to define the ``up`` logic and Phinx can figure out how to migrate down
+automatically for you. For example:
 
 .. code-block:: php
 
@@ -161,12 +142,27 @@ Phinx can only reverse the following commands:
 If a command cannot be reversed then Phinx will throw a
 ``IrreversibleMigrationException`` exception when it's migrating down.
 
+The Up Method
+~~~~~~~~~~~~~
+
+The up method is automatically run by Phinx when you are migrating up and it
+detects the given migration hasn't been executed previously. You should use the
+up method to transform the database with your intended changes.
+
+The Down Method
+~~~~~~~~~~~~~~~
+
+The down method is automatically run by Phinx when you are migrating down and
+it detects the given migration has been executed in the past. You should use
+the down method to reverse/undo the transformations described in the up method.
+
 Executing Queries
 -----------------
 
 Queries can be executed with the ``execute()`` and ``query()`` methods. The
 ``execute()`` method returns the number of affected rows whereas the
-``query()`` method returns the result as an array.
+``query()`` method returns the result as a
+`PDOStatement <http://php.net/manual/en/class.pdostatement.php>`_
 
 .. code-block:: php
 
@@ -331,6 +327,10 @@ Finally calling ``save()`` commits the changes to the database.
     Phinx automatically creates an auto-incrementing primary key column called ``id`` for every
     table.
 
+The ``id`` option sets the name of the automatically created identity field, while the ``primary_key``
+option selects the field or fields used for primary key. The ``primary_key`` option always defaults to
+the value of ``id``. Both can be disabled by setting them to false.
+
 To specify an alternate primary key you can specify the ``primary_key`` option
 when accessing the Table object. Let's disable the automatic ``id`` column and
 create a primary key using two columns instead:
@@ -365,7 +365,7 @@ create a primary key using two columns instead:
         }
 
 Setting a single ``primary_key`` doesn't enable the ``AUTO_INCREMENT`` option.
-To do this, we need to override the default ``id`` field name:
+To simply change the name of the primary key, we need to override the default ``id`` field name:
 
 .. code-block:: php
 
@@ -381,8 +381,7 @@ To do this, we need to override the default ``id`` field name:
             public function up()
             {
                 $table = $this->table('followers', array('id' => 'user_id'));
-                $table->addColumn('user_id', 'integer')
-                      ->addColumn('follower_id', 'integer')
+                $table->addColumn('follower_id', 'integer')
                       ->addColumn('created', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
                       ->save();
             }
@@ -415,9 +414,9 @@ Column types are specified as strings and can be one of:
 -  timestamp
 -  uuid
 
-In addition, the MySQL adapter supports ``enum`` and ``set`` column types.
+In addition, the MySQL adapter supports ``enum``, ``set`` and ``blob`` column types.
 
-In addition, the Postgres adapter supports ``json`` and ``jsonb`` column types
+In addition, the Postgres adapter supports ``smallint``, ``json``, ``jsonb`` and ``uuid`` column types
 (PostgreSQL 9.3 and above).
 
 For valid options, see the `Valid Column Options`_ below.
@@ -536,7 +535,8 @@ Working With Columns
 Get a column list
 ~~~~~~~~~~~~~~~~~
 
-To retrieve all table columns, simply create a `table` object and call `getColumns()` method. This method will return an array of Column classes with basic info. Example below:
+To retrieve all table columns, simply create a `table` object and call `getColumns()`
+method. This method will return an array of Column classes with basic info. Example below:
 
 .. code-block:: php
 
@@ -924,6 +924,7 @@ Option    Description
 ========= ===========
 precision combine with ``scale`` set to set decimial accuracy
 scale     combine with ``precision`` to set decimial accuracy
+signed    enable or disable the ``unsigned`` option *(only applies to MySQL)*
 ========= ===========
 
 For ``enum`` and ``set`` columns:
@@ -953,6 +954,14 @@ update   set an action to be triggered when the row is updated (use with ``CURRE
 timezone enable or disable the ``with time zone`` option for ``time`` and ``timestamp`` columns *(only applies to Postgres)*
 ======== ===========
 
+For ``boolean``columns:
+
+======== ===========
+Option   Description
+======== ===========
+signed   enable or disable the ``unsigned`` option *(only applies to MySQL)*
+======== ===========
+
 For foreign key definitions:
 
 ====== ===========
@@ -965,11 +974,35 @@ delete set an action to be triggered when the row is deleted
 You can pass one or more of these options to any column with the optional
 third argument array.
 
+Limit Option and PostgreSQL
+~~~~~~~~~~~~~~~~~~~~~~
+
+When using the PostgreSQL adapter, additional hinting of database column type can be
+made for ``integer`` columns. Using ``limit`` with one the following options will
+modify the column type accordingly:
+
+============ ==============
+Limit        Column Type
+============ ==============
+INT_SMALL    SMALLINT
+============ ==============
+
+.. code-block:: php
+
+         use Phinx\Db\Adapter\PostgresAdapter;
+
+         //...
+
+         $table = $this->table('cart_items');
+         $table->addColumn('user_id', 'integer')
+               ->addColumn('subtype_id', 'integer', array('limit' => PostgresAdapter::INT_SMALL))
+               ->create();
+
 Limit Option and MySQL
 ~~~~~~~~~~~~~~~~~~~~~~
 
 When using the MySQL adapter, additional hinting of database column type can be
-made for ``integer``, ``text`` and ``binary`` columns. Using ``limit`` with 
+made for ``integer``, ``text`` and ``blob`` columns. Using ``limit`` with
 one the following options will modify the column type accordingly:
 
 ============ ==============

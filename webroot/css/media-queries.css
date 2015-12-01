@@ -109,6 +109,6 @@
 
 /*FOR HIGHER RESOLUTIONS*/
 @media only screen and (min-width:1600px) {
-    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:55%}
-    div#modal {left:22.5%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:63%}
+    div#modal {left:18.5%}
 }
