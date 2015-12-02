@@ -43,10 +43,10 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
-            /*'unauthorizedRedirect' => [
+            'unauthorizedRedirect' => [
                 'action' => 'index',
                 'prefix' => false
-            ],*/
+            ],
             'authenticate' => [
                 'Form' => [
                     'fields' => [

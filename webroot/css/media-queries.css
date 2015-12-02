@@ -94,17 +94,17 @@
      /*DEFAULT PAGE WIDTH*/
     #top-header,#main-content,nav ul, .flash .message, body>footer div, div#modal {width:96%}
 
-    div#modal {left:5%}
+    div#modal {left:2%}
 
     #form .input-wrapper {width:50%}
     #form > div input, #form > div textarea {width:100%}
 
+    .comment-reply .reply-wrapper {width:65%}
+
     #basic-list {margin:2% auto;}
-    #basic-list ul li {width:45%; margin:1% 2.5%}
+    #basic-list > ul > li {width:45%; margin:1% 2.5%}
     #basic-list .display-item img {width:60px;}
     #basic-list .display-item a {font-size:.9em;}
-
-    .comment-reply .reply-wrapper {width:95%}
 }
 
 /*FOR HIGHER RESOLUTIONS*/

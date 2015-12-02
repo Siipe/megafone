@@ -13,18 +13,15 @@
 		}
 
 		public function index() {
-            $complaints = $this->Complaints->find();
-            $complaints
-                ->select(['total_comments' => $complaints->func()->count('Comments.id')])
-                ->leftJoinWith('Comments', function($q) {
-                    return $q->where(['Comments.comment_id IS' => NULL]);
-                })
-                ->contain(['Users', 'Categories'])
-                ->group(['Complaints.id'])
-                ->order(['total_comments' => 'DESC'])
-                ->autoFields(true);
+            $this->paginate = [
+                'limit' => 9,
+                'contain' => ['Users', 'Categories', 'Comments' => function($q) {
+                    return $q->where(['Comments.comment_id IS' => null]);
+                }],
+                'order' => ['Complaints.dateCreated' => 'DESC']
+            ];
 
-			$this->set('complaints', $this->paginate($complaints));
+			$this->set('complaints', $this->paginate());
 		}
 
 		public function view($id = null) {
