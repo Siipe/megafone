@@ -16,13 +16,9 @@
 				'dependent' => true
 				]);
 
-            /*$this->addBehavior('CounterCache', [
-                'Complaints' => [
-                    'comment_count' => [
-                        'conditions' => ['Comments.comment_id IS' => null]
-                    ]
-                ]
-            ]);*/
+            $this->addBehavior('CounterCache', [
+                'Complaints' => ['comment_count']
+            ]);
 		}
 
 		public function isOwnedBy($id, $user_id) {

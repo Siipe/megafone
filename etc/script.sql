@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS complaints (
   dateCreated DATETIME NOT NULL,
   user_id INT,
   category_id INT NOT NULL,
+  comment_count INT,
   FOREIGN KEY FK_USER_COMPLAINT (user_id) REFERENCES users(id),
   FOREIGN KEY FK_CATEGORY_COMPLAINT (category_id) REFERENCES categories(id)
 );

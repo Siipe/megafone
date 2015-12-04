@@ -2,7 +2,7 @@
 @media only screen and (min-width:150px) and (max-width:600px) {
 
     /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:96%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div {width:96%}
 
     /*HEADER*/
     header {background:none}
@@ -30,7 +30,7 @@
     #content article p {text-align:justify}
     #content article footer {margin:4% 0}
 
-    div#modal {left:2%}
+    div.image-modal {width:96%; left:2%}
 
     .images {float:none; width:90%; margin-bottom:4%}
 
@@ -92,9 +92,9 @@
 /*FOR TABLETS*/
 @media only screen and (min-width:600px) and (max-width:1000px) {
      /*DEFAULT PAGE WIDTH*/
-    #top-header,#main-content,nav ul, .flash .message, body>footer div, div#modal {width:96%}
+    #top-header,#main-content,nav ul, .flash .message, body>footer div {width:96%}
 
-    div#modal {left:2%}
+    div.image-modal {width:96%; left:2%}
 
     #form .input-wrapper {width:50%}
     #form > div input, #form > div textarea {width:100%}
@@ -109,6 +109,6 @@
 
 /*FOR HIGHER RESOLUTIONS*/
 @media only screen and (min-width:1600px) {
-    #top-header,#main-content, nav ul, .flash .message, body>footer div, div#modal {width:63%}
-    div#modal {left:18.5%}
+    #top-header,#main-content, nav ul, .flash .message, body>footer div {width:63%}
+    div.image-modal {width:63%; left:18.5%}
 }

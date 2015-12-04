@@ -1,4 +1,4 @@
-<div id="modal">
+<div id="modal" class="image-modal">
     <p class="hint"><?= __('Hold SHIFT to keep the aspect ratio') ?></p>
     
     <?= $this->Form->create(null,['type' => 'file', 'url' => ['controller' => 'Users', 'action' => 'updateImage']]) ?>

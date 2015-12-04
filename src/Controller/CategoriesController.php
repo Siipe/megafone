@@ -28,10 +28,7 @@
                     'order' => ['dateCreated' => 'desc']
                 ];
 
-                $complaint = $this->Categories->Complaints->findByCategoryId($id)->contain([
-                    'Comments' => function($q){
-                        return $q->where(['Comments.comment_id IS' => null]);
-                    }]);
+                $complaint = $this->Categories->Complaints->findByCategoryId($id);
 
                 $response = [
                     'category' => $this->Categories->get($id, ['contain' => 'Users']),

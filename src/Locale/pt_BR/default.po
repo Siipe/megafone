@@ -267,6 +267,9 @@ msgstr "Nenhuma resposta ainda"
 msgid "Invalid access method"
 msgstr "Método de acesso inválido"
 
+msgid "{0,plural,=0{No replies yet} =1{1 reply} other{# replies}}"
+msgstr "{0,plural,=0{Sem respostas ainda} =1{1 resposta} other{# respostas}}"
+
 # About
 
 msgid "About us"

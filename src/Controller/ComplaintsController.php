@@ -15,10 +15,8 @@
 		public function index() {
             $this->paginate = [
                 'limit' => 9,
-                'contain' => ['Users', 'Categories', 'Comments' => function($q) {
-                    return $q->where(['Comments.comment_id IS' => null]);
-                }],
-                'order' => ['Complaints.dateCreated' => 'DESC']
+                'contain' => ['Users', 'Categories'],
+                'order' => ['Complaints.comment_count' => 'DESC', 'Complaints.dateCreated' => 'DESC']
             ];
 
 			$this->set('complaints', $this->paginate());
@@ -59,7 +57,7 @@
 		}
 
 		public function add() {
-			$complaint = $this->Complaints->newEntity();
+			$complaint = $this->Complaints->newEntity(['comment_count' => 0]);
 			if($this->request->is('post')) {
 				$complaint = $this->Complaints->patchEntity($complaint, $this->request->data);
 

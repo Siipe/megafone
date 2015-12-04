@@ -28,14 +28,14 @@
 </article>
 <div class="interval"></div>
 <article>
-    <h1> <?= __('Comments ({0})', count($complaint->comments)) ?></h1>
+    <h1> <?= __('Comments ({0})', $complaint->comment_count) ?></h1>
     <section id="comments">
         
 	    <?php 
 	    	require "commentForm.ctp";
 	    ?>
 
-        <?php if(!$complaint->comments): ?>
+        <?php if(!$complaint->comment_count): ?>
         	<p class="no-results"><?= __('Nothing to show') ?></p>
         <?php else: ?>
 	        <ul class="comments">
@@ -53,9 +53,8 @@
 
 		                    <div class="comment-reply"></div>
 
-		                    <?php if(!$comment->replies): ?>
-		                		<p class="no-replies"><?= __('No replies yet') ?></p>
-			                <?php else: ?>
+		                	<p class="no-replies"><?= __('{0,plural,=0{No replies yet} =1{1 reply} other{# replies}}', count($comment->replies)) ?></p>
+			                <?php if($comment->replies): ?>
 			                	<ul class="comments">
 					                <?php foreach($comment->replies as $reply): ?>
 					                	<li>
